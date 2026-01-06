@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Croissant - TiaBakery Blog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- STYLE DASAR (KONSISTEN) --- */
+        :root {
+            --bg-white: #FFFFFF; --bg-warm: #FFFBF2; --text-dark: #3E2723; --text-light: #795548;
+            --red: #FF5252; --yellow: #FFD740; --yellow-soft: #FFF9C4; --green: #69F0AE; --blue: #448AFF;
+            --container-width: 1200px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-white); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; width: 100%; }
+        h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+
+        /* NAVBAR */
+        nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001;}
+        .nav-menu { display: flex; gap: 25px; align-items: center; }
+        .nav-menu a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--text-dark); cursor: pointer; }
+        .nav-menu a:hover { color: var(--red); }
+        .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
+        .nav-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); cursor: pointer; position: relative; }
+        .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        .btn-nav-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
+        .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
+
+        /* MOBILE MENU (DRAWER) */
+        .menu-overlay-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; }
+        .menu-overlay-bg.active { opacity: 1; visibility: visible; }
+        .mobile-menu-dropdown { position: fixed; top: 0; left: 0; width: 100%; height: auto; padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; gap: 25px; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); display: flex; }
+        .mobile-menu-dropdown.active { transform: translateY(0); }
+        .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
+        .mobile-btn-wa { background: #25D366; color: white; padding: 12px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px; }
+        #cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
+        #cart-count.show { opacity: 1; }
+
+        /* --- BLOG DETAIL STYLES --- */
+        .blog-header { padding: 60px 0 40px; text-align: center; background: var(--bg-warm); margin-bottom: 50px; }
+        .blog-meta { font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; align-items: center; }
+        .author-badge { background: var(--text-dark); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
+        .blog-header h1 { font-size: 3rem; line-height: 1.2; max-width: 800px; margin: 0 auto; }
+
+        .blog-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; padding-bottom: 100px; }
+        .sidebar-sticky { position: sticky; top: 100px; }
+        
+        .toc-box { background: white; padding: 30px; border-radius: 20px; border: 1px solid #eee; margin-bottom: 30px; }
+        .toc-title { font-family: 'Fraunces'; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--yellow); padding-bottom: 10px; display: inline-block; }
+        .toc-list { list-style: none; }
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list a { color: var(--text-light); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .toc-list a:hover { color: var(--red); padding-left: 5px; }
+
+        .ads-box { border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer; }
+        .ads-box img { width: 100%; display: block; transition: 0.3s; }
+        .ads-box:hover img { transform: scale(1.05); }
+        .ads-label { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); color: white; font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; }
+
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #4a4a4a; }
+        .article-content h2 { font-size: 1.8rem; margin: 40px 0 20px; color: var(--text-dark); scroll-margin-top: 100px; }
+        .article-content p { margin-bottom: 20px; }
+        
+        .article-img-figure { margin: 30px 0; }
+        .article-img { width: 100%; border-radius: 15px; margin-bottom: 10px; }
+        .img-caption { font-size: 0.9rem; color: #888; text-align: center; font-style: italic; }
+
+        blockquote { border-left: 5px solid var(--red); background: var(--bg-warm); padding: 30px; margin: 40px 0; font-family: 'Fraunces'; font-size: 1.4rem; color: var(--text-dark); border-radius: 0 15px 15px 0; font-style: italic; }
+
+        .faq-box { margin-top: 50px; background: #fafafa; padding: 30px; border-radius: 20px; }
+        details { background: white; margin-bottom: 15px; border-radius: 12px; border: 1px solid #eee; overflow: hidden; }
+        summary { padding: 20px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--text-light); }
+        details[open] summary::after { content: '-'; color: var(--red); }
+        .faq-answer { padding: 20px; color: var(--text-light); border-top: 1px solid #eee; }
+
+        /* AUTHOR BIO */
+        .author-bio { 
+            display: flex; align-items: center; gap: 20px; 
+            margin-top: 60px; padding: 30px; 
+            background: #fff; border: 1px solid #eee; 
+            border-left: 5px solid var(--text-dark); 
+            border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .author-pic { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+        .author-details h4 { font-family: 'Fraunces'; font-size: 1.2rem; margin-bottom: 5px; color: var(--text-dark); }
+        .author-details p { font-size: 0.9rem; color: #666; margin: 0; line-height: 1.5; }
+
+        .share-section { margin-top: 30px; padding-top: 30px; border-top: 1px dashed #ddd; display: flex; align-items: center; gap: 20px; }
+        .share-label { font-weight: 700; font-family: 'Fraunces'; font-size: 1.2rem; }
+        .share-icons { display: flex; gap: 10px; }
+        .share-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; transition: 0.3s; }
+        .share-btn:hover { transform: translateY(-3px); }
+        .share-ig { background: #E1306C; }
+        .share-fb { background: #4267B2; }
+        .share-li { background: #0077b5; }
+
+        .related-section { background: var(--bg-warm); padding: 80px 0; }
+        .related-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: 0.3s; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-10px); }
+        .blog-img-wrapper { height: 200px; overflow: hidden; }
+        .blog-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .blog-content { padding: 20px; }
+        .blog-title-sm { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; font-family: 'Fraunces'; }
+        .blog-link { color: var(--red); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+
+        /* CART SIDEBAR */
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; opacity: 0; transition: 0.3s; }
+        .cart-overlay.active { display: block; opacity: 1; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; z-index: 2001; padding: 25px; box-shadow: -5px 0 30px rgba(0,0,0,0.1); transition: 0.4s; display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
+        .cart-items-container { flex: 1; overflow-y: auto; }
+        .cart-footer { border-top: 1px solid #eee; padding-top: 25px; margin-top: auto; }
+        .btn-checkout { width: 100%; padding: 16px; background: var(--text-dark); color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; display: flex; justify-content: center; gap: 10px; font-size: 1rem; transition: 0.3s; margin-top: 10px; }
+
+        /* FOOTER & UTILS */
+        footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
+        .social-icons a { width: 45px; height: 45px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none;}
+        .social-icons a:hover { background: var(--text-dark); color: white; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 110px; right: 38px; width: 50px; height: 50px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; text-decoration: none; cursor: pointer; }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
+
+        @media (max-width: 900px) {
+            .nav-menu, .btn-nav-wa { display: none; }
+            .hamburger-btn { display: block; }
+            .cart-sidebar { width: 100%; right: -100%; } .cart-sidebar.active { right: 0; }
+            
+            .blog-layout { grid-template-columns: 1fr; }
+            .sidebar-sticky { position: static; }
+            .blog-header h1 { font-size: 2.5rem; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-overlay-bg" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo">TiaBakery.</a>
+            <div class="nav-menu">
+                <a href="about.html">Tentang Kami</a>
+                <a href="product.html">Produk</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.html" style="color: var(--red);">Blog</a>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-btn" onclick="toggleCart()">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa"><i class="ri-whatsapp-line"></i> Kontak</a>
+                <div class="hamburger-btn" onclick="toggleMobileMenu()"><i class="ri-menu-3-line"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-dropdown" id="mobileMenu">
+        <a href="about.html" class="mobile-link">Tentang Kami</a>
+        <a href="product.html" class="mobile-link">Produk</a>
+        <a href="gallery.html" class="mobile-link">Gallery</a>
+        <a href="blog.html" class="mobile-link">Blog</a>
+        <a href="https://wa.me/62895639068080" target="_blank" class="mobile-btn-wa"><i class="ri-whatsapp-line"></i> Kontak WhatsApp</a>
+    </div>
+
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;">&times;</span></div>
+        <div id="cart-items" class="cart-items-container"><p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p></div>
+        <div class="cart-footer">
+            <button class="btn-checkout" onclick="window.location.href='product.html'">Belanja Sekarang</button>
+        </div>
+    </div>
+
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-meta">
+                <span class="author-badge"><i class="ri-user-3-line"></i> Chef Tia</span>
+                <span class="meta-item"><i class="ri-calendar-line"></i> 10 Nov 2023</span>
+                <span class="meta-item"><i class="ri-price-tag-3-line"></i> Trivia</span>
+            </div>
+            <h1>Sejarah Unik di Balik Croissant: Bukan Asli Perancis?</h1>
+        </div>
+    </header>
+
+    <div class="container blog-layout">
+        
+        <article class="article-content">
+            <p>Jika mendengar kata "Croissant", yang terlintas di pikiran pasti menara Eiffel dan sarapan pagi di Paris. Namun, tahukah Anda bahwa kue bulan sabit berlapis yang terkenal ini sebenarnya bukan asli dari Perancis? Sejarah mencatat asal-usulnya dari tempat yang tak terduga: Austria.</p>
+
+            <figure class="article-img-figure">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1000&q=80" alt="Croissant" class="article-img">
+                <figcaption class="img-caption">Bentuk bulan sabit (crescent) menjadi ikon kuliner Perancis yang mendunia.</figcaption>
+            </figure>
+
+            <h2 id="section1">Asal Usul dari Austria (Kipferl)</h2>
+            <p>Nenek moyang Croissant adalah <strong>Kipferl</strong>, roti berbentuk bulan sabit dari Wina, Austria. Legenda mengatakan bahwa Kipferl diciptakan pada tahun 1683 saat pengepungan kota Wina oleh pasukan Ottoman (Turki).</p>
+            <p>Para pembuat roti yang bekerja di tengah malam mendengar suara pasukan Ottoman menggali terowongan di bawah tanah. Mereka segera membunyikan alarm dan menyelamatkan kota. Sebagai perayaan kemenangan, mereka membuat roti berbentuk bulan sabit (lambang bendera Ottoman) agar warga bisa "memakan" musuh mereka.</p>
+
+            <blockquote>
+                "Kipferl adalah simbol kemenangan dan keberanian, yang kemudian berevolusi menjadi simbol keanggunan kuliner Perancis."
+            </blockquote>
+
+            <h2 id="section2">Masuk ke Perancis (Marie Antoinette)</h2>
+            <p>Kipferl dibawa ke Perancis oleh Ratu Marie Antoinette, putri Austria yang menikah dengan Raja Louis XVI. Ia merindukan kue dari kampung halamannya dan meminta koki istana untuk membuatnya. Sejak saat itu, kue ini dikenal dengan nama "Croissant" (Bulan Sabit) di Perancis.</p>
+
+            <figure class="article-img-figure">
+                <img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=1000&q=80" alt="Lapisan Croissant" class="article-img">
+                <figcaption class="img-caption">Teknik laminasi modern menciptakan rongga sarang lebah (honeycomb) yang sempurna.</figcaption>
+            </figure>
+
+            <h2 id="section3">Evolusi Teknik Laminasi</h2>
+            <p>Meskipun bentuknya sama, Kipferl asli bertekstur seperti roti (brioche). Baru pada awal abad ke-20, baker Perancis menyempurnakannya dengan menggunakan adonan <i>Puff Pastry</i> (teknik laminasi lipatan mentega). Inilah yang menciptakan tekstur berlapis, renyah di luar, dan lembut di dalam seperti yang kita kenal sekarang.</p>
+
+            <div class="faq-box">
+                <h2 id="section4" style="margin-top:0;">Pertanyaan Umum (FAQ)</h2>
+                <details>
+                    <summary>Kenapa bentuknya harus bulan sabit?</summary>
+                    <div class="faq-answer">Secara historis untuk merayakan kemenangan atas pasukan Ottoman yang benderanya berlambang bulan sabit.</div>
+                </details>
+                <details>
+                    <summary>Apakah susah membuat Croissant sendiri?</summary>
+                    <div class="faq-answer">Cukup menantang karena butuh suhu dingin agar mentega tidak leleh saat dilipat (laminasi). Tapi hasilnya sangat memuaskan!</div>
+                </details>
+                <details>
+                    <summary>Apa bedanya Croissant lurus dan melengkung?</summary>
+                    <div class="faq-answer">Di Perancis, yang lurus biasanya menggunakan mentega asli (butter), sedangkan yang melengkung menggunakan margarin.</div>
+                </details>
+            </div>
+
+            <div class="author-bio">
+                <img src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?w=200" alt="Chef Tia" class="author-pic">
+                <div class="author-details">
+                    <h4>Ditulis oleh: Chef Tia</h4>
+                    <p>Founder TiaBakery & Pastry Chef berpengalaman lebih dari 10 tahun di dunia baking artisan. Mencintai ragi alami dan mentega berkualitas.</p>
+                </div>
+            </div>
+
+            <div class="share-section">
+                <span class="share-label">Bagikan Fakta:</span>
+                <div class="share-icons">
+                    <a href="#" class="share-btn share-ig"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="share-btn share-fb"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" class="share-btn share-li"><i class="ri-linkedin-fill"></i></a>
+                </div>
+            </div>
+
+        </article>
+
+        <aside>
+            <div class="sidebar-sticky">
+                
+                <div class="toc-box">
+                    <span class="toc-title">Daftar Isi</span>
+                    <ul class="toc-list">
+                        <li><a href="#section1">Asal Usul Austria</a></li>
+                        <li><a href="#section2">Masuk ke Perancis</a></li>
+                        <li><a href="#section3">Teknik Laminasi</a></li>
+                        <li><a href="#section4">FAQ Croissant</a></li>
+                    </ul>
+                </div>
+
+                <div class="ads-box" onclick="window.location.href='product.html'">
+                    <span class="ads-label">Menu Favorit</span>
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm95bm95bm95bm95bm95bm95bm95bm95bm95bm95bm95bm95bm95biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2JdZ53ZtsK9x4Z6o/giphy.gif" alt="Promo Croissant">
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <section class="related-section">
+        <div class="container">
+            <h2 class="related-title">Artikel Terkait</h2>
+            <div class="related-grid">
+                
+                <div class="blog-card" onclick="window.location.href='#'">
+                    <div class="blog-img-wrapper"><img src="https://images.unsplash.com/photo-1507612238538-4ef2d1094d40?w=500" alt="Ragi"></div>
+                    <div class="blog-content">
+                        <div class="blog-title-sm">Kenapa Ragi Sangat Penting?</div>
+                        <span class="blog-link">Baca Artikel</span>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="window.location.href='#'">
+                    <div class="blog-img-wrapper"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500" alt="Butter"></div>
+                    <div class="blog-content">
+                        <div class="blog-title-sm">Tips Butter Cream Kokoh</div>
+                        <span class="blog-link">Baca Artikel</span>
+                    </div>
+                </div>
+
+                <div class="blog-card" onclick="window.location.href='#'">
+                    <div class="blog-img-wrapper"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" alt="Roti"></div>
+                    <div class="blog-content">
+                        <div class="blog-title-sm">Rahasia Roti Tetap Lembut</div>
+                        <span class="blog-link">Baca Artikel</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3 class="nav-logo" style="margin-bottom: 20px;">TiaBakery.</h3><p style="color: #666; line-height: 1.6; max-width: 250px;">Bakery modern dengan cita rasa autentik.</p></div>
+                <div class="footer-col"><h4>Eksplorasi</h4><ul><li><a href="about.html">Tentang Kami</a></li><li><a href="product.html">Produk</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+                <div class="footer-col"><h4>Kontak</h4><ul><li>Jl. Bakery No. 88, Jakarta</li><li>hello@tiabakery.com</li></ul></div>
+                <div class="footer-col"><h4>Ikuti Kami</h4><div class="social-icons"><a href="#"><i class="ri-instagram-line"></i></a><a href="#"><i class="ri-tiktok-fill"></i></a><a href="#"><i class="ri-facebook-fill"></i></a></div></div>
+            </div>
+            <div style="text-align: center; font-size: 0.9rem; color: #999; border-top: 1px solid #eee; padding-top: 20px;">&copy; 2024 TiaBakery. Dibuat dengan cinta.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
+
+    <script>
+        // Toggle UI
+        function toggleCart() {
+            document.querySelector('.cart-overlay').classList.toggle('active');
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+
+        // Back to Top
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('show');
+            else backToTopBtn.classList.remove('show');
+        });
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

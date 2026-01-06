@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - TiaBakery</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- STYLE DASAR --- */
+        :root {
+            --bg-white: #FFFFFF; --bg-warm: #FFFBF2; --text-dark: #3E2723; --text-light: #795548;
+            --red: #FF5252; --yellow: #FFD740; --yellow-soft: #FFF9C4; --green: #69F0AE; --blue: #448AFF;
+            --container-width: 1200px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-white); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; width: 100%; }
+        h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+
+        /* NAVBAR (SAMA DENGAN INDEX) */
+        nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001; }
+        .nav-menu { display: flex; gap: 25px; align-items: center; }
+        .nav-menu a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--text-dark); cursor: pointer; }
+        .nav-menu a:hover { color: var(--red); }
+        .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
+        .nav-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); cursor: pointer; position: relative; }
+        .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        .btn-nav-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
+        .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
+
+        /* MOBILE MENU OVERLAY */
+        .menu-overlay-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; }
+        .menu-overlay-bg.active { opacity: 1; visibility: visible; }
+        .mobile-menu-dropdown { position: fixed; top: 0; left: 0; width: 100%; height: auto; padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; gap: 25px; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); display: flex; }
+        .mobile-menu-dropdown.active { transform: translateY(0); }
+        .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
+        .mobile-btn-wa { background: #25D366; color: white; padding: 12px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px; }
+
+        /* --- ABOUT SPECIFIC STYLES --- */
+        
+        /* 1. HERO */
+        .about-header { position: relative; height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .about-header img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6); }
+        .about-header-content { position: relative; z-index: 2; padding: 0 20px; }
+        .about-header h1 { font-size: 4rem; margin-bottom: 10px; color: white; }
+        .about-header p { font-size: 1.2rem; font-weight: 300; letter-spacing: 1px; }
+
+        /* 2. INTRO */
+        .intro-section { padding: 100px 0; background: var(--bg-white); }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+        .intro-text h2 { font-size: 2.8rem; margin-bottom: 25px; line-height: 1.2; }
+        .intro-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
+        .intro-highlight { border-left: 4px solid var(--yellow); padding-left: 20px; font-style: italic; color: var(--text-dark); margin: 30px 0; }
+
+        /* 3. MIDDLE IMAGE */
+        .middle-image-section { padding: 0 20px; margin-bottom: 100px; }
+        .middle-img-container { height: 500px; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 30px; overflow: hidden; position: relative; }
+        .middle-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .middle-img-container:hover img { transform: scale(1.05); }
+
+        /* 4. TIMELINE */
+        .timeline-section { background: var(--bg-warm); padding: 100px 0; }
+        .timeline-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background-color: #ddd; top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+        .timeline-item.left { left: 0; text-align: right; }
+        .timeline-item.right { left: 50%; text-align: left; }
+        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--bg-white); border: 4px solid var(--red); top: 20px; border-radius: 50%; z-index: 1; }
+        .timeline-item.right::after { left: -10px; border-color: var(--blue); }
+        .timeline-content { padding: 20px 30px; background-color: white; position: relative; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .year-badge { display: inline-block; padding: 5px 15px; background: var(--text-dark); color: white; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; }
+        .timeline-content h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .timeline-content p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+
+        /* 5. GALLERY SECTION */
+        .gallery-section { padding: 100px 0; background: var(--bg-white); }
+        .gallery-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .gallery-item { height: 300px; overflow: hidden; border-radius: 15px; position: relative; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); opacity: 0; transition: 0.3s; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* 6. CTA SECTION */
+        .story-section { background: #E3F2FD; overflow: hidden; padding: 100px 0; }
+        .story-wrapper { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+        .story-content h2 { font-size: 3rem; margin-bottom: 20px; }
+        .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); text-decoration: none; transition: 0.3s;}
+        .btn-cta-wa:hover { transform: translateY(-3px); }
+        .story-img img { width: 100%; max-width: 600px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* FOOTER & FLOATING */
+        footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+        .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
+        .social-icons a { width: 40px; height: 40px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none;}
+        .social-icons a:hover { background: var(--text-dark); color: white; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 110px; right: 38px; width: 50px; height: 50px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; text-decoration: none; cursor: pointer; }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
+
+        /* --- RESPONSIVE FIXES (MOBILE) --- */
+        @media (max-width: 900px) {
+            .nav-menu, .btn-nav-wa { display: none; }
+            .hamburger-btn { display: block; }
+            
+            .about-header h1 { font-size: 2.5rem; }
+            .middle-img-container { height: 300px; }
+            
+            /* 1. Fix Intro Section Mobile */
+            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+            .intro-text { 
+                padding: 0 10px; /* Tambahan padding agar tidak mepet */
+                text-align: left; 
+            }
+            .intro-img img { width: 100%; border-radius: 15px; }
+
+            /* 2. Fix Timeline Mobile */
+            .timeline-section { padding: 60px 0; }
+            .timeline::after { left: 31px; } /* Geser garis ke kiri */
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 15px; } /* Geser item ke kanan garis */
+            .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
+            .timeline-item::after { left: 21px; right: auto; } /* Geser titik ke garis */
+            .timeline-item.left::after { border-color: var(--red); }
+            
+            /* 3. Fix Gallery Mobile */
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .gallery-item { height: 200px; }
+
+            .story-wrapper { grid-template-columns: 1fr; text-align: center; }
+            .story-content h2 { font-size: 2.2rem; }
+            .story-img img { margin: 0 auto; display: block; max-width: 90%; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-overlay-bg" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo">TiaBakery.</a>
+            
+            <div class="nav-menu">
+                <a href="about.html" style="color: var(--red);">Tentang Kami</a>
+                <a href="product.html">Produk</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.html">Blog</a>
+            </div>
+
+            <div class="nav-icons">
+                <div class="nav-icon-btn" onclick="alert('Belanja di halaman Produk ya!')">
+                    <i class="ri-shopping-bag-3-line"></i>
+                </div>
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa">
+                    <i class="ri-whatsapp-line"></i> Kontak
+                </a>
+                <div class="hamburger-btn" onclick="toggleMobileMenu()">
+                    <i class="ri-menu-3-line"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-dropdown" id="mobileMenu">
+        <a href="about.html" class="mobile-link">Tentang Kami</a>
+        <a href="product.html" class="mobile-link">Produk</a>
+        <a href="gallery.html" class="mobile-link">Gallery</a>
+        <a href="blog.html" class="mobile-link">Blog</a>
+        <a href="https://wa.me/62895639068080" target="_blank" class="mobile-btn-wa">
+            <i class="ri-whatsapp-line"></i> Kontak WhatsApp
+        </a>
+    </div>
+
+    <header class="about-header">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1600&auto=format&fit=crop" alt="Bakery Atmosphere">
+        <div class="about-header-content">
+            <h1>Cerita Kami</h1>
+            <p>Dari Dapur Kecil Menuju Hati Pelanggan.</p>
+        </div>
+    </header>
+
+    <section class="intro-section container">
+        <div class="intro-grid">
+            <div class="intro-text">
+                <span style="color: var(--blue); font-weight: 700; letter-spacing: 2px;">SIAPA KAMI</span>
+                <h2>Menciptakan Kebahagiaan <br> Lewat Sepotong Roti.</h2>
+                <p>
+                    TiaBakery bukan sekadar toko roti. Kami adalah rumah bagi para pencinta rasa autentik. Berdiri di tengah hiruk pikuk kota, kami hadir membawa kehangatan roti yang baru keluar dari oven.
+                </p>
+                <div class="intro-highlight">
+                    "Kami percaya bahwa bahan terbaik tidak butuh banyak rekayasa. Cukup tepung berkualitas, butter asli, dan ketulusan hati."
+                </div>
+                <p>
+                    Setiap adonan kami uleni dengan tangan, setiap resep kami jaga keasliannya. Kami tidak menggunakan pengawet buatan karena kami ingin Anda merasakan rasa alami dari setiap bahan yang kami gunakan.
+                </p>
+            </div>
+            <div class="intro-img">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&auto=format&fit=crop" style="width:100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Making Bread">
+            </div>
+        </div>
+    </section>
+
+    <div class="middle-image-section">
+        <div class="middle-img-container">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600&auto=format&fit=crop" alt="Fresh Bread Display">
+        </div>
+    </div>
+
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="timeline-title">Perjalanan Kami</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="year-badge" style="background: var(--red);">2020</span>
+                        <h3>Awal Mula di Dapur Ibu</h3>
+                        <p>TiaBakery dimulai dari dapur rumah sederhana berukuran 3x3 meter. Hanya menerima pesanan tetangga dengan menu andalan Roti Sisir Mentega.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="year-badge" style="background: var(--blue);">2021</span>
+                        <h3>Orderan Online Meledak</h3>
+                        <p>Berkat media sosial, pesanan kami meningkat pesat. Kami mulai merekrut 2 asisten baker dan menyewa ruko kecil untuk produksi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="year-badge" style="background: var(--green);">2023</span>
+                        <h3>Toko Fisik Pertama</h3>
+                        <p>Mimpi menjadi nyata. Outlet resmi TiaBakery dibuka di Jakarta Selatan dengan konsep "Open Kitchen" agar pelanggan bisa mencium aroma roti.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="year-badge" style="background: var(--yellow); color: black;">2025</span>
+                        <h3>Ekspansi & Inovasi</h3>
+                        <p>Kini kami memiliki 15 varian menu signature dan melayani pengiriman hampers ke seluruh Indonesia. Perjalanan kami masih panjang!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">Galeri Momen</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&auto=format&fit=crop" alt="Gallery 1">
+                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1579632652768-6cb9dcf85912?w=500&auto=format&fit=crop" alt="Gallery 2">
+                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&auto=format&fit=crop" alt="Gallery 3">
+                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&auto=format&fit=crop" alt="Gallery 4">
+                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container story-wrapper">
+            <div class="story-content">
+                <h2>Ingin Menjadi Bagian <br> dari Cerita Kami?</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+                    Rasakan sendiri kehangatan dan kelembutan roti TiaBakery. Pesan sekarang dan nikmati bersama orang tersayang.
+                </p>
+                <a href="product.html" class="btn-cta-wa">
+                    <i class="ri-shopping-bag-3-line" style="font-size: 1.2rem;"></i> Pesan Sekarang
+                </a>
+            </div>
+            <div class="story-img">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000&auto=format&fit=crop" alt="Bakery Products">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="nav-logo" style="margin-bottom: 20px;">TiaBakery.</h3>
+                    <p style="color: #666; line-height: 1.6; max-width: 250px;">
+                        Bakery modern dengan cita rasa autentik. Fresh from the oven, straight to your heart.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Eksplorasi</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="product.html">Produk</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li>Jl. Bakery No. 88, Jakarta</li>
+                        <li>hello@tiabakery.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-tiktok-fill"></i></a>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; font-size: 0.9rem; color: #999; border-top: 1px solid #eee; padding-top: 20px;">
+                &copy; 2024 TiaBakery. Dibuat dengan cinta.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } 
+            else { backToTopBtn.classList.remove('show'); }
+        });
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

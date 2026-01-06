@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Cerita - TiaBakery</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- STYLE DASAR (KONSISTEN) --- */
+        :root {
+            --bg-white: #FFFFFF; --bg-warm: #FFFBF2; --text-dark: #3E2723; --text-light: #795548;
+            --red: #FF5252; --yellow: #FFD740; --yellow-soft: #FFF9C4; --green: #69F0AE; --blue: #448AFF;
+            --container-width: 1200px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg-white); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; width: 100%; }
+        h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+
+        /* NAVBAR (SHORT) */
+        nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001;}
+        .nav-menu { display: flex; gap: 25px; align-items: center; }
+        .nav-menu a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--text-dark); cursor: pointer; }
+        .nav-menu a:hover { color: var(--red); }
+        .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
+        .nav-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); cursor: pointer; position: relative; }
+        .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        .btn-nav-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
+        .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
+
+        /* MOBILE MENU (DRAWER) */
+        .menu-overlay-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; }
+        .menu-overlay-bg.active { opacity: 1; visibility: visible; }
+        .mobile-menu-dropdown { position: fixed; top: 0; left: 0; width: 100%; height: auto; padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; gap: 25px; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); display: flex; }
+        .mobile-menu-dropdown.active { transform: translateY(0); }
+        .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
+        .mobile-btn-wa { background: #25D366; color: white; padding: 12px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px; }
+        #cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
+        #cart-count.show { opacity: 1; }
+
+        /* CART SIDEBAR */
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; opacity: 0; transition: 0.3s; }
+        .cart-overlay.active { display: block; opacity: 1; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; z-index: 2001; padding: 25px; box-shadow: -5px 0 30px rgba(0,0,0,0.1); transition: 0.4s; display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
+        .cart-items-container { flex: 1; overflow-y: auto; }
+        .cart-footer { border-top: 1px solid #eee; padding-top: 25px; margin-top: auto; }
+        .btn-checkout { width: 100%; padding: 16px; background: var(--text-dark); color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; display: flex; justify-content: center; gap: 10px; font-size: 1rem; transition: 0.3s; margin-top: 10px; }
+
+        /* --- BLOG SPECIFIC STYLES --- */
+        .blog-hero { background-color: var(--bg-warm); padding: 80px 0 60px; text-align: center; position: relative; overflow: hidden; }
+        .blog-hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+        .blog-hero p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 40px; }
+
+        /* SEARCH BAR */
+        .search-container { max-width: 600px; margin: 0 auto; position: relative; }
+        .search-input { width: 100%; padding: 18px 25px; padding-right: 50px; border: 2px solid transparent; border-radius: 50px; font-size: 1rem; font-family: 'Montserrat'; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .search-input:focus { border-color: var(--text-dark); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .search-icon { position: absolute; right: 25px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; color: #999; }
+
+        /* BLOG GRID */
+        .blog-section { padding: 60px 0 100px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        
+        .blog-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        
+        .blog-img-wrapper { position: relative; height: 220px; overflow: hidden; }
+        .blog-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .blog-card:hover .blog-img { transform: scale(1.1); }
+        
+        .blog-tag { position: absolute; top: 15px; left: 15px; background: white; color: var(--text-dark); padding: 5px 15px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; z-index: 2; }
+
+        .blog-content { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+        .blog-date { font-size: 0.85rem; color: #999; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+        .blog-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; line-height: 1.3; font-family: 'Fraunces'; }
+        .blog-excerpt { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+        .blog-read-more { font-weight: 700; color: var(--red); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
+        .blog-read-more i { transition: 0.3s; }
+        .blog-card:hover .blog-read-more i { margin-left: 5px; }
+
+        /* NO RESULT & PAGINATION */
+        #no-result { display: none; text-align: center; grid-column: 1 / -1; padding: 50px 0; color: #999; }
+        .pagination-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 60px; }
+        .page-btn { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; background: white; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-family: 'Montserrat'; flex-shrink: 0; }
+        .page-btn.prev, .page-btn.next { width: auto; padding: 0 25px; border-radius: 50px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .page-btn:hover, .page-btn.active { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        .page-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+        /* FOOTER & UTILS */
+        footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
+        .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
+        .social-icons a { width: 45px; height: 45px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 12px; transition: 0.3s; font-size: 1.2rem; color: var(--text-dark); text-decoration: none;}
+        .social-icons a:hover { background: var(--text-dark); color: white; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 110px; right: 38px; width: 50px; height: 50px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; text-decoration: none; cursor: pointer; }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
+
+        @media (max-width: 900px) {
+            .nav-menu, .btn-nav-wa { display: none; }
+            .hamburger-btn { display: block; }
+            .cart-sidebar { width: 100%; right: -100%; } .cart-sidebar.active { right: 0; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-overlay-bg" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo">TiaBakery.</a>
+            <div class="nav-menu">
+                <a href="about.html">Tentang Kami</a>
+                <a href="product.html">Produk</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.html" style="color: var(--red);">Blog</a>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-btn" onclick="toggleCart()">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa"><i class="ri-whatsapp-line"></i> Kontak</a>
+                <div class="hamburger-btn" onclick="toggleMobileMenu()"><i class="ri-menu-3-line"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu-dropdown" id="mobileMenu">
+        <a href="about.html" class="mobile-link">Tentang Kami</a>
+        <a href="product.html" class="mobile-link">Produk</a>
+        <a href="gallery.html" class="mobile-link">Gallery</a>
+        <a href="blog.html" class="mobile-link">Blog</a>
+        <a href="https://wa.me/62895639068080" target="_blank" class="mobile-btn-wa"><i class="ri-whatsapp-line"></i> Kontak WhatsApp</a>
+    </div>
+
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;">&times;</span></div>
+        <div id="cart-items" class="cart-items-container"><p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p></div>
+        <div class="cart-footer">
+            <button class="btn-checkout" onclick="window.location.href='product.html'">Belanja Sekarang</button>
+        </div>
+    </div>
+
+    <header class="blog-hero">
+        <div class="container">
+            <h1>Cerita <span style="font-style: italic; color: var(--red);">Dapur.</span></h1>
+            <p>Temukan resep rahasia, tips baking, dan inspirasi gaya hidup manis dari TiaBakery.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Cari artikel (cth: Coklat, Tips, Resep)...">
+                <i class="ri-search-line search-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                
+                <article class="blog-card" data-title="Rahasia Roti Lembut">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips & Trik</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Bread" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">10 Jan 2024</div><h3 class="blog-title">Rahasia Roti Tetap Lembut Hingga 3 Hari</h3><p class="blog-excerpt">Teknik Tangzhong yang kami gunakan membuat roti tetap moist.</p><a href="blog-detail1.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Resep Brownies Coklat">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1606313564200-e75d5e304abd?w=600" alt="Brownies" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">05 Jan 2024</div><h3 class="blog-title">Resep Brownies Coklat Lumer Anti Gagal</h3><p class="blog-excerpt">Pecinta coklat wajib coba! Resep brownies fudgy sederhana.</p><a href="blog-detail2.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Sehari Bersama Chef Tia">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Behind The Scenes</span><img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=600" alt="Kitchen" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">28 Des 2023</div><h3 class="blog-title">Sehari Bersama Chef Tia di Dapur</h3><p class="blog-excerpt">Mengintip kesibukan dapur kami mulai dari jam 4 pagi.</p><a href="blog-detail3.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Ide Hampers Lebaran">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Inspirasi</span><img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600" alt="Hampers" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">15 Des 2023</div><h3 class="blog-title">Ide Hampers Lebaran yang Berkesan</h3><p class="blog-excerpt">Bingung kirim apa? Simak tips memilih isian hampers.</p><a href="blog-detail4.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Manfaat Sourdough">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Kesehatan</span><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600" alt="Sourdough" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">01 Des 2023</div><h3 class="blog-title">Manfaat Sourdough untuk Kesehatan</h3><p class="blog-excerpt">Roti asam ini ternyata punya segudang manfaat.</p><a href="blog-detail5.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Butter Cream Kokoh">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600" alt="Cake" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">20 Nov 2023</div><h3 class="blog-title">Cara Membuat Butter Cream yang Kokoh</h3><p class="blog-excerpt">Tips agar butter cream tidak mudah meleleh di cuaca panas.</p><a href="blog-detail6.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+
+                <article class="blog-card" data-title="Sejarah Croissant">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Trivia</span><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600" alt="Croissant" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">10 Nov 2023</div><h3 class="blog-title">Sejarah Unik di Balik Croissant</h3><p class="blog-excerpt">Ternyata croissant bukan asli dari Perancis lho!</p><a href="blog-detail7.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Cara Simpan Kue Kering">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=600" alt="Cookies" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">01 Nov 2023</div><h3 class="blog-title">Cara Simpan Kue Kering Agar Awet</h3><p class="blog-excerpt">Jangan biarkan nastar kamu melempem sebelum lebaran.</p><a href="blog-detail8.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Tren Kue Ulang Tahun">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tren</span><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Birthday Cake" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">25 Okt 2023</div><h3 class="blog-title">Tren Kue Ulang Tahun Aesthetic 2024</h3><p class="blog-excerpt">Desain minimalis ala Korea masih mendominasi tahun ini.</p><a href="blog-detail9.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Resep Donat Kentang">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1629892693892-7472097e883e?w=600" alt="Donat" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">15 Okt 2023</div><h3 class="blog-title">Resep Donat Kentang Empuk Seharian</h3><p class="blog-excerpt">Camilan klasik yang selalu jadi rebutan keluarga.</p><a href="blog-detail10.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Kenapa Ragi Penting">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Edukasi</span><img src="https://images.unsplash.com/photo-1507612238538-4ef2d1094d40?w=600" alt="Yeast" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">05 Okt 2023</div><h3 class="blog-title">Kenapa Ragi Sangat Penting?</h3><p class="blog-excerpt">Mengenal fungsi yeast dalam pengembangan adonan roti.</p><a href="blog-detail11.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Pairing Kopi Roti">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Lifestyle</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Coffee" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">28 Sep 2023</div><h3 class="blog-title">Pairing Kopi & Roti yang Pas</h3><p class="blog-excerpt">Roti manis cocoknya dengan kopi apa ya? Cek di sini.</p><a href="blog-detail12.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+
+                <article class="blog-card" data-title="Vegan Baking Tips">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=600" alt="Vegan" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">15 Sep 2023</div><h3 class="blog-title">Tips Baking Tanpa Telur & Susu</h3><p class="blog-excerpt">Substitusi bahan untuk kamu yang alergi atau vegan.</p><a href="blog-detail13.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Asal Usul Baguette">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Trivia</span><img src="https://images.unsplash.com/photo-1589367920969-ab8e965a32a2?w=600" alt="Baguette" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">01 Sep 2023</div><h3 class="blog-title">Kenapa Baguette Bentuknya Panjang?</h3><p class="blog-excerpt">Sejarah unik roti ikonik Perancis yang melegenda.</p><a href="blog-detail14.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Foto Makanan Estetik">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600" alt="Photo" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">20 Agu 2023</div><h3 class="blog-title">Cara Foto Makanan Estetik Pakai HP</h3><p class="blog-excerpt">Bikin foto kue kamu like-able di Instagram.</p><a href="blog-detail15.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Resep Cookies">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600" alt="Cookies" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">10 Agu 2023</div><h3 class="blog-title">Resep Soft Cookies Chocochip</h3><p class="blog-excerpt">Tekstur chewy di dalam, renyah di luar.</p><a href="blog-detail16.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Gluten Free">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Kesehatan</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Gluten Free" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">01 Agu 2023</div><h3 class="blog-title">Mengenal Diet Gluten Free</h3><p class="blog-excerpt">Apa itu gluten dan kenapa sebagian orang menghindarinya?</p><a href="blog-detail17.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+                <article class="blog-card" data-title="Valentine Coklat">
+                    <div class="blog-img-wrapper"><span class="blog-tag">Event</span><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600" alt="Chocolate" class="blog-img"></div>
+                    <div class="blog-content"><div class="blog-date">14 Feb 2023</div><h3 class="blog-title">Sejarah Coklat saat Valentine</h3><p class="blog-excerpt">Kenapa hari kasih sayang identik dengan coklat?</p><a href="blog-detail18.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
+                </article>
+
+                <div id="no-result">
+                    <i class="ri-emotion-sad-line" style="font-size: 3rem; margin-bottom: 10px; display: block;"></i>
+                    <h3>Artikel tidak ditemukan.</h3>
+                    <p>Coba kata kunci lain.</p>
+                </div>
+
+            </div>
+
+            <div class="pagination-container" id="pagination">
+                <button class="page-btn prev" onclick="changePage(-1)">Prev</button>
+                <button class="page-btn active" onclick="setPage(1)">1</button>
+                <button class="page-btn" onclick="setPage(2)">2</button>
+                <button class="page-btn" onclick="setPage(3)">3</button>
+                <button class="page-btn next" onclick="changePage(1)">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3 class="nav-logo" style="margin-bottom: 20px;">TiaBakery.</h3><p style="color: #666; line-height: 1.6; max-width: 250px;">Bakery modern dengan cita rasa autentik.</p></div>
+                <div class="footer-col"><h4>Eksplorasi</h4><ul><li><a href="about.html">Tentang Kami</a></li><li><a href="product.html">Produk</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+                <div class="footer-col"><h4>Kontak</h4><ul><li>Jl. Bakery No. 88, Jakarta</li><li>hello@tiabakery.com</li></ul></div>
+                <div class="footer-col"><h4>Ikuti Kami</h4><div class="social-icons"><a href="#"><i class="ri-instagram-line"></i></a><a href="#"><i class="ri-tiktok-fill"></i></a><a href="#"><i class="ri-facebook-fill"></i></a></div></div>
+            </div>
+            <div style="text-align: center; font-size: 0.9rem; color: #999; border-top: 1px solid #eee; padding-top: 20px;">&copy; 2024 TiaBakery. Dibuat dengan cinta.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
+
+    <script>
+        // Toggle UI
+        function toggleCart() {
+            document.querySelector('.cart-overlay').classList.toggle('active');
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+
+        // Back to Top
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('show');
+            else backToTopBtn.classList.remove('show');
+        });
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- BLOG PAGINATION & SEARCH LOGIC ---
+        const cards = document.querySelectorAll('.blog-card');
+        const itemsPerPage = 6;
+        let currentPage = 1;
+        const totalPages = Math.ceil(cards.length / itemsPerPage);
+        const searchInput = document.getElementById('searchInput');
+        const noResult = document.getElementById('no-result');
+        const paginationContainer = document.getElementById('pagination');
+
+        // Function to Show Page
+        function showPage(page) {
+            if (searchInput.value.trim() !== "") return; // Disable pagination if searching
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+            currentPage = page;
+
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            cards.forEach((card, index) => {
+                if (index >= start && index < end) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update Buttons
+            const buttons = paginationContainer.querySelectorAll('button');
+            buttons.forEach((btn, index) => {
+                btn.classList.remove('active');
+                // Logic simpel untuk highlight tombol angka (index 1,2,3 correspond to page 1,2,3)
+                if (index === currentPage) btn.classList.add('active'); 
+            });
+            
+            // Scroll to top of grid
+            document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function setPage(n) {
+            showPage(n);
+        }
+
+        function changePage(n) {
+            showPage(currentPage + n);
+        }
+
+        // Initialize First Page
+        showPage(1);
+
+        // Search Function
+        searchInput.addEventListener('keyup', function(e) {
+            const term = e.target.value.toLowerCase();
+            let hasResult = false;
+
+            if (term.length > 0) {
+                // Disable pagination view
+                paginationContainer.style.display = 'none';
+                
+                cards.forEach(card => {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const tag = card.querySelector('.blog-tag').innerText.toLowerCase();
+                    const excerpt = card.querySelector('.blog-excerpt').innerText.toLowerCase();
+
+                    if (title.includes(term) || tag.includes(term) || excerpt.includes(term)) {
+                        card.style.display = 'flex';
+                        hasResult = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (hasResult) noResult.style.display = 'none';
+                else noResult.style.display = 'block';
+
+            } else {
+                // Clear search -> Enable pagination
+                noResult.style.display = 'none';
+                paginationContainer.style.display = 'flex';
+                showPage(1); // Reset to page 1
+            }
+        });
+    </script>
+
+</body>
+</html>
