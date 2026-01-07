@@ -91,8 +91,8 @@
         #cart-count.show { opacity: 1; }
 
         /* HERO & SECTIONS */
-        .hero-new { background-color: var(--bg-warm); padding: 60px 0; position: relative; overflow: hidden; }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; min-height: 500px; }
+        .hero-new { background-color: var(--bg-warm); padding: 30px 0; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; min-height: 450px; }
         .hero-text { z-index: 2; position: relative; }
         .hero-badge { display: inline-block; background: var(--yellow-soft); color: #Fbc02d; padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid var(--yellow); }
         .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
@@ -176,6 +176,11 @@
 
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
+        
+        /* BACK TO TOP */
+        .back-to-top { position: fixed; bottom: 110px; right: 38px; width: 50px; height: 50px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; text-decoration: none; cursor: pointer; }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
 
         /* CART & CHECKOUT */
         .cart-overlay, .payment-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; opacity: 0; transition: 0.3s; }
@@ -237,6 +242,12 @@
             .grid-4 { padding: 0 20px; }
             .story-img img { max-width: 90%; margin: 0 auto; display: block; }
             
+            /* REVISI FONT SIZE HERO MOBILE DI SINI */
+            .hero-text h1 { font-size: 2.2rem; }
+
+            /* REVISI FONT SIZE ABOUT MOBILE DI SINI */
+            .about-text h2 { font-size: 2rem; }
+
             /* FIX ABOUT US MOBILE */
             .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
             .about-img { width: 85%; margin: 0 auto; } /* Tengah */
@@ -332,7 +343,7 @@
             </div>
             <div class="hero-visual">
                 <div class="blob-bg"></div>
-                <img src="https://plus.unsplash.com/premium_photo-1672192166580-55df62909199?q=80&w=800&auto=format&fit=crop" class="hero-img-main" alt="TiaBakery Signature Cake">
+                <img src="assets/img/img dapur/proses-pembuatan-roti.webp" class="hero-img-main" alt="TiaBakery Signature Cake">
                 <div class="float-item float-1"><i class="ri-star-fill" style="color: var(--yellow);"></i> 4.9 Rating</div>
                 <div class="float-item float-2"><i class="ri-truck-fill" style="color: var(--green);"></i> Free Delivery</div>
             </div>
@@ -342,7 +353,7 @@
     <section id="about" class="section-padding container">
         <div class="about-grid">
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=800&auto=format&fit=crop" alt="Chef Baking">
+                <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef Baking">
                 <div class="about-deco"></div>
             </div>
             <div class="about-text">
@@ -366,29 +377,29 @@
             </div>
             <div class="grid-4">
                 <div class="product-card">
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&auto=format&fit=crop" alt="Choco Lava"></div>
+                    <div class="pc-img"><img src="assets/img/kue/chocolavabo.webp" alt="Choco Lava"></div>
                     <div class="pc-title">Choco Lava Bomb</div>
                     <span class="pc-price">Rp 45.000</span>
-                    <button class="btn-cart" onclick="addToCart(this, 'Choco Lava Bomb', 45000, 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this, 'Choco Lava Bomb', 45000, 'assets/img/kue/chocolavabo.webp')">Beli</button>
                 </div>
                 <div class="product-card">
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&auto=format&fit=crop" alt="Croissant"></div>
+                    <div class="pc-img"><img src="assets/img/kue/crossain.webp" alt="Croissant"></div>
                     <div class="pc-title">French Butter Croissant</div>
                     <span class="pc-price">Rp 25.000</span>
-                    <button class="btn-cart" onclick="addToCart(this, 'French Butter Croissant', 25000, 'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this, 'French Butter Croissant', 25000, 'assets/img/kue/croissan.webp')">Beli</button>
                 </div>
                 <div class="product-card">
                     <div style="position: absolute; top: 10px; right: 10px; background: var(--green); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; z-index: 2;">VEGAN</div>
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=500&auto=format&fit=crop" alt="Toast"></div>
+                    <div class="pc-img"><img src="assets/img/kue/AvocadoToas.webp" alt="Toast"></div>
                     <div class="pc-title">Avocado Toast Bread</div>
                     <span class="pc-price">Rp 35.000</span>
-                    <button class="btn-cart" onclick="addToCart(this, 'Avocado Toast Bread', 35000, 'https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=500')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this, 'Avocado Toast Bread', 35000, 'assets/img/kue/AvocadoToas.webp')">Beli</button>
                 </div>
                 <div class="product-card">
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1534432182912-63863115e106?w=500&auto=format&fit=crop" alt="Matcha"></div>
+                    <div class="pc-img"><img src="assets/img/kue/KyotoMatchaRol.webp" alt="Matcha"></div>
                     <div class="pc-title">Kyoto Matcha Roll</div>
                     <span class="pc-price">Rp 50.000</span>
-                    <button class="btn-cart" onclick="addToCart(this, 'Kyoto Matcha Roll', 50000, 'https://images.unsplash.com/photo-1534432182912-63863115e106?w=500')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this, 'Kyoto Matcha Roll', 50000, 'assets/img/kue/KyotoMatchaRol.webp')">Beli</button>
                 </div>
             </div>
         </section>
@@ -408,36 +419,36 @@
         </div>
         <div class="grid-4" id="menu-grid">
             <div class="product-card menu-item" data-category="pastry">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=500&auto=format&fit=crop" alt="Tart"></div>
-                <div class="pc-title">Mini Fruit Tart</div><span class="pc-price">Rp 30.000</span><button class="btn-cart" onclick="addToCart(this, 'Mini Fruit Tart', 30000, 'https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/MiniFruitTar.webp" alt="Tart"></div>
+                <div class="pc-title">Mini Fruit Tart</div><span class="pc-price">Rp 30.000</span><button class="btn-cart" onclick="addToCart(this, 'Mini Fruit Tart', 30000, 'assets/img/kue/MiniFruitTar.webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="pastry">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=500&auto=format&fit=crop" alt="Cupcake"></div>
-                <div class="pc-title">Blueberry Cupcake</div><span class="pc-price">Rp 15.000</span><button class="btn-cart" onclick="addToCart(this, 'Blueberry Cupcake', 15000, 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/blueberrycupcake.webp" alt="Cupcake"></div>
+                <div class="pc-title">Blueberry Cupcake</div><span class="pc-price">Rp 15.000</span><button class="btn-cart" onclick="addToCart(this, 'Blueberry Cupcake', 15000, 'assets/img/kue/blueberrycupcake.webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="donat">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1629892693892-7472097e883e?q=80&w=500&auto=format&fit=crop" alt="Donat"></div>
-                <div class="pc-title">Kampung Potato Donut</div><span class="pc-price">Rp 8.000</span><button class="btn-cart" onclick="addToCart(this, 'Kampung Potato Donut', 8000, 'https://images.unsplash.com/photo-1629892693892-7472097e883e?q=80&w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/KampungPotatoDonu.webp" alt="Donat"></div>
+                <div class="pc-title">Kampung Potato Donut</div><span class="pc-price">Rp 8.000</span><button class="btn-cart" onclick="addToCart(this, 'Kampung Potato Donut', 8000, 'assets/img/kue/KampungPotatoDonu.webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="donat">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1626094309830-26d8d302111e?w=500&auto=format&fit=crop" alt="Bomboloni"></div>
-                <div class="pc-title">Choco Bomboloni</div><span class="pc-price">Rp 12.000</span><button class="btn-cart" onclick="addToCart(this, 'Choco Bomboloni', 12000, 'https://images.unsplash.com/photo-1626094309830-26d8d302111e?w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/ChocoBombolon.webp" alt="Bomboloni"></div>
+                <div class="pc-title">Choco Bomboloni</div><span class="pc-price">Rp 12.000</span><button class="btn-cart" onclick="addToCart(this, 'Choco Bomboloni', 12000, 'assets/img/kue/ChocoBombolon .webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="roti">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=500&auto=format&fit=crop" alt="Bread"></div>
-                <div class="pc-title">Whole Wheat Loaf</div><span class="pc-price">Rp 40.000</span><button class="btn-cart" onclick="addToCart(this, 'Whole Wheat Loaf', 40000, 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/WholeWheatLoa.webp" alt="Bread"></div>
+                <div class="pc-title">Whole Wheat Loaf</div><span class="pc-price">Rp 40.000</span><button class="btn-cart" onclick="addToCart(this, 'Whole Wheat Loaf', 40000, 'assets/img/kue/WholeWheatLoa.webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="roti">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop" alt="Bread"></div>
-                <div class="pc-title">Roti Sisir Mentega</div><span class="pc-price">Rp 25.000</span><button class="btn-cart" onclick="addToCart(this, 'Roti Sisir Mentega', 25000, 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/RotiSisirMenteg.webp" alt="Bread"></div>
+                <div class="pc-title">Roti Sisir Mentega</div><span class="pc-price">Rp 25.000</span><button class="btn-cart" onclick="addToCart(this, 'Roti Sisir Mentega', 25000, 'assets/img/kue/RotiSisirMenteg.webp')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="hampers">
                 <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop" alt="Hampers"></div>
                 <div class="pc-title">Tia's Gift Box</div><span class="pc-price">Rp 150.000</span><button class="btn-cart" onclick="addToCart(this, 'Tias Gift Box', 150000, 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500')">Beli</button>
             </div>
             <div class="product-card menu-item" data-category="pastry">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=500&auto=format&fit=crop" alt="Red Velvet"></div>
-                <div class="pc-title">Red Velvet Slice</div><span class="pc-price">Rp 35.000</span><button class="btn-cart" onclick="addToCart(this, 'Red Velvet Slice', 35000, 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=500')">Beli</button>
+                <div class="pc-img"><img src="assets/img/kue/RedVelvetSlic.webp" alt="Red Velvet"></div>
+                <div class="pc-title">Red Velvet Slice</div><span class="pc-price">Rp 35.000</span><button class="btn-cart" onclick="addToCart(this, 'Red Velvet Slice', 35000, 'assets/img/kue/RedVelvetSlic.webp')">Beli</button>
             </div>
         </div>
     </section>
@@ -482,6 +493,7 @@
     </footer>
 
     <a href="https://wa.me/62895639068080" target="_blank" class="wa-float"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
 
     <script>
         let cart = [];
@@ -490,11 +502,23 @@
         let grandTotal = 0;
         let orderData = {};
 
+        // BACK TO TOP LOGIC (ADDED)
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } 
+            else { backToTopBtn.classList.remove('show'); }
+        });
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         function toggleCart() {
             document.querySelector('.cart-overlay').classList.toggle('active');
             document.getElementById('cartSidebar').classList.toggle('active');
         }
 
+        // Toggle Hamburger Menu
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
             document.getElementById('menuOverlay').classList.toggle('active');
