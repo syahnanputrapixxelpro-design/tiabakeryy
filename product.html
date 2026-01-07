@@ -24,68 +24,53 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
 
-        /* NAVBAR (SHORT & STICKY) */
-        nav { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 12px 0; /* Pendek/Rapi */
-            position: sticky; top: 0; z-index: 1000; 
-            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); 
-        }
+        /* NAVBAR (SAMA DENGAN INDEX) */
+        nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; }
         .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001;}
-        
         .nav-menu { display: flex; gap: 25px; align-items: center; }
         .nav-menu a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--text-dark); cursor: pointer; }
         .nav-menu a:hover { color: var(--red); }
-        
         .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
-        .nav-icon-btn { 
-            width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; 
-            display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); 
-            cursor: pointer; position: relative; 
-        }
+        .nav-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); cursor: pointer; position: relative; }
         .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
-        
-        .btn-nav-wa { 
-            background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; 
-            font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; 
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
-        }
+        .btn-nav-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
         .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
-
         .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
 
-        /* MOBILE MENU (HALF SCREEN / DRAWER) */
-        .menu-overlay-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 998;
-            opacity: 0; visibility: hidden; transition: 0.3s;
-        }
+        /* MOBILE MENU */
+        .menu-overlay-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; }
         .menu-overlay-bg.active { opacity: 1; visibility: visible; }
-
-        .mobile-menu-dropdown {
-            position: fixed; top: 0; left: 0; width: 100%; height: auto;
-            padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; 
-            border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
-            flex-direction: column; align-items: center; justify-content: center; gap: 25px;
-            transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-            display: flex;
-        }
+        .mobile-menu-dropdown { position: fixed; top: 0; left: 0; width: 100%; height: auto; padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; gap: 25px; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); display: flex; }
         .mobile-menu-dropdown.active { transform: translateY(0); }
-        
         .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
-        .mobile-link:hover { color: var(--red); }
         .mobile-btn-wa { background: #25D366; color: white; padding: 12px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px; }
-
         #cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
         #cart-count.show { opacity: 1; }
 
-        /* HERO & FILTER (PRODUCT SPECIFIC) */
-        .product-hero { background-color: var(--bg-warm); padding-top: 80px; padding-bottom: 40px; text-align: center; position: relative; overflow: hidden; }
-        .product-hero h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; }
-        .product-hero p { max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; color: var(--text-light); }
-        .marquee-wrapper { background: var(--text-dark); color: var(--yellow); padding: 15px 0; transform: rotate(-2deg); width: 110%; margin-left: -5%; margin-bottom: 50px; border-top: 2px solid var(--text-dark); border-bottom: 2px solid var(--text-dark); }
+        /* HERO & FILTER */
+        .product-hero { 
+            background-color: var(--bg-warm); 
+            padding-top: 40px; 
+            padding-bottom: 20px; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .product-hero h1 { font-size: 4rem; line-height: 1; margin-bottom: 15px; }
+        .product-hero p { max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--text-light); }
+        
+        .marquee-wrapper { 
+            background: var(--text-dark); 
+            color: var(--yellow); 
+            padding: 15px 0; 
+            transform: rotate(-2deg); 
+            width: 110%; 
+            margin-left: -5%; 
+            margin-bottom: 40px; 
+            border-top: 2px solid var(--text-dark); 
+            border-bottom: 2px solid var(--text-dark); 
+        }
         .marquee-content { display: flex; gap: 40px; white-space: nowrap; animation: scroll 20s linear infinite; font-family: 'Fraunces'; font-weight: 800; font-size: 1.5rem; text-transform: uppercase; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
@@ -94,7 +79,7 @@
         .tab-btn { padding: 10px 25px; border: 1px solid #ddd; border-radius: 50px; background: white; cursor: pointer; font-family: 'Montserrat'; font-weight: 600; transition: 0.3s; font-size: 0.9rem; }
         .tab-btn.active, .tab-btn:hover { background: var(--text-dark); border-color: var(--text-dark); color: var(--yellow); }
 
-        /* PRODUCT GRID & CARD */
+        /* PRODUCT GRID */
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
         .product-card { 
             background: white; border-radius: 20px; padding: 15px; position: relative; 
@@ -114,7 +99,7 @@
         .pc-title { font-weight: 700; margin-bottom: 5px; font-size: 1.1rem; font-family: 'Fraunces'; line-height: 1.3; }
         .pc-price { color: var(--red); font-weight: 700; font-size: 1.1rem; margin-top: auto; }
 
-        /* BUTTON LOGIC (CREATIVE QUANTITY) */
+        /* BUTTON LOGIC */
         .action-container { margin-top: 15px; height: 40px; position: relative; }
         .btn-cart { width: 100%; height: 100%; background: white; border: 2px solid var(--text-dark); border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; color: var(--text-dark); font-family: 'Montserrat'; }
         .btn-cart:hover { background: var(--text-dark); color: white; }
@@ -125,15 +110,15 @@
         .qty-btn.minus { border-right: 1px solid #eee; font-weight: 400;}
         .qty-btn.plus { border-left: 1px solid #eee; font-weight: 400;}
         .qty-val { flex: 1; font-family: 'Fraunces'; font-weight: 700; font-size: 1.2rem; color: var(--red); text-align: center; line-height: 1; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* PAGINATION */
+        
+        /* PAGINATION STYLE */
         .pagination-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 60px 0; }
         .page-btn { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; background: white; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-family: 'Montserrat'; flex-shrink: 0; }
         .page-btn.prev, .page-btn.next { width: auto; padding: 0 25px; border-radius: 50px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         .page-btn:hover, .page-btn.active { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        .page-btn.disabled { opacity: 0.5; pointer-events: none; }
 
-        /* CART & CHECKOUT UI */
+        /* CART & CHECKOUT */
         .cart-overlay, .payment-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; opacity: 0; transition: 0.3s; }
         .cart-overlay.active, .payment-modal-overlay.open { display: flex; opacity: 1; }
         .cart-sidebar { position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; z-index: 2001; padding: 25px; box-shadow: -5px 0 30px rgba(0,0,0,0.1); transition: 0.4s; display: flex; flex-direction: column; }
@@ -178,15 +163,14 @@
         .pm-copy-btn { font-size: 0.9rem; margin-top: 15px; cursor: pointer; color: var(--text-dark); text-decoration: underline; font-weight: 600; }
         @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
         @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-        /* FOOTER & FLOATING */
-        footer { background: white; padding: 100px 0 30px; border-top: 1px solid #eee; margin-top: 80px;}
+        
+        footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
         .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
         .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
-        .social-icons a { width: 45px; height: 45px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 12px; transition: 0.3s; font-size: 1.2rem; color: var(--text-dark); text-decoration: none;}
+        .social-icons a { width: 45px; height: 45px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none;}
         .social-icons a:hover { background: var(--text-dark); color: white; }
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
         .back-to-top { position: fixed; bottom: 110px; right: 38px; width: 50px; height: 50px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; text-decoration: none; cursor: pointer; }
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -195,17 +179,14 @@
         @media (max-width: 900px) {
             .nav-menu, .btn-nav-wa { display: none; }
             .hamburger-btn { display: block; }
-            
             .grid-4 { grid-template-columns: 1fr; }
-            .product-hero h1 { font-size: 2.8rem; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             
-            /* REVISI MOBILE */
+            /* REVISI FONT SIZE HERO MOBILE */
+            .product-hero h1 { font-size: 2.5rem; }
+            
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .filter-container { position: static; top: auto; padding: 10px 0; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
             .tabs { display: inline-flex; padding: 0 20px; }
-            .pagination-container { gap: 5px; flex-wrap: wrap; }
-            .page-btn { width: 38px; height: 38px; font-size: 0.9rem; }
-            .page-btn.prev, .page-btn.next { width: auto; padding: 0 15px; font-size: 0.8rem; height: 38px; }
             .cart-sidebar { width: 100%; right: -100%; } .cart-sidebar.active { right: 0; }
         }
     </style>
@@ -213,31 +194,24 @@
 <body>
 
     <div class="menu-overlay-bg" id="menuOverlay" onclick="toggleMobileMenu()"></div>
-
     <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
 
     <nav>
         <div class="container nav-wrapper">
             <a href="index.html" class="nav-logo">TiaBakery.</a>
-            
             <div class="nav-menu">
                 <a href="about.html">Tentang Kami</a>
                 <a href="product.html" style="color: var(--red);">Produk</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="blog.html">Blog</a>
             </div>
-
             <div class="nav-icons">
                 <div class="nav-icon-btn" onclick="toggleCart()">
                     <i class="ri-shopping-bag-3-line"></i>
                     <span id="cart-count">0</span>
                 </div>
-                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa">
-                    <i class="ri-whatsapp-line"></i> Kontak
-                </a>
-                <div class="hamburger-btn" onclick="toggleMobileMenu()">
-                    <i class="ri-menu-3-line"></i>
-                </div>
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa"><i class="ri-whatsapp-line"></i> Kontak</a>
+                <div class="hamburger-btn" onclick="toggleMobileMenu()"><i class="ri-menu-3-line"></i></div>
             </div>
         </div>
     </nav>
@@ -247,9 +221,7 @@
         <a href="product.html" class="mobile-link">Produk</a>
         <a href="gallery.html" class="mobile-link">Gallery</a>
         <a href="blog.html" class="mobile-link">Blog</a>
-        <a href="https://wa.me/62895639068080" target="_blank" class="mobile-btn-wa">
-            <i class="ri-whatsapp-line"></i> Kontak WhatsApp
-        </a>
+        <a href="https://wa.me/62895639068080" target="_blank" class="mobile-btn-wa"><i class="ri-whatsapp-line"></i> Kontak WhatsApp</a>
     </div>
 
     <div class="cart-overlay" onclick="toggleCart()"></div>
@@ -275,9 +247,10 @@
             <button class="btn-confirm" onclick="processOrder()"><i class="ri-secure-payment-line" style="font-size: 1.3rem;"></i> Konfirmasi Pesanan</button>
         </div>
     </div>
+
     <div id="paymentModalOverlay" class="payment-modal-overlay">
         <div class="payment-modal-box">
-            <h3 style="margin-bottom: 15px;">Menunggu Pembayaran</h3><div class="pm-timer" id="countdown-timer">23 : 59 : 59</div><div class="pm-total-label">Total yang harus dibayar:</div><div class="pm-total-amount" id="pm-amount">Rp 0</div><div class="pm-display-area" id="pm-display-area"></div><p style="font-size: 0.85rem; color: #777; margin-bottom: 20px;">Selesaikan pembayaran sebelum waktu habis.</p><button class="btn-confirm" onclick="finalizeOrderToWA()"><i class="ri-whatsapp-line"></i> Saya Sudah Bayar</button>
+            <h3 style="margin-bottom: 15px;">Menunggu Pembayaran</h3><div class="pm-timer" id="countdown-timer">00 : 15 : 00</div><div class="pm-total-label">Total yang harus dibayar:</div><div class="pm-total-amount" id="pm-amount">Rp 0</div><div class="pm-display-area" id="pm-display-area"></div><p style="font-size: 0.85rem; color: #777; margin-bottom: 20px;">Selesaikan pembayaran sebelum waktu habis.</p><button class="btn-confirm" onclick="finalizeOrderToWA()"><i class="ri-whatsapp-line"></i> Saya Sudah Bayar</button>
         </div>
     </div>
 
@@ -292,164 +265,23 @@
     <div class="filter-container">
         <div class="container">
             <div class="tabs">
-                <button class="tab-btn active" data-filter="all">Semua Menu</button>
-                <button class="tab-btn" data-filter="roti">Roti Artisan</button>
-                <button class="tab-btn" data-filter="cake">Cake & Tart</button>
-                <button class="tab-btn" data-filter="pastry">Pastry</button>
-                <button class="tab-btn" data-filter="hampers">Hampers</button>
+                <button class="tab-btn active" data-filter="all" onclick="filterProducts('all')">Semua Menu</button>
+                <button class="tab-btn" data-filter="roti" onclick="filterProducts('roti')">Roti Artisan</button>
+                <button class="tab-btn" data-filter="cake" onclick="filterProducts('cake')">Cake & Tart</button>
+                <button class="tab-btn" data-filter="pastry" onclick="filterProducts('pastry')">Pastry</button>
+                <button class="tab-btn" data-filter="hampers" onclick="filterProducts('hampers')">Hampers</button>
             </div>
         </div>
     </div>
 
     <div class="container" style="min-height: 60vh;">
         <div class="grid-4" id="menu-grid">
-            
-            <div class="product-card menu-item" data-category="cake">
-                <div class="pc-badge best">Best Seller</div>
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&auto=format&fit=crop" alt="Choco Lava"></div>
-                <div class="pc-info"><div class="pc-cat">Cake</div><div class="pc-title">Choco Lava Bomb</div><div class="pc-price">Rp 45.000</div></div>
-                <div class="action-container" id="act-choco-lava">
-                    <button class="btn-cart" onclick="updateQty('Choco Lava', 45000, 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500', 1, 'act-choco-lava')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Choco Lava', 45000, '', -1, 'act-choco-lava')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Choco Lava', 45000, '', 1, 'act-choco-lava')">+</button>
-                    </div>
-                </div>
             </div>
 
-            <div class="product-card menu-item" data-category="pastry">
-                <div class="pc-badge new">New</div>
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&auto=format&fit=crop" alt="Croissant"></div>
-                <div class="pc-info"><div class="pc-cat">Pastry</div><div class="pc-title">Butter Croissant</div><div class="pc-price">Rp 25.000</div></div>
-                <div class="action-container" id="act-croissant">
-                    <button class="btn-cart" onclick="updateQty('Butter Croissant', 25000, 'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500', 1, 'act-croissant')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Butter Croissant', 25000, '', -1, 'act-croissant')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Butter Croissant', 25000, '', 1, 'act-croissant')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="roti">
-                <div class="pc-badge vegan">Vegan</div>
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=500&auto=format&fit=crop" alt="Toast"></div>
-                <div class="pc-info"><div class="pc-cat">Roti</div><div class="pc-title">Avocado Toast</div><div class="pc-price">Rp 35.000</div></div>
-                <div class="action-container" id="act-toast">
-                    <button class="btn-cart" onclick="updateQty('Avocado Toast', 35000, 'https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=500', 1, 'act-toast')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Avocado Toast', 35000, '', -1, 'act-toast')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Avocado Toast', 35000, '', 1, 'act-toast')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="cake">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1534432182912-63863115e106?w=500&auto=format&fit=crop" alt="Matcha"></div>
-                <div class="pc-info"><div class="pc-cat">Cake</div><div class="pc-title">Kyoto Matcha Roll</div><div class="pc-price">Rp 50.000</div></div>
-                <div class="action-container" id="act-matcha">
-                    <button class="btn-cart" onclick="updateQty('Kyoto Matcha Roll', 50000, 'https://images.unsplash.com/photo-1534432182912-63863115e106?w=500', 1, 'act-matcha')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Kyoto Matcha Roll', 50000, '', -1, 'act-matcha')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Kyoto Matcha Roll', 50000, '', 1, 'act-matcha')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="cake">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=500&auto=format&fit=crop" alt="Tart"></div>
-                <div class="pc-info"><div class="pc-cat">Cake</div><div class="pc-title">Mini Fruit Tart</div><div class="pc-price">Rp 30.000</div></div>
-                <div class="action-container" id="act-tart">
-                    <button class="btn-cart" onclick="updateQty('Mini Fruit Tart', 30000, 'https://images.unsplash.com/photo-1559598467-f8b76c8155d0?w=500', 1, 'act-tart')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Mini Fruit Tart', 30000, '', -1, 'act-tart')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Mini Fruit Tart', 30000, '', 1, 'act-tart')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="cake">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=500&auto=format&fit=crop" alt="Cupcake"></div>
-                <div class="pc-info"><div class="pc-cat">Cake</div><div class="pc-title">Blueberry Cupcake</div><div class="pc-price">Rp 15.000</div></div>
-                <div class="action-container" id="act-cupcake">
-                    <button class="btn-cart" onclick="updateQty('Blueberry Cupcake', 15000, 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=500', 1, 'act-cupcake')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Blueberry Cupcake', 15000, '', -1, 'act-cupcake')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Blueberry Cupcake', 15000, '', 1, 'act-cupcake')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="roti">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=500&auto=format&fit=crop" alt="Bread"></div>
-                <div class="pc-info"><div class="pc-cat">Roti</div><div class="pc-title">Whole Wheat Loaf</div><div class="pc-price">Rp 40.000</div></div>
-                <div class="action-container" id="act-loaf">
-                    <button class="btn-cart" onclick="updateQty('Whole Wheat Loaf', 40000, 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=500', 1, 'act-loaf')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Whole Wheat Loaf', 40000, '', -1, 'act-loaf')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Whole Wheat Loaf', 40000, '', 1, 'act-loaf')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="hampers">
-                <div class="pc-badge best">Gift</div>
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop" alt="Hampers"></div>
-                <div class="pc-info"><div class="pc-cat">Hampers</div><div class="pc-title">Tia's Gift Box</div><div class="pc-price">Rp 150.000</div></div>
-                <div class="action-container" id="act-hampers">
-                    <button class="btn-cart" onclick="updateQty('Tias Gift Box', 150000, 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500', 1, 'act-hampers')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Tias Gift Box', 150000, '', -1, 'act-hampers')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Tias Gift Box', 150000, '', 1, 'act-hampers')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="pastry">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&auto=format&fit=crop" alt="Bakpia"></div>
-                <div class="pc-info"><div class="pc-cat">Pastry</div><div class="pc-title">Bakpia Kukus</div><div class="pc-price">Rp 35.000</div></div>
-                <div class="action-container" id="act-bakpia">
-                    <button class="btn-cart" onclick="updateQty('Bakpia Kukus', 35000, 'https://images.unsplash.com/photo-1612203985729-70726954388c?w=500', 1, 'act-bakpia')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Bakpia Kukus', 35000, '', -1, 'act-bakpia')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Bakpia Kukus', 35000, '', 1, 'act-bakpia')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="roti">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop" alt="Bun"></div>
-                <div class="pc-info"><div class="pc-cat">Roti</div><div class="pc-title">Cinnamon Roll</div><div class="pc-price">Rp 18.000</div></div>
-                <div class="action-container" id="act-cinnamon">
-                    <button class="btn-cart" onclick="updateQty('Cinnamon Roll', 18000, 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500', 1, 'act-cinnamon')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Cinnamon Roll', 18000, '', -1, 'act-cinnamon')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Cinnamon Roll', 18000, '', 1, 'act-cinnamon')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="cake">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop" alt="Cheese Cake"></div>
-                <div class="pc-info"><div class="pc-cat">Cake</div><div class="pc-title">Basque Burnt Cheese</div><div class="pc-price">Rp 65.000</div></div>
-                <div class="action-container" id="act-cheese">
-                    <button class="btn-cart" onclick="updateQty('Burnt Cheese Cake', 65000, 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500', 1, 'act-cheese')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Burnt Cheese Cake', 65000, '', -1, 'act-cheese')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Burnt Cheese Cake', 65000, '', 1, 'act-cheese')">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card menu-item" data-category="roti">
-                <div class="pc-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop" alt="Sourdough"></div>
-                <div class="pc-info"><div class="pc-cat">Roti</div><div class="pc-title">Roti Sisir Manis</div><div class="pc-price">Rp 22.000</div></div>
-                <div class="action-container" id="act-sisir">
-                    <button class="btn-cart" onclick="updateQty('Roti Sisir Manis', 22000, 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500', 1, 'act-sisir')">Beli</button>
-                    <div class="qty-control">
-                        <button class="qty-btn minus" onclick="updateQty('Roti Sisir Manis', 22000, '', -1, 'act-sisir')">-</button><span class="qty-val">0</span><button class="qty-btn plus" onclick="updateQty('Roti Sisir Manis', 22000, '', 1, 'act-sisir')">+</button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="pagination-container" id="pagination">
+            <button class="page-btn prev" onclick="changePage(-1)">Prev</button>
+            <button class="page-btn next" onclick="changePage(1)">Next</button>
         </div>
-
-        <div class="pagination-container">
-            <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i> Prev</button>
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn next">Next <i class="ri-arrow-right-s-line"></i></button>
-        </div>
-
     </div>
 
     <footer>
@@ -468,12 +300,387 @@
     <a href="#" class="back-to-top" id="backToTop"><i class="ri-arrow-up-line"></i></a>
 
     <script>
-        let cart = [];
-        let subtotal = 0;
-        let tax = 0;
-        let grandTotal = 0;
-        let orderData = {};
+        // --- DATA PRODUK DENGAN GAMBAR LOKAL ---
+        const allProducts = [
+            // HALAMAN 1
+            { 
+                id: 1, 
+                name: "Choco Lava Bomb", 
+                category: "cake", 
+                price: 45000, 
+                img: "assets/img/kue/chocolavabo.webp", 
+                badge: "Best Seller", 
+                badgeClass: "best" 
+            },
+            { 
+                id: 2, 
+                name: "Butter Croissant", 
+                category: "pastry", 
+                price: 25000, 
+                img: "assets/img/kue/AlmondCroissan.webp", 
+                badge: "New", 
+                badgeClass: "new" 
+            },
+            { 
+                id: 3, 
+                name: "Avocado Toast", 
+                category: "roti", 
+                price: 35000, 
+                img: "assets/img/kue/AvocadoToas.webp", 
+                badge: "Vegan", 
+                badgeClass: "vegan" 
+            },
+            { 
+                id: 4, 
+                name: "Kyoto Matcha Roll", 
+                category: "cake", 
+                price: 50000, 
+                img: "assets/img/kue/KyotoMatchaRol.webp" 
+            },
+            { 
+                id: 5, 
+                name: "Mini Fruit Tart", 
+                category: "cake", 
+                price: 30000, 
+                img: "assets/img/kue/MiniFruitTar.webp" 
+            },
+            { 
+                id: 6, 
+                name: "Blueberry Cupcake", 
+                category: "cake", 
+                price: 15000, 
+                img: "assets/img/kue/BlueberryCupcake.webp" 
+            },
+            { 
+                id: 7, 
+                name: "Whole Wheat Loaf", 
+                category: "roti", 
+                price: 40000, 
+                img: "assets/img/kue/WholeWheatLoa.webp" 
+            },
+            { 
+                id: 8, 
+                name: "Tia's Gift Box", 
+                category: "hampers", 
+                price: 150000, 
+                img: "assets/img/kue/EidHampers.webp", 
+                badge: "Gift", 
+                badgeClass: "best" 
+            },
 
+            // HALAMAN 2
+            { 
+                id: 9, 
+                name: "Bakpia Kukus", 
+                category: "pastry", 
+                price: 35000, 
+                img: "assets/img/kue/BakpiaKuku.webp" 
+            },
+            { 
+                id: 10, 
+                name: "Cinnamon Roll", 
+                category: "roti", 
+                price: 18000, 
+                img: "assets/img/kue/CinnamonRol.webp" 
+            },
+            { 
+                id: 11, 
+                name: "Basque Burnt Cheese", 
+                category: "cake", 
+                price: 65000, 
+                img: "assets/img/kue/BasqueBurntChees.webp" 
+            },
+            { 
+                id: 12, 
+                name: "Roti Sisir Manis", 
+                category: "roti", 
+                price: 22000, 
+                img: "assets/img/kue/RotiSisirMenteg.webp" 
+            },
+            { 
+                id: 13, 
+                name: "Red Velvet Slice", 
+                category: "cake", 
+                price: 35000, 
+                img: "assets/img/kue/RedVelvetSlic.webp" 
+            },
+            { 
+                id: 14, 
+                name: "Almond Croissant", 
+                category: "pastry", 
+                price: 28000, 
+                img: "assets/img/kue/AlmondCroissan.webp" 
+            },
+            { 
+                id: 15, 
+                name: "Garlic Bread", 
+                category: "roti", 
+                price: 20000, 
+                img: "assets/img/kue/cheesegarlicbread.webp" 
+            },
+            { 
+                id: 16, 
+                name: "Premium Hampers", 
+                category: "hampers", 
+                price: 250000, 
+                img: "assets/img/kue/EidHampers.webp", 
+                badge: "Exclusive", 
+                badgeClass: "best" 
+            },
+
+            // HALAMAN 3
+            { 
+                id: 17, 
+                name: "Macaron Box", 
+                category: "cake", 
+                price: 55000, 
+                img: "assets/img/kue/macaronbox.webp" 
+            },
+            { 
+                id: 18, 
+                name: "Danish Pastry", 
+                category: "pastry", 
+                price: 22000, 
+                img: "assets/img/kue/danishpastry.webp" 
+            },
+            { 
+                id: 19, 
+                name: "Sourdough Baguette", 
+                category: "roti", 
+                price: 30000, 
+                img: "assets/img/kue/sourdoughbagugett.webp" 
+            },
+            { 
+                id: 20, 
+                name: "Focaccia Bread", 
+                category: "roti", 
+                price: 32000, 
+                img: "assets/img/kue/FocacciaBread.webp" 
+            },
+            { 
+                id: 21, 
+                name: "Tiramisu Box", 
+                category: "cake", 
+                price: 45000, 
+                img: "assets/img/kue/RedVelvetSlic.webp" 
+            },
+            { 
+                id: 22, 
+                name: "Apple Pie", 
+                category: "pastry", 
+                price: 40000, 
+                img: "assets/img/kue/MiniFruitTar.webp" 
+            },
+            { 
+                id: 23, 
+                name: "Donat Kentang", 
+                category: "roti", 
+                price: 10000, 
+                img: "assets/img/kue/KampungPotatoDonu.webp" 
+            },
+            { 
+                id: 24, 
+                name: "Eid Hampers", 
+                category: "hampers", 
+                price: 300000, 
+                img: "assets/img/kue/EidHampers.webp", 
+                badge: "Seasonal", 
+                badgeClass: "new" 
+            }
+        ];
+
+        let cart = [];
+        let currentPage = 1;
+        const itemsPerPage = 8;
+        let currentFilter = 'all';
+        let filteredProducts = [...allProducts];
+
+        // --- RENDER & PAGINATION ---
+        function renderProducts() {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = '';
+
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = filteredProducts.slice(start, end);
+
+            pageItems.forEach(item => {
+                const qtyInCart = getQtyInCart(item.name);
+                const btnDisplay = qtyInCart > 0 ? 'none' : 'block';
+                const controlDisplay = qtyInCart > 0 ? 'flex' : 'none';
+                
+                const badgeHtml = item.badge ? `<div class="pc-badge ${item.badgeClass}">${item.badge}</div>` : '';
+
+                grid.innerHTML += `
+                    <div class="product-card">
+                        ${badgeHtml}
+                        <div class="pc-img"><img src="${item.img}" alt="${item.name}"></div>
+                        <div class="pc-info">
+                            <div class="pc-cat">${item.category}</div>
+                            <div class="pc-title">${item.name}</div>
+                            <div class="pc-price">Rp ${item.price.toLocaleString('id-ID')}</div>
+                        </div>
+                        <div class="action-container" id="act-${item.id}">
+                            <button class="btn-cart" style="display: ${btnDisplay}" onclick="updateQty('${item.name}', ${item.price}, '${item.img}', 1, 'act-${item.id}')">Beli</button>
+                            <div class="qty-control ${controlDisplay === 'flex' ? 'active' : ''}">
+                                <button class="qty-btn minus" onclick="updateQty('${item.name}', ${item.price}, '', -1, 'act-${item.id}')">-</button>
+                                <span class="qty-val">${qtyInCart}</span>
+                                <button class="qty-btn plus" onclick="updateQty('${item.name}', ${item.price}, '', 1, 'act-${item.id}')">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const paginationEl = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            
+            let html = `<button class="page-btn prev ${currentPage === 1 ? 'disabled' : ''}" onclick="changePage(-1)">Prev</button>`;
+            
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button class="page-btn ${currentPage === i ? 'active' : ''}" onclick="setPage(${i})">${i}</button>`;
+            }
+            
+            html += `<button class="page-btn next ${currentPage === totalPages ? 'disabled' : ''}" onclick="changePage(1)">Next</button>`;
+            
+            paginationEl.innerHTML = html;
+        }
+
+        function changePage(diff) {
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            const newPage = currentPage + diff;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                renderProducts();
+                window.scrollTo({ top: document.querySelector('.product-hero').offsetHeight, behavior: 'smooth' });
+            }
+        }
+
+        function setPage(pageNum) {
+            currentPage = pageNum;
+            renderProducts();
+            window.scrollTo({ top: document.querySelector('.product-hero').offsetHeight, behavior: 'smooth' });
+        }
+
+        function filterProducts(category) {
+            currentFilter = category;
+            currentPage = 1; // Reset ke halaman 1 saat filter berubah
+            
+            // Update Tab Active
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.dataset.filter === category) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+
+            if (category === 'all') {
+                filteredProducts = [...allProducts];
+            } else {
+                filteredProducts = allProducts.filter(item => item.category === category);
+            }
+            renderProducts();
+        }
+
+        function getQtyInCart(name) {
+            const item = cart.find(i => i.name === name);
+            return item ? item.qty : 0;
+        }
+
+        // --- CART LOGIC ---
+        function updateQty(name, price, img, change, containerId) {
+            const existingItem = cart.find(item => item.name === name);
+            const container = document.getElementById(containerId);
+            // Re-select element karena DOM dirender ulang
+            const btnBeli = container ? container.querySelector('.btn-cart') : null;
+            const qtyControl = container ? container.querySelector('.qty-control') : null;
+            const qtyVal = container ? container.querySelector('.qty-val') : null;
+
+            if (existingItem) {
+                existingItem.qty += change;
+                if (existingItem.qty <= 0) {
+                    cart = cart.filter(item => item.name !== name);
+                    if(qtyControl) qtyControl.classList.remove('active');
+                    if(btnBeli) btnBeli.style.display = 'block';
+                } else {
+                    if(qtyVal) qtyVal.innerText = existingItem.qty;
+                }
+            } else {
+                if (change > 0) {
+                    cart.push({ name, price, img, qty: 1 });
+                    if(btnBeli) btnBeli.style.display = 'none';
+                    if(qtyControl) qtyControl.classList.add('active');
+                    if(qtyVal) qtyVal.innerText = "1";
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-count');
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            
+            badge.innerText = totalQty;
+            if (totalQty > 0) badge.classList.add('show');
+            else badge.classList.remove('show');
+
+            const cartContainer = document.getElementById('cart-items');
+            if (cartContainer) {
+                cartContainer.innerHTML = '';
+                if (cart.length === 0) {
+                    cartContainer.innerHTML = '<p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p>';
+                } else {
+                    cart.forEach(item => {
+                        // Cari ID container asli produk ini untuk update tombol remove
+                        const prod = allProducts.find(p => p.name === item.name);
+                        const contId = prod ? `act-${prod.id}` : null;
+                        
+                        cartContainer.innerHTML += `
+                            <div style="display: flex; gap: 10px; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px;">
+                                <img src="${item.img}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; font-size: 0.9rem;">${item.name}</div>
+                                    <div style="font-size: 0.85rem; color: #666;">${item.qty} x Rp ${item.price.toLocaleString('id-ID')}</div>
+                                </div>
+                                <div style="cursor: pointer; color: #ccc;" onclick="removeItemCompletely('${item.name}')">&times;</div>
+                            </div>
+                        `;
+                    });
+                }
+            }
+            // Update total prices in cart and checkout
+            calculateTotals();
+            document.getElementById('cart-subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
+            document.getElementById('cart-tax').innerText = 'Rp ' + tax.toLocaleString('id-ID');
+            document.getElementById('cart-grand-total').innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
+        }
+
+        function calculateTotals() {
+            subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            tax = subtotal * 0.10;
+            grandTotal = subtotal + tax;
+        }
+
+        function removeItemCompletely(name) {
+            cart = cart.filter(item => item.name !== name);
+            // Re-render agar tampilan tombol di grid produk kembali ke "Beli"
+            renderProducts(); 
+            updateCartUI();
+        }
+
+        // Toggle UI
+        function toggleCart() {
+            document.querySelector('.cart-overlay').classList.toggle('active');
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+
+        // Back to Top Logic
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) backToTopBtn.classList.add('show');
@@ -484,120 +691,18 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Update Qty Logic
-        function updateQty(name, price, img, change, containerId) {
-            const existingItem = cart.find(item => item.name === name);
-            const container = document.getElementById(containerId);
-            const btnBeli = container.querySelector('.btn-cart');
-            const qtyControl = container.querySelector('.qty-control');
-            const qtyVal = container.querySelector('.qty-val');
-
-            if (existingItem) {
-                existingItem.qty += change;
-                if (existingItem.qty <= 0) {
-                    cart = cart.filter(item => item.name !== name);
-                    qtyControl.classList.remove('active');
-                    btnBeli.style.display = 'block';
-                } else {
-                    qtyVal.innerText = existingItem.qty;
-                }
-            } else {
-                if (change > 0) {
-                    cart.push({ name, price, img, qty: 1 });
-                    btnBeli.style.display = 'none';
-                    qtyControl.classList.add('active');
-                    qtyVal.innerText = "1";
-                }
-            }
-            calculateTotals();
-            updateCartUI();
-        }
-
-        function calculateTotals() {
-            subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            tax = subtotal * 0.10;
-            grandTotal = subtotal + tax;
-        }
-
-        function updateCartUI() {
-            const container = document.getElementById('cart-items');
-            const badge = document.getElementById('cart-count');
-            
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            badge.innerText = totalQty;
-            
-            if (totalQty > 0) badge.classList.add('show'); 
-            else badge.classList.remove('show');
-
-            container.innerHTML = '';
-            if (cart.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p>';
-            } else {
-                cart.forEach((item) => {
-                    container.innerHTML += `
-                        <div class="cart-item">
-                            <img src="${item.img}" alt="${item.name}">
-                            <div class="cart-item-details">
-                                <div class="cart-item-title">${item.name}</div>
-                                <div class="cart-item-price">${item.qty} x Rp ${item.price.toLocaleString('id-ID')}</div>
-                            </div>
-                            <div class="cart-remove" onclick="removeItemCompletely('${item.name}', '${findContainerId(item.name)}')">&times;</div>
-                        </div>
-                    `;
-                });
-            }
-            document.getElementById('cart-subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
-            document.getElementById('cart-tax').innerText = 'Rp ' + tax.toLocaleString('id-ID');
-            document.getElementById('cart-grand-total').innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
-        }
-
-        function removeItemCompletely(name, containerId) {
-            cart = cart.filter(item => item.name !== name);
-            calculateTotals();
-            updateCartUI();
-            if(containerId) {
-                const container = document.getElementById(containerId);
-                if(container) {
-                    container.querySelector('.qty-control').classList.remove('active');
-                    container.querySelector('.btn-cart').style.display = 'block';
-                }
-            }
-        }
-
-        function findContainerId(name) {
-            if(name === 'Choco Lava Bomb') return 'act-choco-lava';
-            if(name === 'Butter Croissant') return 'act-croissant';
-            if(name === 'Avocado Toast') return 'act-toast';
-            if(name === 'Kyoto Matcha Roll') return 'act-matcha';
-            if(name === 'Mini Fruit Tart') return 'act-tart';
-            if(name === 'Blueberry Cupcake') return 'act-cupcake';
-            if(name === 'Whole Wheat Loaf') return 'act-loaf';
-            if(name === 'Tias Gift Box') return 'act-hampers';
-            if(name === 'Bakpia Kukus') return 'act-bakpia';
-            if(name === 'Cinnamon Roll') return 'act-cinnamon';
-            if(name === 'Burnt Cheese Cake') return 'act-cheese';
-            if(name === 'Roti Sisir Manis') return 'act-sisir';
-            return null; 
-        }
-
-        // Logic UI (Toggle, Checkout, Payment)
-        function toggleCart() {
-            document.querySelector('.cart-overlay').classList.toggle('active');
-            document.getElementById('cartSidebar').classList.toggle('active');
-        }
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-            document.getElementById('menuOverlay').classList.toggle('active');
-        }
+        // Checkout & Payment Logic
         function openCheckoutPage() {
-            if (cart.length === 0) { alert("Keranjang masih kosong!"); return; }
+            if (cart.length === 0) { alert("Keranjang masih kosong! Silakan belanja dulu."); return; }
             toggleCart();
             document.getElementById('checkoutPage').classList.add('active');
             document.getElementById('checkout-subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
             document.getElementById('checkout-tax').innerText = 'Rp ' + tax.toLocaleString('id-ID');
             document.getElementById('checkout-total').innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
         }
+
         function closeCheckoutPage() { document.getElementById('checkoutPage').classList.remove('active'); }
+
         function processOrder() {
             const name = document.getElementById('cust-name').value;
             const address = document.getElementById('cust-address').value;
@@ -607,6 +712,7 @@
             orderData = { name, address, phone, paymentMethod };
             showPaymentModal(paymentMethod);
         }
+
         function showPaymentModal(method) {
             document.getElementById('checkoutPage').classList.remove('active');
             const modal = document.getElementById('paymentModalOverlay');
@@ -624,20 +730,33 @@
             modal.classList.add('open');
             startCountdown();
         }
+
         function startCountdown() {
-            let duration = 24 * 60 * 60;
+            // Ubah durasi menjadi 15 menit (15 * 60 detik)
+            let duration = 15 * 60; 
             const timerElement = document.getElementById('countdown-timer');
-            const timerInterval = setInterval(() => {
+            
+            // Hentikan interval sebelumnya jika ada agar tidak tumpang tindih
+            if (window.countdownInterval) clearInterval(window.countdownInterval);
+
+            window.countdownInterval = setInterval(() => {
                 const hours = Math.floor(duration / 3600);
                 const minutes = Math.floor((duration % 3600) / 60);
                 const seconds = duration % 60;
+                
                 timerElement.innerText = `${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
-                if (--duration < 0) { clearInterval(timerInterval); timerElement.innerText = "WAKTU HABIS"; }
+                
+                if (--duration < 0) { 
+                    clearInterval(window.countdownInterval); 
+                    timerElement.innerText = "WAKTU HABIS"; 
+                    // Opsional: Bisa tambahkan logika untuk menutup modal atau disable tombol bayar
+                }
             }, 1000);
         }
+
         function finalizeOrderToWA() {
             let message = `Halo TiaBakery, saya konfirmasi pesanan:\n\n*DATA PEMBELI*\nNama: ${orderData.name}\nAlamat: ${orderData.address}\nNo. HP: ${orderData.phone}\n\n*RINCIAN PESANAN*\n`;
-            cart.forEach((item) => { message += `${item.name} (${item.qty}x) - Rp ${(item.price * item.qty).toLocaleString('id-ID')}\n`; });
+            cart.forEach((item, index) => { message += `${index + 1}. ${item.name} (${item.qty}x) - Rp ${(item.price * item.qty).toLocaleString('id-ID')}\n`; });
             message += `\nSubtotal: Rp ${subtotal.toLocaleString('id-ID')}`;
             message += `\nPajak (10%): Rp ${tax.toLocaleString('id-ID')}`;
             message += `\n*TOTAL BAYAR: Rp ${grandTotal.toLocaleString('id-ID')}*\n`;
@@ -646,22 +765,15 @@
             const waNumber = "62895639068080";
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
-            location.reload(); 
+            document.getElementById('paymentModalOverlay').classList.remove('open');
+            cart = []; calculateTotals(); updateCartUI(); renderProducts();
         }
 
-        const tabs = document.querySelectorAll('.tab-btn');
-        const menuItems = document.querySelectorAll('.menu-item');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                const filterValue = tab.getAttribute('data-filter');
-                menuItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    if (filterValue === 'all' || filterValue === category) { item.style.display = 'flex'; item.style.animation = 'fadeIn 0.5s ease'; } else { item.style.display = 'none'; }
-                });
-            });
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
         });
+
     </script>
 
 </body>
