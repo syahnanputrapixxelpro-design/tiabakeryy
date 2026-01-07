@@ -59,7 +59,15 @@
         .btn-checkout { width: 100%; padding: 16px; background: var(--text-dark); color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; display: flex; justify-content: center; gap: 10px; font-size: 1rem; transition: 0.3s; margin-top: 10px; }
 
         /* --- BLOG SPECIFIC STYLES --- */
-        .blog-hero { background-color: var(--bg-warm); padding: 80px 0 60px; text-align: center; position: relative; overflow: hidden; }
+        
+        /* REVISI: PADDING DIKURANGI */
+        .blog-hero { 
+            background-color: var(--bg-warm); 
+            padding: 40px 0 20px; /* Diperkecil dari 80px 0 60px */
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
         .blog-hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
         .blog-hero p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 40px; }
 
@@ -90,13 +98,8 @@
         .blog-read-more i { transition: 0.3s; }
         .blog-card:hover .blog-read-more i { margin-left: 5px; }
 
-        /* NO RESULT & PAGINATION */
+        /* NO RESULT */
         #no-result { display: none; text-align: center; grid-column: 1 / -1; padding: 50px 0; color: #999; }
-        .pagination-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 60px; }
-        .page-btn { width: 45px; height: 45px; border-radius: 50%; border: 1px solid #ddd; background: white; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-family: 'Montserrat'; flex-shrink: 0; }
-        .page-btn.prev, .page-btn.next { width: auto; padding: 0 25px; border-radius: 50px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .page-btn:hover, .page-btn.active { background: var(--text-dark); color: white; border-color: var(--text-dark); }
-        .page-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
 
         /* FOOTER & UTILS */
         footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; }
@@ -180,78 +183,28 @@
             <div class="blog-grid" id="blogGrid">
                 
                 <article class="blog-card" data-title="Rahasia Roti Lembut">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tips & Trik</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Bread" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips & Trik</span><img src="assets/img/img dapur/proses-pembuatan-roti.webp" alt="Bread" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">10 Jan 2024</div><h3 class="blog-title">Rahasia Roti Tetap Lembut Hingga 3 Hari</h3><p class="blog-excerpt">Teknik Tangzhong yang kami gunakan membuat roti tetap moist.</p><a href="blog-detail1.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
                 <article class="blog-card" data-title="Resep Brownies Coklat">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1606313564200-e75d5e304abd?w=600" alt="Brownies" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="assets/img/kue/chocolavabo.webp" alt="Brownies" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">05 Jan 2024</div><h3 class="blog-title">Resep Brownies Coklat Lumer Anti Gagal</h3><p class="blog-excerpt">Pecinta coklat wajib coba! Resep brownies fudgy sederhana.</p><a href="blog-detail2.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
                 <article class="blog-card" data-title="Sehari Bersama Chef Tia">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Behind The Scenes</span><img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=600" alt="Kitchen" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Behind The Scenes</span><img src="assets/img/img dapur/dapurawaltiabakery.webp" alt="Kitchen" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">28 Des 2023</div><h3 class="blog-title">Sehari Bersama Chef Tia di Dapur</h3><p class="blog-excerpt">Mengintip kesibukan dapur kami mulai dari jam 4 pagi.</p><a href="blog-detail3.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
                 <article class="blog-card" data-title="Ide Hampers Lebaran">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Inspirasi</span><img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600" alt="Hampers" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Inspirasi</span><img src="assets/img/kue/EidHampers.webp" alt="Hampers" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">15 Des 2023</div><h3 class="blog-title">Ide Hampers Lebaran yang Berkesan</h3><p class="blog-excerpt">Bingung kirim apa? Simak tips memilih isian hampers.</p><a href="blog-detail4.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
                 <article class="blog-card" data-title="Manfaat Sourdough">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Kesehatan</span><img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600" alt="Sourdough" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Kesehatan</span><img src="assets/img/kue/sourdoughbagugett.webp" alt="Sourdough" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">01 Des 2023</div><h3 class="blog-title">Manfaat Sourdough untuk Kesehatan</h3><p class="blog-excerpt">Roti asam ini ternyata punya segudang manfaat.</p><a href="blog-detail5.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
                 <article class="blog-card" data-title="Butter Cream Kokoh">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600" alt="Cake" class="blog-img"></div>
+                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="assets/img/kue/RedVelvetSlic.webp" alt="Cake" class="blog-img"></div>
                     <div class="blog-content"><div class="blog-date">20 Nov 2023</div><h3 class="blog-title">Cara Membuat Butter Cream yang Kokoh</h3><p class="blog-excerpt">Tips agar butter cream tidak mudah meleleh di cuaca panas.</p><a href="blog-detail6.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-
-                <article class="blog-card" data-title="Sejarah Croissant">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Trivia</span><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600" alt="Croissant" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">10 Nov 2023</div><h3 class="blog-title">Sejarah Unik di Balik Croissant</h3><p class="blog-excerpt">Ternyata croissant bukan asli dari Perancis lho!</p><a href="blog-detail7.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Cara Simpan Kue Kering">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=600" alt="Cookies" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">01 Nov 2023</div><h3 class="blog-title">Cara Simpan Kue Kering Agar Awet</h3><p class="blog-excerpt">Jangan biarkan nastar kamu melempem sebelum lebaran.</p><a href="blog-detail8.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Tren Kue Ulang Tahun">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tren</span><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Birthday Cake" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">25 Okt 2023</div><h3 class="blog-title">Tren Kue Ulang Tahun Aesthetic 2024</h3><p class="blog-excerpt">Desain minimalis ala Korea masih mendominasi tahun ini.</p><a href="blog-detail9.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Resep Donat Kentang">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1629892693892-7472097e883e?w=600" alt="Donat" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">15 Okt 2023</div><h3 class="blog-title">Resep Donat Kentang Empuk Seharian</h3><p class="blog-excerpt">Camilan klasik yang selalu jadi rebutan keluarga.</p><a href="blog-detail10.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Kenapa Ragi Penting">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Edukasi</span><img src="https://images.unsplash.com/photo-1507612238538-4ef2d1094d40?w=600" alt="Yeast" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">05 Okt 2023</div><h3 class="blog-title">Kenapa Ragi Sangat Penting?</h3><p class="blog-excerpt">Mengenal fungsi yeast dalam pengembangan adonan roti.</p><a href="blog-detail11.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Pairing Kopi Roti">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Lifestyle</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Coffee" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">28 Sep 2023</div><h3 class="blog-title">Pairing Kopi & Roti yang Pas</h3><p class="blog-excerpt">Roti manis cocoknya dengan kopi apa ya? Cek di sini.</p><a href="blog-detail12.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-
-                <article class="blog-card" data-title="Vegan Baking Tips">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1505253758473-96b701d2cd03?w=600" alt="Vegan" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">15 Sep 2023</div><h3 class="blog-title">Tips Baking Tanpa Telur & Susu</h3><p class="blog-excerpt">Substitusi bahan untuk kamu yang alergi atau vegan.</p><a href="blog-detail13.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Asal Usul Baguette">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Trivia</span><img src="https://images.unsplash.com/photo-1589367920969-ab8e965a32a2?w=600" alt="Baguette" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">01 Sep 2023</div><h3 class="blog-title">Kenapa Baguette Bentuknya Panjang?</h3><p class="blog-excerpt">Sejarah unik roti ikonik Perancis yang melegenda.</p><a href="blog-detail14.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Foto Makanan Estetik">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Tips</span><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600" alt="Photo" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">20 Agu 2023</div><h3 class="blog-title">Cara Foto Makanan Estetik Pakai HP</h3><p class="blog-excerpt">Bikin foto kue kamu like-able di Instagram.</p><a href="blog-detail15.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Resep Cookies">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Resep</span><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600" alt="Cookies" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">10 Agu 2023</div><h3 class="blog-title">Resep Soft Cookies Chocochip</h3><p class="blog-excerpt">Tekstur chewy di dalam, renyah di luar.</p><a href="blog-detail16.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Gluten Free">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Kesehatan</span><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Gluten Free" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">01 Agu 2023</div><h3 class="blog-title">Mengenal Diet Gluten Free</h3><p class="blog-excerpt">Apa itu gluten dan kenapa sebagian orang menghindarinya?</p><a href="blog-detail17.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
-                </article>
-                <article class="blog-card" data-title="Valentine Coklat">
-                    <div class="blog-img-wrapper"><span class="blog-tag">Event</span><img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600" alt="Chocolate" class="blog-img"></div>
-                    <div class="blog-content"><div class="blog-date">14 Feb 2023</div><h3 class="blog-title">Sejarah Coklat saat Valentine</h3><p class="blog-excerpt">Kenapa hari kasih sayang identik dengan coklat?</p><a href="blog-detail18.html" class="blog-read-more">Baca Selengkapnya <i class="ri-arrow-right-line"></i></a></div>
                 </article>
 
                 <div id="no-result">
@@ -260,14 +213,6 @@
                     <p>Coba kata kunci lain.</p>
                 </div>
 
-            </div>
-
-            <div class="pagination-container" id="pagination">
-                <button class="page-btn prev" onclick="changePage(-1)">Prev</button>
-                <button class="page-btn active" onclick="setPage(1)">1</button>
-                <button class="page-btn" onclick="setPage(2)">2</button>
-                <button class="page-btn" onclick="setPage(3)">3</button>
-                <button class="page-btn next" onclick="changePage(1)">Next</button>
             </div>
         </div>
     </section>
@@ -309,66 +254,16 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // --- BLOG PAGINATION & SEARCH LOGIC ---
-        const cards = document.querySelectorAll('.blog-card');
-        const itemsPerPage = 6;
-        let currentPage = 1;
-        const totalPages = Math.ceil(cards.length / itemsPerPage);
-        const searchInput = document.getElementById('searchInput');
-        const noResult = document.getElementById('no-result');
-        const paginationContainer = document.getElementById('pagination');
-
-        // Function to Show Page
-        function showPage(page) {
-            if (searchInput.value.trim() !== "") return; // Disable pagination if searching
-
-            if (page < 1) page = 1;
-            if (page > totalPages) page = totalPages;
-            currentPage = page;
-
-            const start = (currentPage - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-
-            cards.forEach((card, index) => {
-                if (index >= start && index < end) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Update Buttons
-            const buttons = paginationContainer.querySelectorAll('button');
-            buttons.forEach((btn, index) => {
-                btn.classList.remove('active');
-                // Logic simpel untuk highlight tombol angka (index 1,2,3 correspond to page 1,2,3)
-                if (index === currentPage) btn.classList.add('active'); 
-            });
-            
-            // Scroll to top of grid
-            document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function setPage(n) {
-            showPage(n);
-        }
-
-        function changePage(n) {
-            showPage(currentPage + n);
-        }
-
-        // Initialize First Page
-        showPage(1);
-
         // Search Function
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.blog-card');
+        const noResult = document.getElementById('no-result');
+
         searchInput.addEventListener('keyup', function(e) {
             const term = e.target.value.toLowerCase();
             let hasResult = false;
 
             if (term.length > 0) {
-                // Disable pagination view
-                paginationContainer.style.display = 'none';
-                
                 cards.forEach(card => {
                     const title = card.getAttribute('data-title').toLowerCase();
                     const tag = card.querySelector('.blog-tag').innerText.toLowerCase();
@@ -386,10 +281,10 @@
                 else noResult.style.display = 'block';
 
             } else {
-                // Clear search -> Enable pagination
                 noResult.style.display = 'none';
-                paginationContainer.style.display = 'flex';
-                showPage(1); // Reset to page 1
+                cards.forEach(card => {
+                    card.style.display = 'flex';
+                });
             }
         });
     </script>
