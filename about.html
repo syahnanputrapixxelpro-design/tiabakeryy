@@ -24,7 +24,7 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
 
-        /* NAVBAR (SAMA DENGAN INDEX) */
+        /* NAVBAR */
         nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001; }
@@ -49,11 +49,27 @@
         /* --- ABOUT SPECIFIC STYLES --- */
         
         /* 1. HERO */
-        .about-header { position: relative; height: 60vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .about-header { 
+            position: relative; 
+            height: 40vh; 
+            width: 100%; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+        }
         .about-header img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6); }
         .about-header-content { position: relative; z-index: 2; padding: 0 20px; }
-        .about-header h1 { font-size: 4rem; margin-bottom: 10px; color: white; }
-        .about-header p { font-size: 1.2rem; font-weight: 300; letter-spacing: 1px; }
+        .about-header h1 { font-size: 4rem; margin-bottom: 15px; color: white; line-height: 1.1; }
+        .about-header p { 
+            font-size: 1.2rem; 
+            font-weight: 300; 
+            letter-spacing: 1px; 
+            margin-top: 10px; 
+            opacity: 0.9;
+        }
 
         /* 2. INTRO */
         .intro-section { padding: 100px 0; background: var(--bg-white); }
@@ -120,14 +136,22 @@
             .nav-menu, .btn-nav-wa { display: none; }
             .hamburger-btn { display: block; }
             
+            .about-header { height: 30vh; } 
             .about-header h1 { font-size: 2.5rem; }
+            
             .middle-img-container { height: 300px; }
             
-            /* 1. Fix Intro Section Mobile */
+            /* 1. Fix Intro Section Mobile (REVISI PADDING DI SINI) */
             .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+            
             .intro-text { 
-                padding: 0 10px; /* Tambahan padding agar tidak mepet */
+                padding: 0 30px; 
                 text-align: left; 
+            }
+            
+            /* INI BAGIAN YANG DITAMBAHKAN UNTUK GAMBAR */
+            .intro-img {
+                padding: 0 30px; /* Memberi jarak kiri-kanan pada gambar */
             }
             .intro-img img { width: 100%; border-radius: 15px; }
 
@@ -213,14 +237,14 @@
                 </p>
             </div>
             <div class="intro-img">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=800&auto=format&fit=crop" style="width:100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Making Bread">
+                <img src="assets/img/img dapur/dapurawaltiabakery.webp" style="width:100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Making Bread">
             </div>
         </div>
     </section>
 
     <div class="middle-image-section">
         <div class="middle-img-container">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600&auto=format&fit=crop" alt="Fresh Bread Display">
+            <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Fresh Bread Display">
         </div>
     </div>
 
@@ -266,19 +290,19 @@
             <h2 class="gallery-title">Galeri Momen</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&auto=format&fit=crop" alt="Gallery 1">
+                    <img src="assets/img/kue/chocolavabo.webp" alt="Gallery 1">
                     <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579632652768-6cb9dcf85912?w=500&auto=format&fit=crop" alt="Gallery 2">
+                    <img src="assets/img/kue/BlueberryCupcake.webp" alt="Gallery 2">
                     <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&auto=format&fit=crop" alt="Gallery 3">
+                    <img src="assets/img/kue/cheesegarlicbread.webp" alt="Gallery 3">
                     <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&auto=format&fit=crop" alt="Gallery 4">
+                    <img src="assets/img/kue/RotiSisirMenteg.webp" alt="Gallery 4">
                     <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
                 </div>
             </div>
@@ -297,7 +321,7 @@
                 </a>
             </div>
             <div class="story-img">
-                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000&auto=format&fit=crop" alt="Bakery Products">
+                <img src="assets/img/img dapur/sourdough.webp" alt="Bakery Products">
             </div>
         </div>
     </section>
@@ -316,7 +340,7 @@
                     <ul>
                         <li><a href="about.html">Tentang Kami</a></li>
                         <li><a href="product.html">Produk</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
