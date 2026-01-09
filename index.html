@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Bahan 100% Halal dan alami.">
-    <meta name="theme-color" content="#FFFBF2">
+    <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Pesan online sekarang!">
     <title>TiaBakery - Official Website</title>
     
     <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp">
@@ -27,9 +26,7 @@
         h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
-        
-        /* Mencegah Layout Shift pada Gambar */
-        img { max-width: 100%; height: auto; display: block; } 
+        img { max-width: 100%; height: auto; display: block; } /* Display block mencegah layout shift kecil */
 
         /* NAVBAR */
         nav { 
@@ -46,22 +43,21 @@
         .nav-menu a:hover { color: var(--red); }
         
         .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
-        /* Aksesibilitas: Menambah ukuran touch target */
         .nav-icon-btn { 
-            width: 44px; height: 44px; border-radius: 50%; background: white; border: 1px solid #eee; 
-            display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-dark); 
-            cursor: pointer; position: relative; 
+            width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; 
+            display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); 
+            cursor: pointer; position: relative; border: none; /* Accessibility Fix: Hapus border default button */
         }
         .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
         
         .btn-nav-wa { 
-            background: #25D366; color: white; padding: 10px 20px; border-radius: 50px; 
+            background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; 
             font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; 
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
         }
         .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
 
-        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; background: transparent; border: none; }
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; background: none; border: none; }
         
         /* MOBILE MENU */
         .menu-overlay-bg {
@@ -117,15 +113,13 @@
         .hero-text p { font-size: 1.1rem; line-height: 1.6; color: var(--text-light); margin-bottom: 35px; max-width: 90%; }
         
         .hero-buttons { display: flex; gap: 15px; }
-        .btn-primary { padding: 15px 35px; background: var(--red); color: white; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(255, 82, 82, 0.3); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: none; }
-        .btn-secondary { padding: 15px 35px; background: white; color: var(--text-dark); border: 2px solid #eee; border-radius: 50px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-primary { padding: 15px 35px; background: var(--red); color: white; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(255, 82, 82, 0.3); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: none; text-decoration: none;} /* Fix: text-decoration none */
+        .btn-secondary { padding: 15px 35px; background: white; color: var(--text-dark); border: 2px solid #eee; border-radius: 50px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;} /* Fix: text-decoration none */
         
         .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
         .blob-bg { position: absolute; width: 450px; height: 450px; background: #FFE082; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; z-index: 1; animation: morph 8s ease-in-out infinite; opacity: 0.5; }
-        
-        /* OPTIMASI GAMBAR HERO */
-        .hero-img-main { position: relative; z-index: 2; width: 100%; height: auto; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); animation: float-img 6s ease-in-out infinite; border-radius: 20px; aspect-ratio: 1/1; }
-        
+        /* LCP Optimization: Contain size to prevent shifts */
+        .hero-img-main { position: relative; z-index: 2; width: 100%; height: auto; max-width: 500px; aspect-ratio: 1/1; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); animation: float-img 6s ease-in-out infinite; border-radius: 20px; }
         .float-item { position: absolute; background: white; padding: 10px 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 3; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; animation: float-item 5s ease-in-out infinite; }
         .float-1 { top: 10%; right: 0; border-left: 5px solid var(--blue); animation-delay: 0s; }
         .float-2 { bottom: 15%; left: 0; border-left: 5px solid var(--green); animation-delay: 2s; }
@@ -141,7 +135,8 @@
         /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
         .about-img { position: relative; }
-        .about-img img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block; aspect-ratio: 4/3; object-fit: cover; }
+        /* CLS Optimization: Aspect Ratio */
+        .about-img img { width: 100%; height: auto; aspect-ratio: 4/3; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block; object-fit: cover; }
         .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
         .about-text p { line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
         .about-deco { position: absolute; bottom: -20px; left: -20px; width: 100%; height: 100%; border: 3px solid var(--text-dark); border-radius: 20px; z-index: 1; }
@@ -157,8 +152,8 @@
         .pc-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .product-card:hover .pc-img img { transform: scale(1.1); }
         .pc-title { font-weight: 700; margin-bottom: 5px; font-size: 1.1rem; font-family: 'Fraunces'; }
-        .pc-price { color: var(--red); font-weight: 700; margin-bottom: 15px; display: block; margin-top: auto; }
-        .btn-cart { width: 100%; padding: 10px; border: 2px solid var(--text-dark); background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .pc-price { color: var(--red); font-weight: 700; margin-bottom: 15px; display: block; }
+        .btn-cart { width: 100%; padding: 10px; border: 2px solid var(--text-dark); background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: auto; } /* Fix button at bottom */
         .btn-cart:hover { background: var(--text-dark); color: white; }
 
         .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
@@ -177,14 +172,14 @@
         .story-section { background: #E3F2FD; overflow: hidden; }
         .story-wrapper { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
         .story-content h2 { font-size: 3rem; margin-bottom: 20px; }
-        .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
-        .story-img img { width: 100%; height: auto; max-width: 600px; aspect-ratio: 4/3; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
+        .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); text-decoration: none; }
+        .story-img img { width: 100%; height: auto; aspect-ratio: 4/3; max-width: 600px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
 
         footer { background: white; padding: 80px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
         .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
         .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
-        .social-icons a { width: 40px; height: 40px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none;}
+        .social-icons a { width: 40px; height: 40px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none; }
         .social-icons a:hover { background: var(--text-dark); color: white; }
 
         /* CART & CHECKOUT */
@@ -234,7 +229,7 @@
         @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         /* --- FLOATING BUTTONS (OPTIMIZED) --- */
-        /* Back to Top - Posisi agak ke atas */
+        /* Back to Top */
         .back-to-top { 
             position: fixed; 
             bottom: 110px; /* Di atas WA */
@@ -259,7 +254,7 @@
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
         .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
 
-        /* WA Float - Posisi paling bawah (utama) */
+        /* WA Float */
         .wa-float { 
             position: fixed; 
             bottom: 30px; 
@@ -307,7 +302,6 @@
             
             .hero-text h1 { font-size: 2.2rem; }
 
-            /* TOMBOL SIMETRIS MOBILE FIX */
             .hero-buttons {
                 display: flex;
                 justify-content: center;
@@ -353,16 +347,16 @@
             </div>
 
             <div class="nav-icons">
-                <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Lihat Keranjang Belanja">
+                <div class="nav-icon-btn" onclick="toggleCart()" aria-label="Lihat Keranjang">
                     <i class="ri-shopping-bag-3-line"></i>
                     <span id="cart-count">0</span>
-                </button>
-                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Chat WhatsApp Admin">
+                </div>
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Hubungi WhatsApp">
                     <i class="ri-whatsapp-line"></i> Kontak
                 </a>
-                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Buka Menu Navigasi">
+                <div class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
                     <i class="ri-menu-3-line"></i>
-                </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -379,7 +373,7 @@
 
     <div class="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header"><h3>Keranjang Saya</h3><button onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem; background:none; border:none;" aria-label="Tutup Keranjang">&times;</button></div>
+        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;" aria-label="Tutup Keranjang">&times;</span></div>
         <div id="cart-items" class="cart-items-container"><p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p></div>
         <div class="cart-footer">
             <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">Rp 0</span></div>
@@ -391,7 +385,7 @@
 
     <div id="checkoutPage" class="checkout-page">
         <div class="checkout-container">
-            <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()" aria-label="Kembali ke belanja"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
+            <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()" aria-label="Kembali"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
             <div class="form-group"><label class="form-label">Nama Lengkap</label><input type="text" id="cust-name" class="form-input" placeholder="Masukkan nama anda"></div>
             <div class="form-group"><label class="form-label">Alamat Lengkap</label><input type="text" id="cust-address" class="form-input" placeholder="Jalan, No. Rumah, Kecamatan, Kota"></div>
             <div class="form-group"><label class="form-label">Nomor WhatsApp (Angka Saja)</label><input type="tel" id="cust-phone" class="form-input" placeholder="08xxxxxxxxxx" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div>
@@ -432,7 +426,7 @@
     <section id="about" class="section-padding container">
         <div class="about-grid">
             <div class="about-img">
-                <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef Baking" width="600" height="450" loading="lazy">
+                <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef Baking" width="600" height="400" loading="lazy">
                 <div class="about-deco"></div>
             </div>
             <div class="about-text">
@@ -554,7 +548,7 @@
                 </a>
             </div>
             <div class="story-img">
-                <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1472&auto=format&fit=crop" alt="TiaBakery Warm Atmosphere" width="600" height="450" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1472&auto=format&fit=crop" alt="TiaBakery Warm Atmosphere" width="600" height="400" loading="lazy">
             </div>
         </div>
     </section>
@@ -571,8 +565,8 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float" aria-label="Hubungi WhatsApp Admin"><i class="ri-whatsapp-line"></i></a>
-    <a href="#" class="back-to-top" id="backToTop" aria-label="Kembali ke Bagian Atas"><i class="ri-arrow-up-line"></i></a>
+    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float" aria-label="Hubungi WhatsApp"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Kembali ke Atas"><i class="ri-arrow-up-line"></i></a>
 
     <script>
         let cart = [];
@@ -581,13 +575,12 @@
         let grandTotal = 0;
         let orderData = {};
 
-        // BACK TO TOP LOGIC (PASSIVE LISTENER UNTUK PERFORMA)
+        // BACK TO TOP LOGIC
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } 
             else { backToTopBtn.classList.remove('show'); }
-        }, { passive: true }); // PASSIVE LISTENER: MENINGKATKAN SCROLL PERFORMANCE
-        
+        });
         backToTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
