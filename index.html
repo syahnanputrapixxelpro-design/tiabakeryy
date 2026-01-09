@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO META TAGS -->
+    <!-- ==================== SEO META TAGS ==================== -->
     <title>TiaBakery - Roti Artisan & Pastry Premium | Fresh from Oven Setiap Hari</title>
     <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Bahan 100% Halal dan alami. Pesan sekarang via WhatsApp!">
-    <meta name="keywords" content="roti artisan, pastry premium, kue halal, bakery jakarta, roti segar, croissant, choco lava, toko roti online">
+    <meta name="keywords" content="roti artisan, pastry premium, kue halal, bakery jakarta, roti segar, croissant, choco lava, toko roti online, bakery halal, kue ulang tahun">
     <meta name="author" content="TiaBakery">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <meta name="theme-color" content="#FFFBF2">
+    <meta name="msapplication-TileColor" content="#FFFBF2">
     <link rel="canonical" href="https://tiabakery.com/">
     
-    <!-- FAVICON -->
+    <!-- ==================== FAVICON ==================== -->
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     
-    <!-- OPEN GRAPH -->
+    <!-- ==================== OPEN GRAPH ==================== -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tiabakery.com/">
     <meta property="og:title" content="TiaBakery - Roti Artisan & Pastry Premium">
@@ -27,71 +29,70 @@
     <meta property="og:image" content="https://tiabakery.com/assets/img/og-image.jpg">
     <meta property="og:locale" content="id_ID">
     
-    <!-- TWITTER CARDS -->
+    <!-- ==================== TWITTER CARDS ==================== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TiaBakery - Roti Artisan & Pastry Premium">
     <meta name="twitter:description" content="Roti artisan dengan bahan 100% alami dan Halal.">
+    <meta name="twitter:image" content="https://tiabakery.com/assets/img/twitter-card.jpg">
     
-    <!-- PRELOAD LCP IMAGE -->
-    <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp" type="image/webp">
+    <!-- ==================== PRELOAD LCP IMAGE ==================== -->
+    <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp" fetchpriority="high">
     
-    <!-- PRECONNECT -->
+    <!-- ==================== PRECONNECT (CRITICAL) ==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- CRITICAL CSS INLINE -->
+    <!-- ==================== CRITICAL CSS (INLINE) ==================== -->
     <style>
         :root{--bg-white:#FFF;--bg-warm:#FFFBF2;--text-dark:#3E2723;--text-light:#795548;--red:#FF5252;--yellow:#FFD740;--yellow-soft:#FFF9C4;--green:#69F0AE;--blue:#448AFF;--container-width:1200px}
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
-        body{background-color:var(--bg-white);color:var(--text-dark);font-family:'Montserrat',system-ui,sans-serif;overflow-x:hidden}
+        body{background-color:var(--bg-white);color:var(--text-dark);font-family:'Montserrat',system-ui,-apple-system,sans-serif;overflow-x:hidden;width:100%}
         h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;color:var(--text-dark)}
-        a{text-decoration:none;color:inherit}
+        a{text-decoration:none;color:inherit;transition:color .3s}
         img{max-width:100%;height:auto;display:block}
         .container{max-width:var(--container-width);margin:0 auto;padding:0 20px}
         
-        /* NAVBAR */
+        /* NAVBAR - CRITICAL */
         nav{background:rgba(255,255,255,.95);padding:12px 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.05)}
         .nav-wrapper{display:flex;justify-content:space-between;align-items:center}
         .nav-logo{font-family:'Fraunces',Georgia,serif;font-size:1.6rem;font-weight:800;color:var(--text-dark);letter-spacing:-1px}
         .nav-menu{display:flex;gap:25px;align-items:center}
-        .nav-menu a{font-weight:600;font-size:.9rem;text-transform:uppercase;color:var(--text-dark);transition:color .3s}
+        .nav-menu a{font-weight:600;font-size:.9rem;text-transform:uppercase;color:var(--text-dark)}
         .nav-menu a:hover{color:var(--red)}
         .nav-icons{display:flex;gap:15px;align-items:center}
-        .nav-icon-btn{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--text-dark);cursor:pointer;position:relative;transition:.3s}
+        .nav-icon-btn{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--text-dark);cursor:pointer;position:relative}
         .nav-icon-btn:hover{background:var(--text-dark);color:#fff;border-color:var(--text-dark)}
-        .btn-nav-wa{background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:5px;box-shadow:0 4px 10px rgba(37,211,102,.2);transition:.3s}
+        .btn-nav-wa{background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:5px;box-shadow:0 4px 10px rgba(37,211,102,.2)}
         .btn-nav-wa:hover{background:#1ebc57}
         .hamburger-btn{display:none;font-size:1.8rem;color:var(--text-dark);cursor:pointer;background:0 0;border:none}
-        #cart-count{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
+        #cart-count{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
         #cart-count.show{opacity:1}
         
-        /* HERO */
-        .hero-new{background-color:var(--bg-warm);padding:10px 0;overflow:hidden}
+        /* HERO - CRITICAL (Above the fold) */
+        .hero-new{background-color:var(--bg-warm);padding:10px 0;position:relative;overflow:hidden}
         .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;min-height:350px}
-        .hero-text{z-index:2}
+        .hero-text{z-index:2;position:relative}
         .hero-badge{display:inline-block;background:var(--yellow-soft);color:#Fbc02d;padding:8px 16px;border-radius:50px;font-weight:700;font-size:.85rem;margin-bottom:20px;border:1px solid var(--yellow)}
         .hero-text h1{font-size:3.5rem;line-height:1.1;margin-bottom:25px;font-weight:800}
         .hero-text p{font-size:1.1rem;line-height:1.6;color:var(--text-light);margin-bottom:35px;max-width:90%}
         .hero-buttons{display:flex;gap:15px}
-        .btn-primary{padding:15px 35px;background:var(--red);color:#fff;border-radius:50px;font-weight:700;box-shadow:0 10px 20px rgba(255,82,82,.3);display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;transition:.3s}
-        .btn-primary:hover{transform:translateY(-2px)}
-        .btn-secondary{padding:15px 35px;background:#fff;color:var(--text-dark);border:2px solid #eee;border-radius:50px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
-        .btn-secondary:hover{border-color:var(--text-dark)}
+        .btn-primary{padding:15px 35px;background:var(--red);color:#fff;border-radius:50px;font-weight:700;box-shadow:0 10px 20px rgba(255,82,82,.3);display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
+        .btn-secondary{padding:15px 35px;background:#fff;color:var(--text-dark);border:2px solid #eee;border-radius:50px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
         .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
         .blob-bg{position:absolute;width:450px;height:450px;background:#FFE082;border-radius:40% 60% 70% 30%/40% 50% 60% 50%;z-index:1;opacity:.5}
-        .hero-img-main{position:relative;z-index:2;width:100%;max-width:500px;border-radius:20px;aspect-ratio:1/1;object-fit:cover;filter:drop-shadow(0 20px 30px rgba(0,0,0,.15))}
+        .hero-img-main{position:relative;z-index:2;width:100%;height:auto;max-width:500px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.15));border-radius:20px;aspect-ratio:1/1;object-fit:cover}
         .float-item{position:absolute;background:#fff;padding:10px 20px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,.1);z-index:3;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
         .float-1{top:10%;right:0;border-left:5px solid var(--blue)}
         .float-2{bottom:15%;left:0;border-left:5px solid var(--green)}
         
-        /* MOBILE */
+        /* MOBILE CRITICAL */
         @media(max-width:900px){
             .nav-menu,.btn-nav-wa{display:none}
             .hamburger-btn{display:block}
             .hero-grid{grid-template-columns:1fr;text-align:center;padding:20px}
             .hero-text h1{font-size:2.2rem}
-            .hero-visual{margin-top:40px}
+            .hero-visual{margin-top:40px;height:350px}
             .blob-bg{width:300px;height:300px;left:50%;top:50%;transform:translate(-50%,-50%)}
             .hero-img-main{max-width:280px}
             .hero-buttons{justify-content:center}
@@ -99,17 +100,23 @@
         }
     </style>
     
-    <!-- FONTS (ASYNC) -->
+    <!-- ==================== FONTS (ASYNC LOAD) ==================== -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- JSON-LD -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"TiaBakery","description":"TiaBakery menyediakan roti artisan, pastry, dan kue premium fresh from oven dengan bahan 100% Halal.","url":"https://tiabakery.com","telephone":"+62895639068080","address":{"@type":"PostalAddress","streetAddress":"Jl. Bakery No. 88","addressLocality":"Jakarta","addressCountry":"ID"},"priceRange":"Rp 8.000 - Rp 150.000","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1250"}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Apakah TiaBakery sudah bersertifikat Halal?","acceptedAnswer":{"@type":"Answer","text":"Ya, 100%. Kami hanya menggunakan bahan-bahan Halal yang tersertifikasi."}},{"@type":"Question","name":"Berapa lama roti TiaBakery tahan?","acceptedAnswer":{"@type":"Answer","text":"Rata-rata tahan 3-4 hari di suhu ruang karena tanpa pengawet."}}]}</script>
+    <!-- ==================== JSON-LD STRUCTURED DATA ==================== -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Bakery","name":"TiaBakery","description":"TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari dengan bahan 100% Halal dan alami.","url":"https://tiabakery.com","logo":"https://tiabakery.com/assets/img/logo.png","telephone":"+62895639068080","email":"hello@tiabakery.com","address":{"@type":"PostalAddress","streetAddress":"Jl. Bakery No. 88","addressLocality":"Jakarta","addressRegion":"DKI Jakarta","postalCode":"10110","addressCountry":"ID"},"geo":{"@type":"GeoCoordinates","latitude":"-6.2088","longitude":"106.8456"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"08:00","closes":"22:00"}],"priceRange":"Rp 8.000 - Rp 150.000","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1250","bestRating":"5","worstRating":"1"},"sameAs":["https://www.instagram.com/tiabakery","https://www.facebook.com/tiabakery","https://www.tiktok.com/@tiabakery"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Apakah TiaBakery sudah bersertifikat Halal?","acceptedAnswer":{"@type":"Answer","text":"Ya, 100%. Kami hanya menggunakan bahan-bahan Halal yang tersertifikasi."}},{"@type":"Question","name":"Berapa lama roti TiaBakery tahan di suhu ruang?","acceptedAnswer":{"@type":"Answer","text":"Rata-rata tahan 3-4 hari di suhu ruang karena tanpa pengawet."}},{"@type":"Question","name":"Apakah TiaBakery melayani pengiriman ke luar kota?","acceptedAnswer":{"@type":"Answer","text":"Roti basah hanya dalam kota. Cookies dan Hampers bisa ke seluruh Indonesia."}},{"@type":"Question","name":"Bagaimana cara memesan Custom Cake di TiaBakery?","acceptedAnswer":{"@type":"Answer","text":"Hubungi WhatsApp kami H-3 sebelum acara untuk request khusus."}}]}
+    </script>
 </head>
 <body>
+    <!-- MOBILE MENU OVERLAY -->
     <div class="menu-overlay-bg" id="menuOverlay" onclick="toggleMobileMenu()"></div>
 
+    <!-- NAVBAR -->
     <nav>
         <div class="container nav-wrapper">
             <a href="index.html" class="nav-logo">TiaBakery.</a>
@@ -120,20 +127,21 @@
                 <a href="blog.html">Blog</a>
             </div>
             <div class="nav-icons">
-                <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Keranjang">
+                <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Lihat Keranjang Belanja">
                     <i class="ri-shopping-bag-3-line"></i>
                     <span id="cart-count">0</span>
                 </button>
-                <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" class="btn-nav-wa" aria-label="WhatsApp">
+                <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" class="btn-nav-wa" aria-label="Chat WhatsApp">
                     <i class="ri-whatsapp-line"></i> Kontak
                 </a>
-                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Buka Menu">
                     <i class="ri-menu-3-line"></i>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- MOBILE MENU -->
     <div class="mobile-menu-dropdown" id="mobileMenu">
         <a href="about.html" class="mobile-link">Tentang Kami</a>
         <a href="product.html" class="mobile-link">Produk</a>
@@ -144,9 +152,10 @@
         </a>
     </div>
 
+    <!-- CART SIDEBAR -->
     <div class="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header"><h3>Keranjang Saya</h3><button onclick="toggleCart()" aria-label="Tutup">&times;</button></div>
+        <div class="cart-header"><h3>Keranjang Saya</h3><button onclick="toggleCart()" aria-label="Tutup Keranjang">&times;</button></div>
         <div id="cart-items" class="cart-items-container"><p class="empty-cart">Keranjang masih kosong.</p></div>
         <div class="cart-footer">
             <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">Rp 0</span></div>
@@ -156,6 +165,7 @@
         </div>
     </div>
 
+    <!-- CHECKOUT PAGE -->
     <div id="checkoutPage" class="checkout-page">
         <div class="checkout-container">
             <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()" aria-label="Kembali"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
@@ -168,6 +178,7 @@
         </div>
     </div>
 
+    <!-- PAYMENT MODAL -->
     <div id="paymentModalOverlay" class="payment-modal-overlay">
         <div class="payment-modal-box">
             <h3>Menunggu Pembayaran</h3>
@@ -180,8 +191,9 @@
         </div>
     </div>
 
+    <!-- MAIN CONTENT -->
     <main>
-        <!-- HERO -->
+        <!-- HERO SECTION -->
         <section class="hero-new">
             <div class="container hero-grid">
                 <div class="hero-text">
@@ -195,18 +207,18 @@
                 </div>
                 <div class="hero-visual">
                     <div class="blob-bg"></div>
-                    <img src="assets/img/img dapur/proses-pembuatan-roti.webp" class="hero-img-main" alt="TiaBakery Signature Cake" width="500" height="500" fetchpriority="high">
+                    <img src="assets/img/img dapur/proses-pembuatan-roti.webp" class="hero-img-main" alt="TiaBakery Signature Cake - Roti artisan premium" width="500" height="500" fetchpriority="high">
                     <div class="float-item float-1"><i class="ri-star-fill" style="color:var(--yellow)"></i> 4.9 Rating</div>
                     <div class="float-item float-2"><i class="ri-truck-fill" style="color:var(--green)"></i> Free Delivery</div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
+        <!-- ABOUT SECTION -->
         <section id="about" class="section-padding container">
             <div class="about-grid">
                 <div class="about-img">
-                    <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef TiaBakery" width="600" height="450" loading="lazy">
+                    <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef TiaBakery membuat roti artisan" width="600" height="450" loading="lazy">
                     <div class="about-deco"></div>
                 </div>
                 <div class="about-text">
@@ -217,7 +229,7 @@
             </div>
         </section>
 
-        <!-- BESTSELLER -->
+        <!-- BESTSELLER SECTION -->
         <div class="container" id="bestseller">
             <section class="bestseller-section">
                 <div class="bs-header">
@@ -238,7 +250,7 @@
                         <div class="pc-img"><img src="assets/img/kue/crossain.webp" alt="French Butter Croissant" width="300" height="300" loading="lazy"></div>
                         <h4 class="pc-title">French Butter Croissant</h4>
                         <span class="pc-price">Rp 25.000</span>
-                        <button class="btn-cart" onclick="addToCart(this,'French Butter Croissant',25000,'assets/img/kue/crossain.webp')">Beli</button>
+                        <button class="btn-cart" onclick="addToCart(this,'French Butter Croissant',25000,'assets/img/kue/croissan.webp')">Beli</button>
                     </article>
                     <article class="product-card">
                         <span class="badge-vegan">VEGAN</span>
@@ -257,7 +269,7 @@
             </section>
         </div>
 
-        <!-- MENU -->
+        <!-- MENU SECTION -->
         <section id="menu" class="section-padding container">
             <div class="section-header-center">
                 <span class="section-subtitle">Our Menu</span>
@@ -279,7 +291,7 @@
                 <article class="product-card menu-item" data-category="pastry">
                     <div class="pc-img"><img src="assets/img/kue/BlueberryCupcak.webp" alt="Blueberry Cupcake" width="300" height="300" loading="lazy"></div>
                     <h4 class="pc-title">Blueberry Cupcake</h4><span class="pc-price">Rp 15.000</span>
-                    <button class="btn-cart" onclick="addToCart(this,'Blueberry Cupcake',15000,'assets/img/kue/BlueberryCupcak.webp')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this,'Blueberry Cupcake',15000,'assets/img/kue/blueberrycupcake.webp')">Beli</button>
                 </article>
                 <article class="product-card menu-item" data-category="donat">
                     <div class="pc-img"><img src="assets/img/kue/KampungPotatoDonu.webp" alt="Kampung Potato Donut" width="300" height="300" loading="lazy"></div>
@@ -289,7 +301,7 @@
                 <article class="product-card menu-item" data-category="donat">
                     <div class="pc-img"><img src="assets/img/kue/ChocoBombolon.webp" alt="Choco Bomboloni" width="300" height="300" loading="lazy"></div>
                     <h4 class="pc-title">Choco Bomboloni</h4><span class="pc-price">Rp 12.000</span>
-                    <button class="btn-cart" onclick="addToCart(this,'Choco Bomboloni',12000,'assets/img/kue/ChocoBombolon.webp')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this,'Choco Bomboloni',12000,'assets/img/kue/ChocoBombolon .webp')">Beli</button>
                 </article>
                 <article class="product-card menu-item" data-category="roti">
                     <div class="pc-img"><img src="assets/img/kue/WholeWheatLoa.webp" alt="Whole Wheat Loaf" width="300" height="300" loading="lazy"></div>
@@ -302,9 +314,9 @@
                     <button class="btn-cart" onclick="addToCart(this,'Roti Sisir Mentega',25000,'assets/img/kue/RotiSisirMenteg.webp')">Beli</button>
                 </article>
                 <article class="product-card menu-item" data-category="hampers">
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=70&auto=format&fit=crop" alt="Tias Gift Box" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop" alt="Tias Gift Box" width="300" height="300" loading="lazy"></div>
                     <h4 class="pc-title">Tia's Gift Box</h4><span class="pc-price">Rp 150.000</span>
-                    <button class="btn-cart" onclick="addToCart(this,'Tias Gift Box',150000,'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=70')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this,'Tias Gift Box',150000,'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500')">Beli</button>
                 </article>
                 <article class="product-card menu-item" data-category="pastry">
                     <div class="pc-img"><img src="assets/img/kue/RedVelvetSlic.webp" alt="Red Velvet Slice" width="300" height="300" loading="lazy"></div>
@@ -314,7 +326,7 @@
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- FAQ SECTION -->
         <section id="faq" class="section-padding faq-section">
             <div class="container faq-container">
                 <div class="section-header-center">
@@ -328,23 +340,24 @@
             </div>
         </section>
 
-        <!-- CTA -->
+        <!-- CTA SECTION -->
         <section class="story-section section-padding">
             <div class="container story-wrapper">
                 <div class="story-content">
                     <h2>Rasa yang Menyatukan <br>Kebahagiaan.</h2>
                     <p>Setiap resep kami adalah warisan yang dijaga. TiaBakery hadir untuk membuat setiap momen kumpul keluarga menjadi lebih manis dan berwarna.</p>
-                    <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" class="btn-cta-wa">
+                    <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" class="btn-cta-wa" aria-label="Pesan via WhatsApp">
                         <i class="ri-whatsapp-line"></i> Pesan via WhatsApp
                     </a>
                 </div>
                 <div class="story-img">
-                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=500&q=70&auto=format&fit=crop" alt="Suasana TiaBakery" width="600" height="450" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1472&auto=format&fit=crop" alt="Suasana hangat TiaBakery" width="600" height="450" loading="lazy">
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -375,31 +388,36 @@
 
     <!-- FLOATING BUTTONS -->
     <div class="floating-buttons-container">
-        <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
+        <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas" title="Kembali ke Atas">
             <i class="ri-arrow-up-line"></i>
         </button>
-        <a href="https://wa.me/62895639068080?text=Halo%20TiaBakery" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+        <a href="https://wa.me/62895639068080?text=Halo%20TiaBakery%2C%20saya%20ingin%20bertanya" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp" title="Chat WhatsApp">
             <i class="ri-whatsapp-line"></i>
             <span class="wa-badge">1</span>
         </a>
     </div>
 
-    <!-- NON-CRITICAL CSS -->
+    <!-- NON-CRITICAL CSS (DEFERRED) -->
     <style>
-        .menu-overlay-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:998;opacity:0;visibility:hidden;transition:.3s}
+        /* ==================== NON-CRITICAL STYLES ==================== */
+        
+        /* MOBILE MENU */
+        .menu-overlay-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:998;opacity:0;visibility:hidden;transition:opacity .3s}
         .menu-overlay-bg.active{opacity:1;visibility:visible}
-        .mobile-menu-dropdown{position:fixed;top:0;left:0;width:100%;padding:80px 0 40px;background:#fff;z-index:999;border-radius:0 0 30px 30px;box-shadow:0 10px 40px rgba(0,0,0,.1);flex-direction:column;align-items:center;gap:25px;transform:translateY(-100%);transition:transform .4s;display:flex}
+        .mobile-menu-dropdown{position:fixed;top:0;left:0;width:100%;height:auto;padding:80px 0 40px;background:#fff;z-index:999;border-radius:0 0 30px 30px;box-shadow:0 10px 40px rgba(0,0,0,.1);flex-direction:column;align-items:center;gap:25px;transform:translateY(-100%);transition:transform .4s cubic-bezier(.77,0,.175,1);display:flex}
         .mobile-menu-dropdown.active{transform:translateY(0)}
         .mobile-link{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--text-dark)}
         .mobile-link:hover{color:var(--red)}
-        .mobile-btn-wa{background:#25D366;color:#fff;padding:12px 35px;border-radius:50px;font-weight:700;display:flex;align-items:center;gap:10px;margin-top:10px}
+        .mobile-btn-wa{background:#25D366;color:#fff;padding:12px 35px;border-radius:50px;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:10px;box-shadow:0 10px 20px rgba(37,211,102,.3);margin-top:10px}
         
+        /* SECTIONS */
         .section-padding{padding:80px 0}
         .section-header-center{text-align:center;margin-bottom:50px}
         .section-title{font-size:2.5rem;margin-bottom:15px}
         .section-subtitle{display:block;color:var(--blue);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
         .section-desc{color:var(--text-light)}
         
+        /* ABOUT */
         .about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
         .about-img{position:relative}
         .about-img img{width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.1);position:relative;z-index:2;aspect-ratio:4/3;object-fit:cover}
@@ -408,60 +426,65 @@
         .about-deco{position:absolute;bottom:-20px;left:-20px;width:100%;height:100%;border:3px solid var(--text-dark);border-radius:20px;z-index:1}
         .read-more{font-weight:700;color:var(--red);border-bottom:2px solid var(--red)}
         
+        /* PRODUCTS */
         .bestseller-section{background:var(--yellow-soft);padding:70px 0;margin:60px 0;border-radius:30px}
         .bs-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;padding:0 40px}
-        .sticker-title{background:var(--red);color:#fff;padding:8px 20px;transform:rotate(-2deg);display:inline-block;font-size:1.2rem;font-weight:700;margin-bottom:10px}
+        .sticker-title{background:var(--red);color:#fff;padding:8px 20px;transform:rotate(-2deg);display:inline-block;font-size:1.2rem;font-weight:700;box-shadow:3px 3px 0 rgba(0,0,0,.1);margin-bottom:10px}
         .see-all{font-weight:600}
         .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;padding:0 40px}
         .product-card{background:#fff;border-radius:16px;padding:15px;position:relative;box-shadow:0 5px 15px rgba(0,0,0,.03);transition:transform .3s,box-shadow .3s;border:1px solid rgba(0,0,0,.03);display:flex;flex-direction:column}
         .product-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,.08)}
-        .pc-img{height:200px;border-radius:12px;margin-bottom:15px;overflow:hidden;background:#f5f5f5}
+        .pc-img{height:200px;border-radius:12px;margin-bottom:15px;overflow:hidden;width:100%}
         .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-        .product-card:hover .pc-img img{transform:scale(1.05)}
+        .product-card:hover .pc-img img{transform:scale(1.1)}
         .pc-title{font-weight:700;margin-bottom:5px;font-size:1.1rem;font-family:'Fraunces',Georgia,serif}
         .pc-price{color:var(--red);font-weight:700;margin-bottom:15px;display:block;margin-top:auto}
-        .btn-cart{width:100%;padding:10px;border:2px solid var(--text-dark);background:0 0;border-radius:8px;font-weight:700;cursor:pointer;transition:.3s}
+        .btn-cart{width:100%;padding:10px;border:2px solid var(--text-dark);background:0 0;border-radius:8px;font-weight:700;cursor:pointer;transition:background .3s,color .3s}
         .btn-cart:hover{background:var(--text-dark);color:#fff}
         .badge-vegan{position:absolute;top:10px;right:10px;background:var(--green);color:#fff;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:700;z-index:2}
         
+        /* TABS */
         .tabs{display:flex;justify-content:center;gap:15px;margin-bottom:40px;flex-wrap:wrap}
-        .tab-btn{padding:12px 30px;border:1px solid #ddd;border-radius:50px;background:#fff;cursor:pointer;font-weight:600;transition:.3s}
+        .tab-btn{padding:12px 30px;border:1px solid #ddd;border-radius:50px;background:#fff;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;transition:background .3s,border-color .3s}
         .tab-btn.active,.tab-btn:hover{background:var(--yellow);border-color:var(--yellow)}
         
+        /* FAQ */
         .faq-section{background:#FAFAFA;border-top:1px solid #eee;border-bottom:1px solid #eee}
         .faq-container{max-width:800px;margin:0 auto}
-        details{background:#fff;margin-bottom:15px;border-radius:12px;overflow:hidden;border:1px solid #eee}
+        details{background:#fff;margin-bottom:15px;border-radius:12px;box-shadow:0 2px 5px rgba(0,0,0,.02);overflow:hidden;border:1px solid #eee}
         summary{padding:20px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-family:'Fraunces',Georgia,serif;font-size:1.1rem}
         summary::after{content:'+';font-size:1.5rem;color:var(--text-light)}
         details[open] summary::after{content:'-';color:var(--red)}
         details[open] summary{border-bottom:1px solid #f0f0f0;color:var(--red)}
-        .faq-answer{padding:25px;line-height:1.6;color:var(--text-light)}
+        .faq-answer{padding:25px;line-height:1.6;color:var(--text-light);background:#fffcfc}
         
+        /* STORY/CTA */
         .story-section{background:#E3F2FD;overflow:hidden}
         .story-wrapper{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}
         .story-content h2{font-size:3rem;margin-bottom:20px}
         .story-content p{font-size:1.1rem;line-height:1.6;margin-bottom:30px}
-        .btn-cta-wa{background:#25D366;color:#fff;padding:15px 40px;border-radius:50px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 20px rgba(37,211,102,.3);transition:.3s}
-        .btn-cta-wa:hover{transform:translateY(-3px)}
+        .btn-cta-wa{background:#25D366;color:#fff;padding:15px 40px;border-radius:50px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 20px rgba(37,211,102,.3)}
         .story-img img{width:100%;max-width:600px;aspect-ratio:4/3;border-radius:30% 70% 70% 30%/30% 30% 70% 70%;box-shadow:0 20px 40px rgba(0,0,0,.1);object-fit:cover}
         
+        /* FOOTER */
         footer{background:#fff;padding:80px 0 30px}
         .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px}
         .footer-col h4{margin-bottom:25px;font-size:1.1rem}
         .footer-col p{color:#666;line-height:1.6;max-width:250px;margin-top:20px}
         .footer-col ul{list-style:none}
         .footer-col ul li{margin-bottom:12px;color:var(--text-light);font-size:.95rem}
-        .social-icons a{width:40px;height:40px;background:#f5f5f5;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;margin-right:10px;transition:.3s;color:var(--text-dark)}
+        .social-icons a{width:40px;height:40px;background:#f5f5f5;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;margin-right:10px;transition:background .3s,color .3s;color:var(--text-dark)}
         .social-icons a:hover{background:var(--text-dark);color:#fff}
         .footer-bottom{text-align:center;font-size:.9rem;color:#999;border-top:1px solid #eee;padding-top:20px}
         
-        .cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:2000;display:none;opacity:0;transition:.3s}
+        /* CART */
+        .cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:2000;display:none;opacity:0;transition:opacity .3s}
         .cart-overlay.active{display:block;opacity:1}
         .cart-sidebar{position:fixed;top:0;right:-400px;width:350px;height:100%;background:#fff;z-index:2001;padding:25px;box-shadow:-5px 0 30px rgba(0,0,0,.1);transition:right .4s;display:flex;flex-direction:column}
         .cart-sidebar.active{right:0}
         .cart-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:20px;margin-bottom:20px}
         .cart-header button{cursor:pointer;font-size:1.5rem;background:0 0;border:none}
-        .cart-items-container{flex:1;overflow-y:auto}
+        .cart-items-container{flex:1;overflow-y:auto;padding-right:5px}
         .empty-cart{text-align:center;color:#999;margin-top:50px}
         .cart-item{display:flex;gap:15px;margin-bottom:20px;border-bottom:1px solid #f9f9f9;padding-bottom:15px}
         .cart-item img{width:70px;height:70px;object-fit:cover;border-radius:10px}
@@ -472,51 +495,55 @@
         .cart-remove:hover{color:var(--red)}
         .cart-footer{border-top:1px solid #eee;padding-top:25px;margin-top:auto}
         .cart-summary-row{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:12px;color:#666}
-        .cart-total-row{display:flex;justify-content:space-between;font-weight:800;font-size:1.3rem;margin:15px 0 25px;color:var(--text-dark);border-top:2px dashed #eee;padding-top:15px}
-        .btn-checkout{width:100%;padding:16px;background:var(--text-dark);color:#fff;border:none;border-radius:50px;font-weight:700;cursor:pointer;display:flex;justify-content:center;gap:10px;transition:.3s}
+        .cart-total-row{display:flex;justify-content:space-between;font-weight:800;font-size:1.3rem;margin-top:15px;margin-bottom:25px;color:var(--text-dark);border-top:2px dashed #eee;padding-top:15px}
+        .btn-checkout{width:100%;padding:16px;background:var(--text-dark);color:#fff;border:none;border-radius:50px;font-weight:700;cursor:pointer;display:flex;justify-content:center;gap:10px;font-size:1rem;transition:background .3s;margin-top:10px}
         .btn-checkout:hover{background:var(--red)}
         
+        /* CHECKOUT */
         .checkout-page{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:3000;overflow-y:auto;display:none;padding:40px 20px}
         .checkout-page.active{display:block}
         .checkout-container{max-width:600px;margin:0 auto;padding-bottom:50px}
         .checkout-header{display:flex;align-items:center;gap:20px;margin-bottom:40px;border-bottom:1px solid #eee;padding-bottom:20px}
         .btn-back{font-size:1.5rem;cursor:pointer;background:0 0;border:none}
         .form-group{margin-bottom:25px}
-        .form-label{display:block;font-weight:700;margin-bottom:10px}
-        .form-input{width:100%;padding:15px;border:1px solid #ddd;border-radius:12px;font-size:1rem;transition:.3s}
-        .form-input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 4px rgba(68,138,255,.1)}
-        .order-summary h3{margin-bottom:15px}
+        .form-label{display:block;font-weight:700;margin-bottom:10px;font-size:.95rem}
+        .form-input{width:100%;padding:15px;border:1px solid #ddd;border-radius:12px;font-family:'Montserrat',sans-serif;font-size:1rem;outline:none;transition:border-color .3s,box-shadow .3s}
+        .form-input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(68,138,255,.1)}
+        .order-summary h3{margin-bottom:15px;font-size:1.1rem}
         .payment-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-bottom:30px}
-        .payment-label{border:2px solid #eee;border-radius:15px;padding:20px;cursor:pointer;text-align:center;font-weight:600;transition:.3s;display:flex;flex-direction:column;align-items:center;gap:8px}
+        .payment-label{border:2px solid #eee;border-radius:15px;padding:20px;cursor:pointer;text-align:center;font-weight:600;transition:border-color .3s,background .3s;display:flex;flex-direction:column;align-items:center;gap:8px}
         .payment-label i{font-size:1.5rem}
         .payment-radio:checked+.payment-label{border-color:var(--green);background:rgba(105,240,174,.1)}
         .payment-radio{display:none}
-        .btn-confirm{width:100%;padding:20px;background:#25D366;color:#fff;border:none;border-radius:50px;font-weight:800;font-size:1.1rem;cursor:pointer;display:flex;justify-content:center;gap:10px;margin-top:20px;transition:.3s}
-        .btn-confirm:hover{background:#1ebc57}
+        .btn-confirm{width:100%;padding:20px;background:#25D366;color:#fff;border:none;border-radius:50px;font-weight:800;font-size:1.1rem;cursor:pointer;display:flex;justify-content:center;gap:10px;margin-top:20px;transition:background .3s,transform .3s}
+        .btn-confirm:hover{background:#1ebc57;transform:translateY(-3px)}
         .btn-confirm i{font-size:1.3rem}
         
-        .payment-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:4000;display:none;align-items:center;justify-content:center}
-        .payment-modal-overlay.open{display:flex}
+        /* PAYMENT MODAL */
+        .payment-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:4000;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+        .payment-modal-overlay.open{display:flex;opacity:1}
         .payment-modal-box{background:#fff;width:90%;max-width:450px;border-radius:25px;padding:40px;text-align:center}
         .payment-modal-box h3{margin-bottom:15px}
-        .pm-timer{background:#ffebee;color:var(--red);display:inline-block;padding:10px 20px;border-radius:50px;font-weight:800;margin-bottom:15px}
+        .pm-timer{background:#ffebee;color:var(--red);display:inline-block;padding:10px 20px;border-radius:50px;font-weight:800;margin-bottom:15px;font-size:1rem;letter-spacing:1px}
         .pm-total-label{font-size:.9rem;color:#666}
-        .pm-total-amount{font-family:'Fraunces',Georgia,serif;font-size:2.5rem;font-weight:800;margin:10px 0 30px}
-        .pm-display-area{background:#f9f9f9;padding:30px;border-radius:20px;margin-bottom:30px;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed #ddd}
-        .pm-qr-img{max-width:220px}
-        .pm-bank-name{font-weight:700;color:#666}
+        .pm-total-amount{font-family:'Fraunces',Georgia,serif;font-size:2.5rem;font-weight:800;color:var(--text-dark);margin:10px 0 30px}
+        .pm-display-area{background:#f9f9f9;padding:30px;border-radius:20px;margin-bottom:30px;display:flex;align-items:center;justify-content:center;min-height:250px;flex-direction:column;border:2px dashed #ddd}
+        .pm-qr-img{width:100%;max-width:220px}
+        .pm-bank-name{font-weight:700;color:#666;margin-bottom:5px}
         .pm-bank-info{font-size:1.8rem;font-weight:800;color:var(--blue);letter-spacing:2px;margin:10px 0}
-        .pm-copy-btn{margin-top:15px;cursor:pointer;text-decoration:underline;font-weight:600}
+        .pm-copy-btn{font-size:.9rem;margin-top:15px;cursor:pointer;color:var(--text-dark);text-decoration:underline;font-weight:600}
         .pm-note{font-size:.85rem;color:#777;margin-bottom:20px}
         
+        /* FLOATING BUTTONS */
         .floating-buttons-container{position:fixed;bottom:30px;right:30px;display:flex;flex-direction:column;align-items:center;gap:15px;z-index:999}
-        .back-to-top{width:50px;height:50px;background:var(--text-dark);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:.3s;border:none;cursor:pointer}
-        .back-to-top.show{opacity:1;visibility:visible}
-        .back-to-top:hover{background:var(--red);transform:scale(1.1)}
-        .wa-float{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 5px 25px rgba(37,211,102,.5);transition:.3s;position:relative}
+        .back-to-top{width:50px;height:50px;background:var(--text-dark);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 15px rgba(0,0,0,.2);opacity:0;visibility:hidden;transition:all .3s;transform:translateY(20px);border:none;cursor:pointer}
+        .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+        .back-to-top:hover{background:var(--red);transform:translateY(-5px) scale(1.1)}
+        .wa-float{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 5px 25px rgba(37,211,102,.5);transition:all .3s;position:relative}
         .wa-float:hover{transform:scale(1.15)}
         .wa-badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;width:22px;height:22px;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
         
+        /* MOBILE RESPONSIVE */
         @media(max-width:900px){
             .about-grid,.story-wrapper,.footer-grid{grid-template-columns:1fr}
             .about-text h2{font-size:2rem}
@@ -526,94 +553,134 @@
             .grid-4{grid-template-columns:1fr 1fr;padding:0 20px}
             .bs-header{flex-direction:column;align-items:flex-start;gap:15px}
             .story-content h2{font-size:2rem}
-            .story-img img{max-width:90%;margin:0 auto}
+            .story-img img{max-width:90%;margin:0 auto;display:block}
             .footer-grid{gap:30px}
             .cart-sidebar{width:100%;right:-100%}
-            .floating-buttons-container{bottom:20px;right:20px}
+            .cart-sidebar.active{right:0}
+            .floating-buttons-container{bottom:20px;right:20px;gap:12px}
             .back-to-top{width:45px;height:45px;font-size:1.3rem}
             .wa-float{width:55px;height:55px;font-size:1.6rem}
             .payment-options{grid-template-columns:1fr}
         }
-        @media(max-width:600px){.grid-4{grid-template-columns:1fr}}
+        @media(max-width:600px){
+            .grid-4{grid-template-columns:1fr}
+        }
     </style>
 
     <!-- ICONS (DEFERRED) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"></noscript>
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT (DEFERRED) -->
     <script defer>
         let cart=[],subtotal=0,tax=0,grandTotal=0,orderData={};
         const backToTopBtn=document.getElementById('backToTop');
         
-        window.addEventListener('scroll',()=>{backToTopBtn.classList.toggle('show',window.scrollY>300)},{passive:true});
-        backToTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+        window.addEventListener('scroll',()=>{
+            backToTopBtn.classList.toggle('show',window.scrollY>300);
+        },{passive:true});
+        
+        backToTopBtn.addEventListener('click',e=>{
+            e.preventDefault();
+            window.scrollTo({top:0,behavior:'smooth'});
+        });
         
         function toggleCart(){
             document.querySelector('.cart-overlay').classList.toggle('active');
             document.getElementById('cartSidebar').classList.toggle('active');
         }
+        
         function toggleMobileMenu(){
             document.getElementById('mobileMenu').classList.toggle('active');
             document.getElementById('menuOverlay').classList.toggle('active');
         }
+        
         function addToCart(btn,name,price,img){
             const t=btn.innerText;
-            btn.innerText="✓";btn.style.cssText="background:var(--text-dark);color:white";
+            btn.innerText="✓";
+            btn.style.cssText="background:var(--text-dark);color:white";
             setTimeout(()=>{btn.innerText=t;btn.style.cssText=""},1000);
-            cart.push({name,price,img});calculateTotals();updateCartUI();
+            cart.push({name,price,img});
+            calculateTotals();
+            updateCartUI();
             if(!document.getElementById('cartSidebar').classList.contains('active'))toggleCart();
         }
-        function removeFromCart(i){cart.splice(i,1);calculateTotals();updateCartUI()}
-        function calculateTotals(){subtotal=cart.reduce((s,i)=>s+i.price,0);tax=subtotal*.1;grandTotal=subtotal+tax}
+        
+        function removeFromCart(i){
+            cart.splice(i,1);
+            calculateTotals();
+            updateCartUI();
+        }
+        
+        function calculateTotals(){
+            subtotal=cart.reduce((s,i)=>s+i.price,0);
+            tax=subtotal*.1;
+            grandTotal=subtotal+tax;
+        }
+        
         function updateCartUI(){
             const c=document.getElementById('cart-items'),b=document.getElementById('cart-count');
-            b.innerText=cart.length;b.classList.toggle('show',cart.length>0);
-            c.innerHTML=cart.length?cart.map((i,x)=>`<div class="cart-item"><img src="${i.img}" alt="${i.name}" width="70" height="70" loading="lazy"><div class="cart-item-details"><div class="cart-item-title">${i.name}</div><div class="cart-item-price">Rp ${i.price.toLocaleString('id-ID')}</div></div><div class="cart-remove" onclick="removeFromCart(${x})">&times;</div></div>`).join(''):'<p class="empty-cart">Keranjang masih kosong.</p>';
+            b.innerText=cart.length;
+            b.classList.toggle('show',cart.length>0);
+            c.innerHTML=cart.length?cart.map((i,x)=>`<div class="cart-item"><img src="${i.img}" alt="${i.name}" width="70" height="70"><div class="cart-item-details"><div class="cart-item-title">${i.name}</div><div class="cart-item-price">Rp ${i.price.toLocaleString('id-ID')}</div></div><div class="cart-remove" onclick="removeFromCart(${x})">&times;</div></div>`).join(''):'<p class="empty-cart">Keranjang masih kosong.</p>';
             document.getElementById('cart-subtotal').innerText='Rp '+subtotal.toLocaleString('id-ID');
             document.getElementById('cart-tax').innerText='Rp '+tax.toLocaleString('id-ID');
             document.getElementById('cart-grand-total').innerText='Rp '+grandTotal.toLocaleString('id-ID');
         }
+        
         function openCheckoutPage(){
             if(!cart.length){alert("Keranjang masih kosong!");return}
-            toggleCart();document.getElementById('checkoutPage').classList.add('active');
+            toggleCart();
+            document.getElementById('checkoutPage').classList.add('active');
             document.getElementById('checkout-subtotal').innerText='Rp '+subtotal.toLocaleString('id-ID');
             document.getElementById('checkout-tax').innerText='Rp '+tax.toLocaleString('id-ID');
             document.getElementById('checkout-total').innerText='Rp '+grandTotal.toLocaleString('id-ID');
         }
+        
         function closeCheckoutPage(){document.getElementById('checkoutPage').classList.remove('active')}
+        
         function processOrder(){
             const n=document.getElementById('cust-name').value,a=document.getElementById('cust-address').value,p=document.getElementById('cust-phone').value,m=document.querySelector('input[name="payment"]:checked').value;
             if(!n||!a||!p){alert("Mohon lengkapi data diri!");return}
-            orderData={name:n,address:a,phone:p,paymentMethod:m};showPaymentModal(m);
+            orderData={name:n,address:a,phone:p,paymentMethod:m};
+            showPaymentModal(m);
         }
+        
         function showPaymentModal(m){
             document.getElementById('checkoutPage').classList.remove('active');
             const d=document.getElementById('pm-display-area');
             document.getElementById('pm-amount').innerText='Rp '+grandTotal.toLocaleString('id-ID');
-            d.innerHTML=m==='QRIS'?'<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="pm-qr-img" alt="QRIS" width="200" height="200"><p style="margin-top:10px;font-weight:600">Scan QRIS di atas</p>':m==='Transfer Bank'?'<div class="pm-bank-name">BANK BCA</div><div class="pm-bank-info">8800 9922 1100</div><div style="font-size:.9rem">a.n TiaBakery Official</div><div class="pm-copy-btn" onclick="navigator.clipboard.writeText(\'88009922110\');alert(\'Disalin!\')">Salin Nomor</div>':'<i class="ri-hand-coin-line" style="font-size:4rem;color:var(--green)"></i><p style="margin-top:10px;font-weight:600">Bayar saat kurir sampai.</p>';
-            document.getElementById('paymentModalOverlay').classList.add('open');startCountdown();
+            d.innerHTML=m==='QRIS'?'<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="pm-qr-img" alt="QRIS" width="200" height="200"><p style="margin-top:10px;font-weight:600">Scan QRIS di atas</p>':m==='Transfer Bank'?'<div class="pm-bank-name">BANK BCA</div><div class="pm-bank-info">8800 9922 1100</div><div style="margin-top:5px;font-size:.9rem">a.n TiaBakery Official</div><div class="pm-copy-btn" onclick="alert(\'Nomor disalin!\')">Salin Nomor</div>':'<i class="ri-hand-coin-line" style="font-size:4rem;color:var(--green)"></i><p style="margin-top:10px;font-weight:600">Bayar saat kurir sampai.</p>';
+            document.getElementById('paymentModalOverlay').classList.add('open');
+            startCountdown();
         }
+        
         function startCountdown(){
-            let d=86400;const t=document.getElementById('countdown-timer'),i=setInterval(()=>{
+            let d=86400;
+            const t=document.getElementById('countdown-timer'),i=setInterval(()=>{
                 const h=Math.floor(d/3600),m=Math.floor(d%3600/60),s=d%60;
                 t.innerText=`${String(h).padStart(2,'0')} : ${String(m).padStart(2,'0')} : ${String(s).padStart(2,'0')}`;
                 if(--d<0){clearInterval(i);t.innerText="WAKTU HABIS"}
             },1000);
         }
+        
         function finalizeOrderToWA(){
             let m=`Halo TiaBakery, saya konfirmasi pesanan:\n\n*DATA PEMBELI*\nNama: ${orderData.name}\nAlamat: ${orderData.address}\nNo. HP: ${orderData.phone}\n\n*RINCIAN PESANAN*\n`;
             cart.forEach((i,x)=>{m+=`${x+1}. ${i.name} - Rp ${i.price.toLocaleString('id-ID')}\n`});
-            m+=`\nSubtotal: Rp ${subtotal.toLocaleString('id-ID')}\nPajak: Rp ${tax.toLocaleString('id-ID')}\n*TOTAL: Rp ${grandTotal.toLocaleString('id-ID')}*\n\nMetode: *${orderData.paymentMethod}*`;
+            m+=`\nSubtotal: Rp ${subtotal.toLocaleString('id-ID')}\nPajak (10%): Rp ${tax.toLocaleString('id-ID')}\n*TOTAL BAYAR: Rp ${grandTotal.toLocaleString('id-ID')}*\n\nMetode: *${orderData.paymentMethod}*\n\nMohon diproses. Terima kasih!`;
             window.open(`https://wa.me/62895639068080?text=${encodeURIComponent(m)}`,'_blank');
             document.getElementById('paymentModalOverlay').classList.remove('open');
             cart=[];calculateTotals();updateCartUI();
         }
+        
         document.querySelectorAll('.tab-btn').forEach(t=>{
             t.addEventListener('click',()=>{
                 document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-                t.classList.add('active');const f=t.dataset.filter;
-                document.querySelectorAll('.menu-item').forEach(i=>{i.style.display=(f==='all'||f===i.dataset.category)?'block':'none'});
+                t.classList.add('active');
+                const f=t.dataset.filter;
+                document.querySelectorAll('.menu-item').forEach(i=>{
+                    i.style.display=(f==='all'||f===i.dataset.category)?'block':'none';
+                });
             });
         });
     </script>
