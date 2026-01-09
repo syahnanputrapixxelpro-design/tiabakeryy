@@ -262,6 +262,27 @@
             /* REVISI FONT SIZE HERO MOBILE DI SINI */
             .hero-text h1 { font-size: 2.2rem; }
 
+            /* PERBAIKAN TOMBOL SIMETRIS MOBILE (UPDATED) */
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                gap: 15px;
+                margin-top: 10px;
+                padding: 0 10px;
+            }
+
+            /* INI BAGIAN KUNCI AGAR TOMBOL SIMETRIS (SAMA LEBAR) */
+            .hero-buttons .btn-primary, 
+            .hero-buttons .btn-secondary {
+                flex: 1;              /* Membuat kedua tombol mengisi ruang sama rata */
+                justify-content: center; /* Teks di tengah */
+                text-align: center;
+                max-width: 160px;     /* Membatasi agar tidak terlalu lebar */
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
             /* REVISI FONT SIZE ABOUT MOBILE DI SINI */
             .about-text h2 { font-size: 2rem; }
 
