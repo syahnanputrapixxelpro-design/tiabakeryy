@@ -90,9 +90,20 @@
         #cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
         #cart-count.show { opacity: 1; }
 
-        /* HERO & SECTIONS */
-        .hero-new { background-color: var(--bg-warm); padding: 30px 0; position: relative; overflow: hidden; }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; min-height: 450px; }
+        /* HERO & SECTIONS (REVISI PADDING HERO DISINI) */
+        .hero-new { 
+            background-color: var(--bg-warm); 
+            padding: 10px 0; /* Dikurangi dari 30px menjadi 10px */
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            align-items: center; 
+            gap: 40px; 
+            min-height: 350px; /* Dikurangi dari 450px agar lebih pendek */
+        }
         .hero-text { z-index: 2; position: relative; }
         .hero-badge { display: inline-block; background: var(--yellow-soft); color: #Fbc02d; padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid var(--yellow); }
         .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
@@ -233,7 +244,13 @@
             .nav-menu, .btn-nav-wa { display: none; }
             .hamburger-btn { display: block; }
             
-            .hero-grid { grid-template-columns: 1fr; text-align: center; padding: 40px 20px; }
+            /* REVISI PADDING MOBILE */
+            .hero-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                padding: 20px 20px; /* Dikurangi dari 40px menjadi 20px */
+            }
+            
             .hero-visual { margin-top: 40px; width: 100%; height: 350px; }
             .blob-bg { width: 300px; height: 300px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
             .hero-img-main { max-width: 280px; }
@@ -647,4 +664,3 @@
 
 </body>
 </html>
-
