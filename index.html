@@ -35,12 +35,13 @@
     <meta name="twitter:description" content="Roti artisan dengan bahan 100% alami dan Halal.">
     <meta name="twitter:image" content="https://tiabakery.com/assets/img/twitter-card.jpg">
     
-    <!-- ==================== PRELOAD LCP IMAGE ==================== -->
-    <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp" fetchpriority="high">
+    <!-- ==================== PRELOAD LCP IMAGE (CRITICAL) ==================== -->
+    <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp" type="image/webp" fetchpriority="high">
     
-    <!-- ==================== PRECONNECT (CRITICAL) ==================== -->
+    <!-- ==================== PRECONNECT ==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
     
     <!-- ==================== CRITICAL CSS (INLINE) ==================== -->
     <style>
@@ -50,8 +51,12 @@
         body{background-color:var(--bg-white);color:var(--text-dark);font-family:'Montserrat',system-ui,-apple-system,sans-serif;overflow-x:hidden;width:100%}
         h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;color:var(--text-dark)}
         a{text-decoration:none;color:inherit;transition:color .3s}
-        img{max-width:100%;height:auto;display:block}
         .container{max-width:var(--container-width);margin:0 auto;padding:0 20px}
+        
+        /* IMAGE OPTIMIZATION - CRITICAL */
+        img{max-width:100%;height:auto;display:block}
+        .img-lazy{background:#f5f5f5;background:linear-gradient(90deg,#f5f5f5 25%,#eee 50%,#f5f5f5 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
         
         /* NAVBAR - CRITICAL */
         nav{background:rgba(255,255,255,.95);padding:12px 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.05)}
@@ -81,7 +86,11 @@
         .btn-secondary{padding:15px 35px;background:#fff;color:var(--text-dark);border:2px solid #eee;border-radius:50px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
         .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
         .blob-bg{position:absolute;width:450px;height:450px;background:#FFE082;border-radius:40% 60% 70% 30%/40% 50% 60% 50%;z-index:1;opacity:.5}
-        .hero-img-main{position:relative;z-index:2;width:100%;height:auto;max-width:500px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.15));border-radius:20px;aspect-ratio:1/1;object-fit:cover}
+        
+        /* HERO IMAGE - OPTIMIZED */
+        .hero-img-wrapper{position:relative;z-index:2;width:100%;max-width:500px;aspect-ratio:1/1}
+        .hero-img-main{width:100%;height:100%;object-fit:cover;filter:drop-shadow(0 20px 30px rgba(0,0,0,.15));border-radius:20px}
+        
         .float-item{position:absolute;background:#fff;padding:10px 20px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,.1);z-index:3;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
         .float-1{top:10%;right:0;border-left:5px solid var(--blue)}
         .float-2{bottom:15%;left:0;border-left:5px solid var(--green)}
@@ -94,7 +103,7 @@
             .hero-text h1{font-size:2.2rem}
             .hero-visual{margin-top:40px;height:350px}
             .blob-bg{width:300px;height:300px;left:50%;top:50%;transform:translate(-50%,-50%)}
-            .hero-img-main{max-width:280px}
+            .hero-img-wrapper{max-width:280px;margin:0 auto}
             .hero-buttons{justify-content:center}
             .hero-buttons .btn-primary,.hero-buttons .btn-secondary{flex:1;max-width:160px;justify-content:center;padding:15px 10px}
         }
@@ -105,12 +114,8 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- ==================== JSON-LD STRUCTURED DATA ==================== -->
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Bakery","name":"TiaBakery","description":"TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari dengan bahan 100% Halal dan alami.","url":"https://tiabakery.com","logo":"https://tiabakery.com/assets/img/logo.png","telephone":"+62895639068080","email":"hello@tiabakery.com","address":{"@type":"PostalAddress","streetAddress":"Jl. Bakery No. 88","addressLocality":"Jakarta","addressRegion":"DKI Jakarta","postalCode":"10110","addressCountry":"ID"},"geo":{"@type":"GeoCoordinates","latitude":"-6.2088","longitude":"106.8456"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"08:00","closes":"22:00"}],"priceRange":"Rp 8.000 - Rp 150.000","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1250","bestRating":"5","worstRating":"1"},"sameAs":["https://www.instagram.com/tiabakery","https://www.facebook.com/tiabakery","https://www.tiktok.com/@tiabakery"]}
-    </script>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Apakah TiaBakery sudah bersertifikat Halal?","acceptedAnswer":{"@type":"Answer","text":"Ya, 100%. Kami hanya menggunakan bahan-bahan Halal yang tersertifikasi."}},{"@type":"Question","name":"Berapa lama roti TiaBakery tahan di suhu ruang?","acceptedAnswer":{"@type":"Answer","text":"Rata-rata tahan 3-4 hari di suhu ruang karena tanpa pengawet."}},{"@type":"Question","name":"Apakah TiaBakery melayani pengiriman ke luar kota?","acceptedAnswer":{"@type":"Answer","text":"Roti basah hanya dalam kota. Cookies dan Hampers bisa ke seluruh Indonesia."}},{"@type":"Question","name":"Bagaimana cara memesan Custom Cake di TiaBakery?","acceptedAnswer":{"@type":"Answer","text":"Hubungi WhatsApp kami H-3 sebelum acara untuk request khusus."}}]}
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"TiaBakery","description":"TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari dengan bahan 100% Halal dan alami.","url":"https://tiabakery.com","logo":"https://tiabakery.com/assets/img/logo.png","telephone":"+62895639068080","email":"hello@tiabakery.com","address":{"@type":"PostalAddress","streetAddress":"Jl. Bakery No. 88","addressLocality":"Jakarta","addressRegion":"DKI Jakarta","postalCode":"10110","addressCountry":"ID"},"geo":{"@type":"GeoCoordinates","latitude":"-6.2088","longitude":"106.8456"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"08:00","closes":"22:00"}],"priceRange":"Rp 8.000 - Rp 150.000","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1250","bestRating":"5","worstRating":"1"},"sameAs":["https://www.instagram.com/tiabakery","https://www.facebook.com/tiabakery","https://www.tiktok.com/@tiabakery"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Apakah TiaBakery sudah bersertifikat Halal?","acceptedAnswer":{"@type":"Answer","text":"Ya, 100%. Kami hanya menggunakan bahan-bahan Halal yang tersertifikasi."}},{"@type":"Question","name":"Berapa lama roti TiaBakery tahan di suhu ruang?","acceptedAnswer":{"@type":"Answer","text":"Rata-rata tahan 3-4 hari di suhu ruang karena tanpa pengawet."}},{"@type":"Question","name":"Apakah TiaBakery melayani pengiriman ke luar kota?","acceptedAnswer":{"@type":"Answer","text":"Roti basah hanya dalam kota. Cookies dan Hampers bisa ke seluruh Indonesia."}},{"@type":"Question","name":"Bagaimana cara memesan Custom Cake di TiaBakery?","acceptedAnswer":{"@type":"Answer","text":"Hubungi WhatsApp kami H-3 sebelum acara untuk request khusus."}}]}</script>
 </head>
 <body>
     <!-- MOBILE MENU OVERLAY -->
@@ -191,7 +196,7 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- ==================== MAIN CONTENT ==================== -->
     <main>
         <!-- HERO SECTION -->
         <section class="hero-new">
@@ -207,7 +212,24 @@
                 </div>
                 <div class="hero-visual">
                     <div class="blob-bg"></div>
-                    <img src="assets/img/img dapur/proses-pembuatan-roti.webp" class="hero-img-main" alt="TiaBakery Signature Cake - Roti artisan premium" width="500" height="500" fetchpriority="high">
+                    <!-- HERO IMAGE - OPTIMIZED dengan srcset -->
+                    <div class="hero-img-wrapper">
+                        <img 
+                            src="assets/img/img dapur/proses-pembuatan-roti.webp" 
+                            srcset="
+                                assets/img/img dapur/proses-pembuatan-roti-280.webp 280w,
+                                assets/img/img dapur/proses-pembuatan-roti-400.webp 400w,
+                                assets/img/img dapur/proses-pembuatan-roti.webp 500w
+                            "
+                            sizes="(max-width: 900px) 280px, 500px"
+                            class="hero-img-main" 
+                            alt="TiaBakery Signature Cake - Roti artisan premium fresh from oven" 
+                            width="500" 
+                            height="500" 
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+                    </div>
                     <div class="float-item float-1"><i class="ri-star-fill" style="color:var(--yellow)"></i> 4.9 Rating</div>
                     <div class="float-item float-2"><i class="ri-truck-fill" style="color:var(--green)"></i> Free Delivery</div>
                 </div>
@@ -218,7 +240,26 @@
         <section id="about" class="section-padding container">
             <div class="about-grid">
                 <div class="about-img">
-                    <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef TiaBakery membuat roti artisan" width="600" height="450" loading="lazy">
+                    <!-- ABOUT IMAGE - OPTIMIZED -->
+                    <picture>
+                        <source 
+                            type="image/webp" 
+                            srcset="
+                                assets/img/img dapur/kuedipanggangan-400.webp 400w,
+                                assets/img/img dapur/kuedipanggangan.webp 600w
+                            "
+                            sizes="(max-width: 900px) 85vw, 50vw"
+                        >
+                        <img 
+                            src="assets/img/img dapur/kuedipanggangan.webp" 
+                            alt="Chef TiaBakery membuat roti artisan dengan bahan premium" 
+                            width="600" 
+                            height="450" 
+                            loading="lazy"
+                            decoding="async"
+                            class="about-img-main"
+                        >
+                    </picture>
                     <div class="about-deco"></div>
                 </div>
                 <div class="about-text">
@@ -240,27 +281,91 @@
                     <a href="product.html" class="see-all">Lihat Semua <i class="ri-arrow-right-line"></i></a>
                 </div>
                 <div class="grid-4">
+                    <!-- PRODUCT 1 -->
                     <article class="product-card">
-                        <div class="pc-img"><img src="assets/img/kue/chocolavabo.webp" alt="Choco Lava Bomb" width="300" height="300" loading="lazy"></div>
+                        <div class="pc-img">
+                            <img 
+                                src="assets/img/kue/chocolavabo.webp" 
+                                srcset="
+                                    assets/img/kue/chocolavabo-150.webp 150w,
+                                    assets/img/kue/chocolavabo-250.webp 250w,
+                                    assets/img/kue/chocolavabo.webp 300w
+                                "
+                                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                                alt="Choco Lava Bomb - Pastry cokelat lumer premium" 
+                                width="300" 
+                                height="300" 
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
                         <h4 class="pc-title">Choco Lava Bomb</h4>
                         <span class="pc-price">Rp 45.000</span>
                         <button class="btn-cart" onclick="addToCart(this,'Choco Lava Bomb',45000,'assets/img/kue/chocolavabo.webp')">Beli</button>
                     </article>
+                    <!-- PRODUCT 2 -->
                     <article class="product-card">
-                        <div class="pc-img"><img src="assets/img/kue/crossain.webp" alt="French Butter Croissant" width="300" height="300" loading="lazy"></div>
+                        <div class="pc-img">
+                            <img 
+                                src="assets/img/kue/crossain.webp" 
+                                srcset="
+                                    assets/img/kue/crossain-150.webp 150w,
+                                    assets/img/kue/crossain-250.webp 250w,
+                                    assets/img/kue/crossain.webp 300w
+                                "
+                                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                                alt="French Butter Croissant - Croissant autentik dengan mentega Prancis" 
+                                width="300" 
+                                height="300" 
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
                         <h4 class="pc-title">French Butter Croissant</h4>
                         <span class="pc-price">Rp 25.000</span>
                         <button class="btn-cart" onclick="addToCart(this,'French Butter Croissant',25000,'assets/img/kue/croissan.webp')">Beli</button>
                     </article>
+                    <!-- PRODUCT 3 -->
                     <article class="product-card">
                         <span class="badge-vegan">VEGAN</span>
-                        <div class="pc-img"><img src="assets/img/kue/AvocadoToas.webp" alt="Avocado Toast Bread" width="300" height="300" loading="lazy"></div>
+                        <div class="pc-img">
+                            <img 
+                                src="assets/img/kue/AvocadoToas.webp" 
+                                srcset="
+                                    assets/img/kue/AvocadoToas-150.webp 150w,
+                                    assets/img/kue/AvocadoToas-250.webp 250w,
+                                    assets/img/kue/AvocadoToas.webp 300w
+                                "
+                                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                                alt="Avocado Toast Bread - Roti vegan dengan alpukat segar" 
+                                width="300" 
+                                height="300" 
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
                         <h4 class="pc-title">Avocado Toast Bread</h4>
                         <span class="pc-price">Rp 35.000</span>
                         <button class="btn-cart" onclick="addToCart(this,'Avocado Toast Bread',35000,'assets/img/kue/AvocadoToas.webp')">Beli</button>
                     </article>
+                    <!-- PRODUCT 4 -->
                     <article class="product-card">
-                        <div class="pc-img"><img src="assets/img/kue/KyotoMatchaRol.webp" alt="Kyoto Matcha Roll" width="300" height="300" loading="lazy"></div>
+                        <div class="pc-img">
+                            <img 
+                                src="assets/img/kue/KyotoMatchaRol.webp" 
+                                srcset="
+                                    assets/img/kue/KyotoMatchaRol-150.webp 150w,
+                                    assets/img/kue/KyotoMatchaRol-250.webp 250w,
+                                    assets/img/kue/KyotoMatchaRol.webp 300w
+                                "
+                                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                                alt="Kyoto Matcha Roll - Roll cake matcha premium dari Jepang" 
+                                width="300" 
+                                height="300" 
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
                         <h4 class="pc-title">Kyoto Matcha Roll</h4>
                         <span class="pc-price">Rp 50.000</span>
                         <button class="btn-cart" onclick="addToCart(this,'Kyoto Matcha Roll',50000,'assets/img/kue/KyotoMatchaRol.webp')">Beli</button>
@@ -283,43 +388,113 @@
                 <button class="tab-btn" data-filter="hampers" role="tab">Hampers</button>
             </div>
             <div class="grid-4" id="menu-grid">
+                <!-- MENU ITEM 1 -->
                 <article class="product-card menu-item" data-category="pastry">
-                    <div class="pc-img"><img src="assets/img/kue/MiniFruitTar.webp" alt="Mini Fruit Tart" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/MiniFruitTar.webp" 
+                            srcset="assets/img/kue/MiniFruitTar-150.webp 150w, assets/img/kue/MiniFruitTar-250.webp 250w, assets/img/kue/MiniFruitTar.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Mini Fruit Tart - Tart buah segar mini" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Mini Fruit Tart</h4><span class="pc-price">Rp 30.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Mini Fruit Tart',30000,'assets/img/kue/MiniFruitTar.webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 2 -->
                 <article class="product-card menu-item" data-category="pastry">
-                    <div class="pc-img"><img src="assets/img/kue/BlueberryCupcak.webp" alt="Blueberry Cupcake" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/BlueberryCupcak.webp" 
+                            srcset="assets/img/kue/BlueberryCupcak-150.webp 150w, assets/img/kue/BlueberryCupcak-250.webp 250w, assets/img/kue/BlueberryCupcak.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Blueberry Cupcake - Cupcake blueberry lembut" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Blueberry Cupcake</h4><span class="pc-price">Rp 15.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Blueberry Cupcake',15000,'assets/img/kue/blueberrycupcake.webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 3 -->
                 <article class="product-card menu-item" data-category="donat">
-                    <div class="pc-img"><img src="assets/img/kue/KampungPotatoDonu.webp" alt="Kampung Potato Donut" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/KampungPotatoDonu.webp" 
+                            srcset="assets/img/kue/KampungPotatoDonu-150.webp 150w, assets/img/kue/KampungPotatoDonu-250.webp 250w, assets/img/kue/KampungPotatoDonu.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Kampung Potato Donut - Donat kentang tradisional" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Kampung Potato Donut</h4><span class="pc-price">Rp 8.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Kampung Potato Donut',8000,'assets/img/kue/KampungPotatoDonu.webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 4 -->
                 <article class="product-card menu-item" data-category="donat">
-                    <div class="pc-img"><img src="assets/img/kue/ChocoBombolon.webp" alt="Choco Bomboloni" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/ChocoBombolon.webp" 
+                            srcset="assets/img/kue/ChocoBombolon-150.webp 150w, assets/img/kue/ChocoBombolon-250.webp 250w, assets/img/kue/ChocoBombolon.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Choco Bomboloni - Bomboloni isi cokelat" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Choco Bomboloni</h4><span class="pc-price">Rp 12.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Choco Bomboloni',12000,'assets/img/kue/ChocoBombolon .webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 5 -->
                 <article class="product-card menu-item" data-category="roti">
-                    <div class="pc-img"><img src="assets/img/kue/WholeWheatLoa.webp" alt="Whole Wheat Loaf" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/WholeWheatLoa.webp" 
+                            srcset="assets/img/kue/WholeWheatLoa-150.webp 150w, assets/img/kue/WholeWheatLoa-250.webp 250w, assets/img/kue/WholeWheatLoa.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Whole Wheat Loaf - Roti gandum sehat" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Whole Wheat Loaf</h4><span class="pc-price">Rp 40.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Whole Wheat Loaf',40000,'assets/img/kue/WholeWheatLoa.webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 6 -->
                 <article class="product-card menu-item" data-category="roti">
-                    <div class="pc-img"><img src="assets/img/kue/RotiSisirMenteg.webp" alt="Roti Sisir Mentega" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/RotiSisirMenteg.webp" 
+                            srcset="assets/img/kue/RotiSisirMenteg-150.webp 150w, assets/img/kue/RotiSisirMenteg-250.webp 250w, assets/img/kue/RotiSisirMenteg.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Roti Sisir Mentega - Roti sisir klasik" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Roti Sisir Mentega</h4><span class="pc-price">Rp 25.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Roti Sisir Mentega',25000,'assets/img/kue/RotiSisirMenteg.webp')">Beli</button>
                 </article>
+                <!-- MENU ITEM 7 - HAMPERS (External Image) -->
                 <article class="product-card menu-item" data-category="hampers">
-                    <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop" alt="Tias Gift Box" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=75&auto=format&fit=crop" 
+                            alt="Tias Gift Box - Hampers eksklusif untuk hadiah" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Tia's Gift Box</h4><span class="pc-price">Rp 150.000</span>
-                    <button class="btn-cart" onclick="addToCart(this,'Tias Gift Box',150000,'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500')">Beli</button>
+                    <button class="btn-cart" onclick="addToCart(this,'Tias Gift Box',150000,'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=75')">Beli</button>
                 </article>
+                <!-- MENU ITEM 8 -->
                 <article class="product-card menu-item" data-category="pastry">
-                    <div class="pc-img"><img src="assets/img/kue/RedVelvetSlic.webp" alt="Red Velvet Slice" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-img">
+                        <img 
+                            src="assets/img/kue/RedVelvetSlic.webp" 
+                            srcset="assets/img/kue/RedVelvetSlic-150.webp 150w, assets/img/kue/RedVelvetSlic-250.webp 250w, assets/img/kue/RedVelvetSlic.webp 300w"
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
+                            alt="Red Velvet Slice - Kue red velvet premium" 
+                            width="300" height="300" loading="lazy" decoding="async"
+                        >
+                    </div>
                     <h4 class="pc-title">Red Velvet Slice</h4><span class="pc-price">Rp 35.000</span>
                     <button class="btn-cart" onclick="addToCart(this,'Red Velvet Slice',35000,'assets/img/kue/RedVelvetSlic.webp')">Beli</button>
                 </article>
@@ -351,7 +526,12 @@
                     </a>
                 </div>
                 <div class="story-img">
-                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1472&auto=format&fit=crop" alt="Suasana hangat TiaBakery" width="600" height="450" loading="lazy">
+                    <!-- STORY IMAGE - OPTIMIZED -->
+                    <img 
+                        src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600&q=75&auto=format&fit=crop" 
+                        alt="Suasana hangat TiaBakery dengan roti fresh from oven" 
+                        width="600" height="450" loading="lazy" decoding="async"
+                    >
                 </div>
             </div>
         </section>
@@ -386,21 +566,21 @@
         </div>
     </footer>
 
-    <!-- FLOATING BUTTONS -->
+    <!-- ==================== FLOATING BUTTONS ==================== -->
     <div class="floating-buttons-container">
+        <!-- Back to Top - ATAS -->
         <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas" title="Kembali ke Atas">
             <i class="ri-arrow-up-line"></i>
         </button>
+        <!-- WhatsApp - BAWAH -->
         <a href="https://wa.me/62895639068080?text=Halo%20TiaBakery%2C%20saya%20ingin%20bertanya" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp" title="Chat WhatsApp">
             <i class="ri-whatsapp-line"></i>
             <span class="wa-badge">1</span>
         </a>
     </div>
 
-    <!-- NON-CRITICAL CSS (DEFERRED) -->
+    <!-- ==================== NON-CRITICAL CSS (DEFERRED) ==================== -->
     <style>
-        /* ==================== NON-CRITICAL STYLES ==================== */
-        
         /* MOBILE MENU */
         .menu-overlay-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:998;opacity:0;visibility:hidden;transition:opacity .3s}
         .menu-overlay-bg.active{opacity:1;visibility:visible}
@@ -420,7 +600,7 @@
         /* ABOUT */
         .about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
         .about-img{position:relative}
-        .about-img img{width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.1);position:relative;z-index:2;aspect-ratio:4/3;object-fit:cover}
+        .about-img-main{width:100%;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.1);position:relative;z-index:2;aspect-ratio:4/3;object-fit:cover}
         .about-text h2{font-size:2.5rem;margin-bottom:20px;line-height:1.2}
         .about-text p{line-height:1.8;color:var(--text-light);margin-bottom:20px}
         .about-deco{position:absolute;bottom:-20px;left:-20px;width:100%;height:100%;border:3px solid var(--text-dark);border-radius:20px;z-index:1}
@@ -434,9 +614,12 @@
         .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;padding:0 40px}
         .product-card{background:#fff;border-radius:16px;padding:15px;position:relative;box-shadow:0 5px 15px rgba(0,0,0,.03);transition:transform .3s,box-shadow .3s;border:1px solid rgba(0,0,0,.03);display:flex;flex-direction:column}
         .product-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,.08)}
-        .pc-img{height:200px;border-radius:12px;margin-bottom:15px;overflow:hidden;width:100%}
+        
+        /* PRODUCT IMAGE - OPTIMIZED with aspect-ratio */
+        .pc-img{height:200px;border-radius:12px;margin-bottom:15px;overflow:hidden;width:100%;background:#f5f5f5}
         .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-        .product-card:hover .pc-img img{transform:scale(1.1)}
+        .product-card:hover .pc-img img{transform:scale(1.05)}
+        
         .pc-title{font-weight:700;margin-bottom:5px;font-size:1.1rem;font-family:'Fraunces',Georgia,serif}
         .pc-price{color:var(--red);font-weight:700;margin-bottom:15px;display:block;margin-top:auto}
         .btn-cart{width:100%;padding:10px;border:2px solid var(--text-dark);background:0 0;border-radius:8px;font-weight:700;cursor:pointer;transition:background .3s,color .3s}
@@ -571,11 +754,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"></noscript>
 
-    <!-- JAVASCRIPT (DEFERRED) -->
+    <!-- ==================== JAVASCRIPT (DEFERRED) ==================== -->
     <script defer>
         let cart=[],subtotal=0,tax=0,grandTotal=0,orderData={};
         const backToTopBtn=document.getElementById('backToTop');
         
+        // Back to Top with passive listener
         window.addEventListener('scroll',()=>{
             backToTopBtn.classList.toggle('show',window.scrollY>300);
         },{passive:true});
@@ -622,7 +806,7 @@
             const c=document.getElementById('cart-items'),b=document.getElementById('cart-count');
             b.innerText=cart.length;
             b.classList.toggle('show',cart.length>0);
-            c.innerHTML=cart.length?cart.map((i,x)=>`<div class="cart-item"><img src="${i.img}" alt="${i.name}" width="70" height="70"><div class="cart-item-details"><div class="cart-item-title">${i.name}</div><div class="cart-item-price">Rp ${i.price.toLocaleString('id-ID')}</div></div><div class="cart-remove" onclick="removeFromCart(${x})">&times;</div></div>`).join(''):'<p class="empty-cart">Keranjang masih kosong.</p>';
+            c.innerHTML=cart.length?cart.map((i,x)=>`<div class="cart-item"><img src="${i.img}" alt="${i.name}" width="70" height="70" loading="lazy"><div class="cart-item-details"><div class="cart-item-title">${i.name}</div><div class="cart-item-price">Rp ${i.price.toLocaleString('id-ID')}</div></div><div class="cart-remove" onclick="removeFromCart(${x})">&times;</div></div>`).join(''):'<p class="empty-cart">Keranjang masih kosong.</p>';
             document.getElementById('cart-subtotal').innerText='Rp '+subtotal.toLocaleString('id-ID');
             document.getElementById('cart-tax').innerText='Rp '+tax.toLocaleString('id-ID');
             document.getElementById('cart-grand-total').innerText='Rp '+grandTotal.toLocaleString('id-ID');
@@ -650,7 +834,7 @@
             document.getElementById('checkoutPage').classList.remove('active');
             const d=document.getElementById('pm-display-area');
             document.getElementById('pm-amount').innerText='Rp '+grandTotal.toLocaleString('id-ID');
-            d.innerHTML=m==='QRIS'?'<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="pm-qr-img" alt="QRIS" width="200" height="200"><p style="margin-top:10px;font-weight:600">Scan QRIS di atas</p>':m==='Transfer Bank'?'<div class="pm-bank-name">BANK BCA</div><div class="pm-bank-info">8800 9922 1100</div><div style="margin-top:5px;font-size:.9rem">a.n TiaBakery Official</div><div class="pm-copy-btn" onclick="alert(\'Nomor disalin!\')">Salin Nomor</div>':'<i class="ri-hand-coin-line" style="font-size:4rem;color:var(--green)"></i><p style="margin-top:10px;font-weight:600">Bayar saat kurir sampai.</p>';
+            d.innerHTML=m==='QRIS'?'<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="pm-qr-img" alt="QRIS" width="200" height="200" loading="lazy"><p style="margin-top:10px;font-weight:600">Scan QRIS di atas</p>':m==='Transfer Bank'?'<div class="pm-bank-name">BANK BCA</div><div class="pm-bank-info">8800 9922 1100</div><div style="margin-top:5px;font-size:.9rem">a.n TiaBakery Official</div><div class="pm-copy-btn" onclick="navigator.clipboard.writeText(\'8800992211\');alert(\'Nomor disalin!\')">Salin Nomor</div>':'<i class="ri-hand-coin-line" style="font-size:4rem;color:var(--green)"></i><p style="margin-top:10px;font-weight:600">Bayar saat kurir sampai.</p>';
             document.getElementById('paymentModalOverlay').classList.add('open');
             startCountdown();
         }
@@ -673,6 +857,7 @@
             cart=[];calculateTotals();updateCartUI();
         }
         
+        // Tab Filter
         document.querySelectorAll('.tab-btn').forEach(t=>{
             t.addEventListener('click',()=>{
                 document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
