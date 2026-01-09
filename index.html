@@ -3,57 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Bahan 100% Halal dan alami. Pesan online sekarang!">
-    <meta name="keywords" content="TiaBakery, Roti Artisan, Bakery Jakarta, Kue Premium, Hampers Lebaran, Croissant Enak">
-    <meta name="author" content="TiaBakery">
-    
-    <meta property="og:title" content="TiaBakery - Kelembutan Cinta di Setiap Gigitan">
-    <meta property="og:description" content="Nikmati aneka roti, cake, dan pastry premium dari TiaBakery. Freshly baked everyday!">
-    <meta property="og:image" content="assets/img/img dapur/proses-pembuatan-roti.webp">
-    <meta property="og:type" content="website">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-
+    <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Pesan online sekarang!">
     <title>TiaBakery - Official Website</title>
     
+    <link rel="preload" as="image" href="assets/img/img dapur/proses-pembuatan-roti.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Bakery",
-      "name": "TiaBakery",
-      "image": "assets/img/img dapur/proses-pembuatan-roti.webp",
-      "description": "TiaBakery menyediakan roti artisan dan kue premium fresh from the oven.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Jl. Bakery No. 88",
-        "addressLocality": "Jakarta",
-        "addressCountry": "ID"
-      },
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "07:00",
-        "closes": "21:00"
-      },
-      "telephone": "+62895639068080"
-    }
-    </script>
 
     <style>
         /* --- STYLE DASAR --- */
@@ -67,7 +26,7 @@
         h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
-        img { max-width: 100%; height: auto; }
+        img { max-width: 100%; height: auto; display: block; } /* Display block mencegah layout shift kecil */
 
         /* NAVBAR */
         nav { 
@@ -87,7 +46,7 @@
         .nav-icon-btn { 
             width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; 
             display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); 
-            cursor: pointer; position: relative; 
+            cursor: pointer; position: relative; border: none;
         }
         .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
         
@@ -98,7 +57,7 @@
         }
         .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
 
-        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; background: none; border: none; }
         
         /* MOBILE MENU */
         .menu-overlay-bg {
@@ -159,7 +118,8 @@
         
         .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
         .blob-bg { position: absolute; width: 450px; height: 450px; background: #FFE082; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; z-index: 1; animation: morph 8s ease-in-out infinite; opacity: 0.5; }
-        .hero-img-main { position: relative; z-index: 2; width: 100%; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); animation: float-img 6s ease-in-out infinite; border-radius: 20px; }
+        /* LCP Optimization: Contain size to prevent shifts */
+        .hero-img-main { position: relative; z-index: 2; width: 100%; height: auto; max-width: 500px; aspect-ratio: 1/1; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); animation: float-img 6s ease-in-out infinite; border-radius: 20px; }
         .float-item { position: absolute; background: white; padding: 10px 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 3; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; animation: float-item 5s ease-in-out infinite; }
         .float-1 { top: 10%; right: 0; border-left: 5px solid var(--blue); animation-delay: 0s; }
         .float-2 { bottom: 15%; left: 0; border-left: 5px solid var(--green); animation-delay: 2s; }
@@ -175,7 +135,7 @@
         /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
         .about-img { position: relative; }
-        .about-img img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block; }
+        .about-img img { width: 100%; height: auto; aspect-ratio: 4/3; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block; object-fit: cover; }
         .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
         .about-text p { line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
         .about-deco { position: absolute; bottom: -20px; left: -20px; width: 100%; height: 100%; border: 3px solid var(--text-dark); border-radius: 20px; z-index: 1; }
@@ -212,7 +172,7 @@
         .story-wrapper { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
         .story-content h2 { font-size: 3rem; margin-bottom: 20px; }
         .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
-        .story-img img { width: 100%; max-width: 600px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
+        .story-img img { width: 100%; height: auto; aspect-ratio: 4/3; max-width: 600px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
 
         footer { background: white; padding: 80px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
@@ -268,7 +228,7 @@
         @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         /* --- FLOATING BUTTONS (OPTIMIZED) --- */
-        /* Back to Top - Posisi agak ke atas */
+        /* Back to Top */
         .back-to-top { 
             position: fixed; 
             bottom: 110px; /* Di atas WA */
@@ -293,7 +253,7 @@
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
         .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
 
-        /* WA Float - Posisi paling bawah (utama) dengan animasi Pulse */
+        /* WA Float */
         .wa-float { 
             position: fixed; 
             bottom: 30px; 
@@ -308,13 +268,12 @@
             justify-content: center; 
             font-size: 2rem; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.2); 
-            z-index: 999; /* Z-Index paling tinggi agar bisa diklik */
+            z-index: 999; 
             transition: 0.3s;
-            animation: pulse-green 2s infinite; /* Animasi Denyut */
+            animation: pulse-green 2s infinite; 
         }
         .wa-float:hover { transform: scale(1.1); }
 
-        /* Animasi Pulse untuk WA */
         @keyframes pulse-green {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -342,7 +301,6 @@
             
             .hero-text h1 { font-size: 2.2rem; }
 
-            /* TOMBOL SIMETRIS MOBILE FIX */
             .hero-buttons {
                 display: flex;
                 justify-content: center;
@@ -378,7 +336,7 @@
 
     <nav>
         <div class="container nav-wrapper">
-            <a href="index.html" class="nav-logo">TiaBakery.</a>
+            <a href="#" class="nav-logo">TiaBakery.</a>
             
             <div class="nav-menu">
                 <a href="about.html">Tentang Kami</a>
@@ -392,7 +350,7 @@
                     <i class="ri-shopping-bag-3-line"></i>
                     <span id="cart-count">0</span>
                 </div>
-                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Kontak WA">
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Hubungi WhatsApp">
                     <i class="ri-whatsapp-line"></i> Kontak
                 </a>
                 <div class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -414,7 +372,7 @@
 
     <div class="cart-overlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;">&times;</span></div>
+        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;" aria-label="Tutup Keranjang">&times;</span></div>
         <div id="cart-items" class="cart-items-container"><p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p></div>
         <div class="cart-footer">
             <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">Rp 0</span></div>
@@ -426,7 +384,7 @@
 
     <div id="checkoutPage" class="checkout-page">
         <div class="checkout-container">
-            <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
+            <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()" aria-label="Kembali"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
             <div class="form-group"><label class="form-label">Nama Lengkap</label><input type="text" id="cust-name" class="form-input" placeholder="Masukkan nama anda"></div>
             <div class="form-group"><label class="form-label">Alamat Lengkap</label><input type="text" id="cust-address" class="form-input" placeholder="Jalan, No. Rumah, Kecamatan, Kota"></div>
             <div class="form-group"><label class="form-label">Nomor WhatsApp (Angka Saja)</label><input type="tel" id="cust-phone" class="form-input" placeholder="08xxxxxxxxxx" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div>
