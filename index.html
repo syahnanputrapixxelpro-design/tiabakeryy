@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TiaBakery menyediakan roti artisan, pastry, dan kue premium yang fresh from the oven setiap hari. Bahan 100% Halal dan alami. Pesan online sekarang!">
+    <meta name="keywords" content="TiaBakery, Roti Artisan, Bakery Jakarta, Kue Premium, Hampers Lebaran, Croissant Enak">
+    <meta name="author" content="TiaBakery">
     
-    <title>Tentang Kami - TiaBakery | Roti Artisan & Kue Premium</title>
-    <meta name="description" content="Kenali perjalanan TiaBakery dari dapur rumahan hingga menjadi toko roti favorit keluarga. Kami menyajikan roti artisan, pastry, dan kue tanpa pengawet dengan bahan premium.">
-    <meta name="keywords" content="TiaBakery, Toko Roti Artisan, Bakery Jakarta, Kue Premium, Hampers Lebaran, Roti Tanpa Pengawet">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="TiaBakery Team">
-
+    <meta property="og:title" content="TiaBakery - Kelembutan Cinta di Setiap Gigitan">
+    <meta property="og:description" content="Nikmati aneka roti, cake, dan pastry premium dari TiaBakery. Freshly baked everyday!">
+    <meta property="og:image" content="assets/img/img dapur/proses-pembuatan-roti.webp">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tiabakery.com/about.html">
-    <meta property="og:title" content="Tentang Kami - TiaBakery">
-    <meta property="og:description" content="Cerita rasa dari dapur kecil menuju hati pelanggan. Roti fresh oven setiap hari.">
-    <meta property="og:image" content="assets/img/img dapur/dapurawaltiabakery.webp">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
+    <title>TiaBakery - Official Website</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,7 +29,7 @@
       "@type": "Bakery",
       "name": "TiaBakery",
       "image": "assets/img/img dapur/proses-pembuatan-roti.webp",
-      "description": "Bakery modern dengan cita rasa autentik dan bahan premium.",
+      "description": "TiaBakery menyediakan roti artisan dan kue premium fresh from the oven.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Jl. Bakery No. 88",
@@ -51,7 +48,7 @@
           "Saturday",
           "Sunday"
         ],
-        "opens": "08:00",
+        "opens": "07:00",
         "closes": "21:00"
       },
       "telephone": "+62895639068080"
@@ -69,194 +66,309 @@
         body { background-color: var(--bg-white); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; width: 100%; }
         h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--text-dark); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-        img { max-width: 100%; height: auto; display: block; } /* Optimasi CLS */
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; height: auto; }
 
         /* NAVBAR */
-        nav { background: rgba(255, 255, 255, 0.95); padding: 12px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001; }
+        nav { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 12px 0; 
+            position: sticky; top: 0; z-index: 1000; 
+            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); 
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .nav-logo { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; z-index: 1001;}
+        
         .nav-menu { display: flex; gap: 25px; align-items: center; }
         .nav-menu a { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; color: var(--text-dark); cursor: pointer; }
         .nav-menu a:hover { color: var(--red); }
-        .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
-        .nav-icon-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); cursor: pointer; position: relative; }
-        .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
-        .btn-nav-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
-        .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
-        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
-
-        /* MOBILE MENU OVERLAY */
-        .menu-overlay-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: 0.3s; }
-        .menu-overlay-bg.active { opacity: 1; visibility: visible; }
-        .mobile-menu-dropdown { position: fixed; top: 0; left: 0; width: 100%; height: auto; padding-top: 80px; padding-bottom: 40px; background: white; z-index: 999; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; gap: 25px; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); display: flex; }
-        .mobile-menu-dropdown.active { transform: translateY(0); }
-        .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
-        .mobile-btn-wa { background: #25D366; color: white; padding: 12px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px; }
-
-        /* --- ABOUT SPECIFIC STYLES --- */
         
-        /* 1. HERO */
-        .about-header { 
+        .nav-icons { display: flex; gap: 15px; align-items: center; z-index: 1001; }
+        .nav-icon-btn { 
+            width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #eee; 
+            display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dark); 
+            cursor: pointer; position: relative; 
+        }
+        .nav-icon-btn:hover { background: var(--text-dark); color: white; border-color: var(--text-dark); }
+        
+        .btn-nav-wa { 
+            background: #25D366; color: white; padding: 8px 20px; border-radius: 50px; 
+            font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
+        }
+        .btn-nav-wa:hover { background: #1ebc57; transform: translateY(-1px); }
+
+        .hamburger-btn { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; z-index: 1001; }
+        
+        /* MOBILE MENU */
+        .menu-overlay-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 998;
+            opacity: 0; visibility: hidden; transition: 0.3s;
+        }
+        .menu-overlay-bg.active { opacity: 1; visibility: visible; }
+
+        .mobile-menu-dropdown {
+            position: fixed; top: 0; left: 0; width: 100%; 
+            height: auto; 
+            padding-top: 80px; padding-bottom: 40px;
+            background: white; 
+            z-index: 999; 
+            border-bottom-left-radius: 30px; 
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+            flex-direction: column; align-items: center; justify-content: center; gap: 25px;
+            transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+        }
+        .mobile-menu-dropdown.active { transform: translateY(0); }
+        
+        .mobile-link { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
+        .mobile-link:hover { color: var(--red); }
+        .mobile-btn-wa {
+            background: #25D366; color: white; padding: 12px 35px; border-radius: 50px;
+            font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); margin-top: 10px;
+        }
+
+        #cart-count { position: absolute; top: -5px; right: -5px; background: var(--red); color: white; font-size: 0.7rem; font-weight: bold; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
+        #cart-count.show { opacity: 1; }
+
+        /* HERO & SECTIONS */
+        .hero-new { 
+            background-color: var(--bg-warm); 
+            padding: 10px 0; 
             position: relative; 
-            height: 40vh; 
-            width: 100%; 
             overflow: hidden; 
-            display: flex; 
+        }
+        .hero-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
             align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            color: white; 
+            gap: 40px; 
+            min-height: 350px; 
         }
-        .about-header img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6); }
-        .about-header-content { position: relative; z-index: 2; padding: 0 20px; }
-        .about-header h1 { font-size: 4rem; margin-bottom: 15px; color: white; line-height: 1.1; }
-        .about-header p { 
-            font-size: 1.2rem; 
-            font-weight: 300; 
-            letter-spacing: 1px; 
-            margin-top: 10px; 
-            opacity: 0.9;
-        }
+        .hero-text { z-index: 2; position: relative; }
+        .hero-badge { display: inline-block; background: var(--yellow-soft); color: #Fbc02d; padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid var(--yellow); }
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
+        .hero-text p { font-size: 1.1rem; line-height: 1.6; color: var(--text-light); margin-bottom: 35px; max-width: 90%; }
+        
+        .hero-buttons { display: flex; gap: 15px; }
+        .btn-primary { padding: 15px 35px; background: var(--red); color: white; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(255, 82, 82, 0.3); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: none; }
+        .btn-secondary { padding: 15px 35px; background: white; color: var(--text-dark); border: 2px solid #eee; border-radius: 50px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+        
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        .blob-bg { position: absolute; width: 450px; height: 450px; background: #FFE082; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; z-index: 1; animation: morph 8s ease-in-out infinite; opacity: 0.5; }
+        .hero-img-main { position: relative; z-index: 2; width: 100%; max-width: 500px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); animation: float-img 6s ease-in-out infinite; border-radius: 20px; }
+        .float-item { position: absolute; background: white; padding: 10px 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 3; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; animation: float-item 5s ease-in-out infinite; }
+        .float-1 { top: 10%; right: 0; border-left: 5px solid var(--blue); animation-delay: 0s; }
+        .float-2 { bottom: 15%; left: 0; border-left: 5px solid var(--green); animation-delay: 2s; }
+        @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }
+        @keyframes float-img { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes float-item { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        /* 2. INTRO */
-        .intro-section { padding: 100px 0; background: var(--bg-white); }
-        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
-        .intro-text h2 { font-size: 2.8rem; margin-bottom: 25px; line-height: 1.2; }
-        .intro-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
-        .intro-highlight { border-left: 4px solid var(--yellow); padding-left: 20px; font-style: italic; color: var(--text-dark); margin: 30px 0; }
+        /* SECTIONS COMMON */
+        .section-padding { padding: 80px 0; }
+        .section-header-center { text-align: center; margin-bottom: 50px; }
+        .section-title { font-size: 2.5rem; margin-bottom: 15px; position: relative; display: inline-block; }
+        
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+        .about-img { position: relative; }
+        .about-img img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative; z-index: 2; display: block; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .about-text p { line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
+        .about-deco { position: absolute; bottom: -20px; left: -20px; width: 100%; height: 100%; border: 3px solid var(--text-dark); border-radius: 20px; z-index: 1; }
+        
+        /* PRODUCTS */
+        .bestseller-section { background: var(--yellow-soft); padding: 70px 0; margin: 60px 0; border-radius: 30px; position: relative; }
+        .bs-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; padding: 0 40px; }
+        .sticker-title { background: var(--red); color: white; padding: 8px 20px; transform: rotate(-2deg); display: inline-block; font-size: 1.2rem; font-weight: 700; box-shadow: 3px 3px 0 rgba(0,0,0,0.1); margin-bottom: 10px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; padding: 0 40px; }
+        .product-card { background: white; border-radius: 16px; padding: 15px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03); animation: fadeIn 0.5s ease; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .pc-img { height: 200px; border-radius: 12px; margin-bottom: 15px; overflow: hidden; position: relative; }
+        .pc-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .product-card:hover .pc-img img { transform: scale(1.1); }
+        .pc-title { font-weight: 700; margin-bottom: 5px; font-size: 1.1rem; font-family: 'Fraunces'; }
+        .pc-price { color: var(--red); font-weight: 700; margin-bottom: 15px; display: block; }
+        .btn-cart { width: 100%; padding: 10px; border: 2px solid var(--text-dark); background: transparent; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-cart:hover { background: var(--text-dark); color: white; }
 
-        /* 3. MIDDLE IMAGE */
-        .middle-image-section { padding: 0 20px; margin-bottom: 100px; }
-        .middle-img-container { height: 500px; width: 100%; max-width: 1200px; margin: 0 auto; border-radius: 30px; overflow: hidden; position: relative; }
-        .middle-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .middle-img-container:hover img { transform: scale(1.05); }
+        .tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { padding: 12px 30px; border: 1px solid #ddd; border-radius: 50px; background: white; cursor: pointer; font-family: 'Montserrat'; font-weight: 600; transition: 0.3s; }
+        .tab-btn.active, .tab-btn:hover { background: var(--yellow); border-color: var(--yellow); color: var(--text-dark); }
 
-        /* 4. TIMELINE */
-        .timeline-section { background: var(--bg-warm); padding: 100px 0; }
-        .timeline-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
-        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 4px; background-color: #ddd; top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px; }
-        .timeline-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
-        .timeline-item.left { left: 0; text-align: right; }
-        .timeline-item.right { left: 50%; text-align: left; }
-        .timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--bg-white); border: 4px solid var(--red); top: 20px; border-radius: 50%; z-index: 1; }
-        .timeline-item.right::after { left: -10px; border-color: var(--blue); }
-        .timeline-content { padding: 20px 30px; background-color: white; position: relative; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .year-badge { display: inline-block; padding: 5px 15px; background: var(--text-dark); color: white; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; }
-        .timeline-content h3 { font-size: 1.3rem; margin-bottom: 10px; }
-        .timeline-content p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
+        .faq-section { background: #FAFAFA; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        details { background: white; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); overflow: hidden; border: 1px solid #eee; }
+        summary { padding: 20px; font-weight: 700; cursor: pointer; position: relative; list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: 'Fraunces', serif; font-size: 1.1rem; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--text-light); }
+        details[open] summary::after { content: '-'; color: var(--red); }
+        details[open] summary { border-bottom: 1px solid #f0f0f0; color: var(--red); }
+        .faq-answer { padding: 25px; line-height: 1.6; color: var(--text-light); background: #fffcfc; }
 
-        /* 5. GALLERY SECTION */
-        .gallery-section { padding: 100px 0; background: var(--bg-white); }
-        .gallery-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .gallery-item { height: 300px; overflow: hidden; border-radius: 15px; position: relative; cursor: pointer; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); opacity: 0; transition: 0.3s; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem; }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-        /* 6. CTA SECTION */
-        .story-section { background: #E3F2FD; overflow: hidden; padding: 100px 0; }
+        .story-section { background: #E3F2FD; overflow: hidden; }
         .story-wrapper { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
         .story-content h2 { font-size: 3rem; margin-bottom: 20px; }
-        .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); text-decoration: none; transition: 0.3s;}
-        .btn-cta-wa:hover { transform: translateY(-3px); }
+        .btn-cta-wa { background: #25D366; color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
         .story-img img { width: 100%; max-width: 600px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); animation: float 6s ease-in-out infinite; object-fit: cover; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
-        /* FOOTER */
-        footer { background: white; padding: 80px 0 30px; border-top: 1px solid #eee; }
+        footer { background: white; padding: 80px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
         .footer-col h4 { margin-bottom: 25px; font-size: 1.1rem; }
         .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
-        .social-icons a { width: 40px; height: 40px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; color: var(--text-dark); text-decoration: none;}
+        .social-icons a { width: 40px; height: 40px; background: #f5f5f5; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; transition: 0.3s; }
         .social-icons a:hover { background: var(--text-dark); color: white; }
 
-        /* --- FLOATING BUTTONS (OPTIMIZED & STACKED) --- */
-        
-        /* 1. Back To Top (Atas) */
+        /* CART & CHECKOUT */
+        .cart-overlay, .payment-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; opacity: 0; transition: 0.3s; }
+        .cart-overlay.active, .payment-modal-overlay.open { display: flex; opacity: 1; }
+        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 350px; height: 100%; background: white; z-index: 2001; padding: 25px; box-shadow: -5px 0 30px rgba(0,0,0,0.1); transition: 0.4s; display: flex; flex-direction: column; }
+        .cart-sidebar.active { right: 0; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
+        .cart-items-container { flex: 1; overflow-y: auto; padding-right: 5px; }
+        .cart-item { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #f9f9f9; padding-bottom: 15px; }
+        .cart-item img { width: 70px; height: 70px; object-fit: cover; border-radius: 10px; }
+        .cart-item-details { flex: 1; }
+        .cart-item-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; }
+        .cart-item-price { color: var(--red); font-size: 0.9rem; font-weight: 600; }
+        .cart-remove { color: #ccc; cursor: pointer; font-size: 1.2rem; align-self: center; }
+        .cart-remove:hover { color: var(--red); }
+        .cart-footer { border-top: 1px solid #eee; padding-top: 25px; margin-top: auto; }
+        .cart-summary-row { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 12px; color: #666; }
+        .cart-total-row { display: flex; justify-content: space-between; font-weight: 800; font-size: 1.3rem; margin-top: 15px; margin-bottom: 25px; color: var(--text-dark); border-top: 2px dashed #eee; padding-top: 15px; }
+        .btn-checkout { width: 100%; padding: 16px; background: var(--text-dark); color: white; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; display: flex; justify-content: center; gap: 10px; font-size: 1rem; transition: 0.3s; margin-top: 10px; }
+        .btn-checkout:hover { background: var(--red); }
+
+        .checkout-page { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 3000; overflow-y: auto; display: none; padding: 40px 20px; animation: slideUp 0.4s ease; }
+        .checkout-page.active { display: block; }
+        .checkout-container { max-width: 600px; margin: 0 auto; padding-bottom: 50px; }
+        .checkout-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .form-group { margin-bottom: 25px; }
+        .form-label { display: block; font-weight: 700; margin-bottom: 10px; font-size: 0.95rem; }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 12px; font-family: 'Montserrat'; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(68, 138, 255, 0.1); }
+        .payment-options { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .payment-label { border: 2px solid #eee; border-radius: 15px; padding: 20px; cursor: pointer; text-align: center; font-weight: 600; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .payment-radio:checked + .payment-label { border-color: var(--green); background: rgba(105, 240, 174, 0.1); color: var(--text-dark); }
+        .payment-radio { display: none; }
+        .btn-confirm { width: 100%; padding: 20px; background: #25D366; color: white; border: none; border-radius: 50px; font-weight: 800; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: center; gap: 10px; margin-top: 20px; transition: 0.3s; }
+        .btn-confirm:hover { background: #1ebc57; transform: translateY(-3px); }
+        .btn-back { font-size: 1.5rem; cursor: pointer; background: none; border: none; }
+        .payment-modal-overlay { align-items: center; justify-content: center; z-index: 4000; background: rgba(0,0,0,0.8); }
+        .payment-modal-box { background: white; width: 90%; max-width: 450px; border-radius: 25px; padding: 40px; text-align: center; position: relative; animation: popIn 0.3s; }
+        .pm-timer { background: #ffebee; color: var(--red); display: inline-block; padding: 10px 20px; border-radius: 50px; font-weight: 800; margin-bottom: 15px; font-size: 1rem; letter-spacing: 1px; }
+        .pm-total-amount { font-family: 'Fraunces'; font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin: 10px 0 30px; }
+        .pm-display-area { background: #f9f9f9; padding: 30px; border-radius: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; min-height: 250px; flex-direction: column; border: 2px dashed #ddd; }
+        .pm-qr-img { width: 100%; max-width: 220px; }
+        .pm-bank-info { font-size: 1.8rem; font-weight: 800; color: var(--blue); letter-spacing: 2px; margin: 10px 0; }
+        .pm-copy-btn { font-size: 0.9rem; margin-top: 15px; cursor: pointer; color: var(--text-dark); text-decoration: underline; font-weight: 600; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        /* --- FLOATING BUTTONS (OPTIMIZED) --- */
+        /* Back to Top - Posisi agak ke atas */
         .back-to-top { 
             position: fixed; 
-            bottom: 100px; /* Jarak dari bawah agar tidak tertutup WA */
+            bottom: 110px; /* Di atas WA */
             right: 30px; 
-            width: 50px; height: 50px; 
-            background: var(--text-dark); color: white; 
+            width: 50px; 
+            height: 50px; 
+            background: var(--text-dark); 
+            color: white; 
             border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
             font-size: 1.5rem; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
             z-index: 998; 
-            opacity: 0; visibility: hidden; 
-            transition: all 0.3s ease; 
+            opacity: 0; 
+            visibility: hidden; 
+            transition: 0.3s; 
             text-decoration: none; 
             cursor: pointer; 
         }
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
         .back-to-top:hover { background: var(--red); transform: translateY(-3px); }
 
-        /* 2. WhatsApp Float (Bawah) */
+        /* WA Float - Posisi paling bawah (utama) dengan animasi Pulse */
         .wa-float { 
             position: fixed; 
-            bottom: 30px; /* Paling bawah */
-            right: 30px; /* Sejajar dengan back-to-top */
-            background: #25D366; color: white; 
-            width: 60px; height: 60px; 
+            bottom: 30px; 
+            right: 30px; 
+            background: #25D366; 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
             border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
             font-size: 2rem; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.2); 
-            z-index: 999; 
-            transition: all 0.3s ease; 
-            text-decoration: none;
+            z-index: 999; /* Z-Index paling tinggi agar bisa diklik */
+            transition: 0.3s;
+            animation: pulse-green 2s infinite; /* Animasi Denyut */
         }
-        .wa-float:hover { transform: scale(1.1); background: #128c7e; }
+        .wa-float:hover { transform: scale(1.1); }
 
-        /* Pulse Animation untuk WA */
-        .wa-float::before {
-            content: ''; position: absolute; width: 100%; height: 100%;
-            border-radius: 50%; background: #25d366; opacity: 0.7; z-index: -1;
-            animation: pulse-wa 2s infinite;
-        }
-        @keyframes pulse-wa {
-            0% { transform: scale(1); opacity: 0.7; }
-            100% { transform: scale(1.6); opacity: 0; }
+        /* Animasi Pulse untuk WA */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- RESPONSIVE FIXES (MOBILE) --- */
+        /* RESPONSIVE & MOBILE */
         @media (max-width: 900px) {
             .nav-menu, .btn-nav-wa { display: none; }
             .hamburger-btn { display: block; }
             
-            .about-header { height: 30vh; } 
-            .about-header h1 { font-size: 2.5rem; }
+            .hero-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                padding: 20px 20px; 
+            }
             
-            .middle-img-container { height: 300px; }
+            .hero-visual { margin-top: 40px; width: 100%; height: 350px; }
+            .blob-bg { width: 300px; height: 300px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+            .hero-img-main { max-width: 280px; }
+            .grid-4, .story-wrapper, .footer-grid { grid-template-columns: 1fr; }
+            .bs-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .grid-4 { padding: 0 20px; }
+            .story-img img { max-width: 90%; margin: 0 auto; display: block; }
             
-            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
-            .intro-text { padding: 0 10px; text-align: left; }
-            .intro-img { padding: 0 10px; }
-            .intro-img img { width: 100%; border-radius: 15px; }
+            .hero-text h1 { font-size: 2.2rem; }
 
-            .timeline-section { padding: 60px 0; }
-            .timeline::after { left: 31px; } 
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 15px; } 
-            .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
-            .timeline-item::after { left: 21px; right: auto; } 
-            .timeline-item.left::after { border-color: var(--red); }
+            /* TOMBOL SIMETRIS MOBILE FIX */
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                gap: 15px;
+                margin-top: 10px;
+                padding: 0 10px;
+            }
+            .hero-buttons .btn-primary, 
+            .hero-buttons .btn-secondary {
+                flex: 1;              
+                justify-content: center; 
+                text-align: center;
+                max-width: 160px;     
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100%;
+            }
+
+            .about-text h2 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+            .about-img { width: 85%; margin: 0 auto; } 
+            .about-deco { left: 10px; bottom: -10px; } 
             
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .gallery-item { height: 200px; }
-
-            .story-wrapper { grid-template-columns: 1fr; text-align: center; }
-            .story-content h2 { font-size: 2.2rem; }
-            .story-img img { margin: 0 auto; display: block; max-width: 90%; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-
-            /* Mobile Floating Adjustments */
-            .wa-float { width: 55px; height: 55px; bottom: 20px; right: 20px; font-size: 1.8rem; }
-            .back-to-top { width: 45px; height: 45px; bottom: 85px; right: 25px; font-size: 1.2rem; } /* Sejajar dengan WA di mobile */
+            .cart-sidebar { width: 100%; right: -100%; } 
+            .cart-sidebar.active { right: 0; }
         }
     </style>
 </head>
@@ -269,20 +381,21 @@
             <a href="index.html" class="nav-logo">TiaBakery.</a>
             
             <div class="nav-menu">
-                <a href="about.html" style="color: var(--red);">Tentang Kami</a>
+                <a href="about.html">Tentang Kami</a>
                 <a href="product.html">Produk</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="blog.html">Blog</a>
             </div>
 
             <div class="nav-icons">
-                <div class="nav-icon-btn" onclick="alert('Belanja di halaman Produk ya!')" aria-label="Lihat Keranjang">
+                <div class="nav-icon-btn" onclick="toggleCart()" aria-label="Lihat Keranjang">
                     <i class="ri-shopping-bag-3-line"></i>
+                    <span id="cart-count">0</span>
                 </div>
-                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Hubungi WhatsApp">
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-nav-wa" aria-label="Kontak WA">
                     <i class="ri-whatsapp-line"></i> Kontak
                 </a>
-                <div class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu Mobile">
+                <div class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
                     <i class="ri-menu-3-line"></i>
                 </div>
             </div>
@@ -299,115 +412,184 @@
         </a>
     </div>
 
-    <header class="about-header">
-        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1600&auto=format&fit=crop" alt="Suasana Dapur TiaBakery" fetchpriority="high" width="1600" height="600">
-        <div class="about-header-content">
-            <h1>Cerita Kami</h1>
-            <p>Dari Dapur Kecil Menuju Hati Pelanggan.</p>
-        </div>
-    </header>
-
-    <section class="intro-section container">
-        <div class="intro-grid">
-            <div class="intro-text">
-                <span style="color: var(--blue); font-weight: 700; letter-spacing: 2px;">SIAPA KAMI</span>
-                <h2>Menciptakan Kebahagiaan <br> Lewat Sepotong Roti.</h2>
-                <p>
-                    TiaBakery bukan sekadar toko roti. Kami adalah rumah bagi para pencinta rasa autentik. Berdiri di tengah hiruk pikuk kota, kami hadir membawa kehangatan roti yang baru keluar dari oven.
-                </p>
-                <div class="intro-highlight">
-                    "Kami percaya bahwa bahan terbaik tidak butuh banyak rekayasa. Cukup tepung berkualitas, butter asli, dan ketulusan hati."
-                </div>
-                <p>
-                    Setiap adonan kami uleni dengan tangan, setiap resep kami jaga keasliannya. Kami tidak menggunakan pengawet buatan karena kami ingin Anda merasakan rasa alami dari setiap bahan yang kami gunakan.
-                </p>
-            </div>
-            <div class="intro-img">
-                <img src="assets/img/img dapur/dapurawaltiabakery.webp" style="width:100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" alt="Proses pembuatan roti di dapur TiaBakery" width="600" height="400" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <div class="middle-image-section">
-        <div class="middle-img-container">
-            <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Roti fresh dari oven" width="1200" height="500" loading="lazy">
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3>Keranjang Saya</h3><span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;">&times;</span></div>
+        <div id="cart-items" class="cart-items-container"><p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p></div>
+        <div class="cart-footer">
+            <div class="cart-summary-row"><span>Subtotal</span><span id="cart-subtotal">Rp 0</span></div>
+            <div class="cart-summary-row"><span>Pajak (10%)</span><span id="cart-tax">Rp 0</span></div>
+            <div class="cart-total-row"><span>Total</span><span id="cart-grand-total">Rp 0</span></div>
+            <button class="btn-checkout" onclick="openCheckoutPage()">Lanjut Pembayaran <i class="ri-arrow-right-line"></i></button>
         </div>
     </div>
 
-    <section class="timeline-section">
-        <div class="container">
-            <h2 class="timeline-title">Perjalanan Kami</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year-badge" style="background: var(--red);">2020</span>
-                        <h3>Awal Mula di Dapur Ibu</h3>
-                        <p>TiaBakery dimulai dari dapur rumah sederhana berukuran 3x3 meter. Hanya menerima pesanan tetangga dengan menu andalan Roti Sisir Mentega.</p>
-                    </div>
+    <div id="checkoutPage" class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-header"><button class="btn-back" onclick="closeCheckoutPage()"><i class="ri-arrow-left-line"></i></button><h2>Informasi Pengiriman</h2></div>
+            <div class="form-group"><label class="form-label">Nama Lengkap</label><input type="text" id="cust-name" class="form-input" placeholder="Masukkan nama anda"></div>
+            <div class="form-group"><label class="form-label">Alamat Lengkap</label><input type="text" id="cust-address" class="form-input" placeholder="Jalan, No. Rumah, Kecamatan, Kota"></div>
+            <div class="form-group"><label class="form-label">Nomor WhatsApp (Angka Saja)</label><input type="tel" id="cust-phone" class="form-input" placeholder="08xxxxxxxxxx" oninput="this.value = this.value.replace(/[^0-9]/g, '')"></div>
+            <div class="order-summary"><h3 style="margin-bottom: 15px; font-size: 1.1rem;">Ringkasan Pesanan</h3><div class="summary-row"><span>Total Belanja</span><span id="checkout-subtotal">Rp 0</span></div><div class="summary-row"><span>Pajak (10%)</span><span id="checkout-tax">Rp 0</span></div><div class="summary-row summary-total"><span>Total Bayar</span><span id="checkout-total">Rp 0</span></div></div>
+            <div class="form-group"><label class="form-label" style="margin-bottom: 15px;">Metode Pembayaran</label><div class="payment-options"><input type="radio" name="payment" id="pay-qris" value="QRIS" class="payment-radio" checked><label for="pay-qris" class="payment-label"><i class="ri-qr-code-line" style="font-size: 1.5rem; display:block; margin-bottom:5px;"></i>QRIS</label><input type="radio" name="payment" id="pay-transfer" value="Transfer Bank" class="payment-radio"><label for="pay-transfer" class="payment-label"><i class="ri-bank-card-line" style="font-size: 1.5rem; display:block; margin-bottom:5px;"></i>Transfer Bank</label><input type="radio" name="payment" id="pay-cod" value="COD" class="payment-radio"><label for="pay-cod" class="payment-label"><i class="ri-hand-coin-line" style="font-size: 1.5rem; display:block; margin-bottom:5px;"></i>COD</label></div></div>
+            <button class="btn-confirm" onclick="processOrder()"><i class="ri-secure-payment-line" style="font-size: 1.3rem;"></i> Konfirmasi Pesanan</button>
+        </div>
+    </div>
+
+    <div id="paymentModalOverlay" class="payment-modal-overlay">
+        <div class="payment-modal-box">
+            <h3 style="margin-bottom: 15px;">Menunggu Pembayaran</h3><div class="pm-timer" id="countdown-timer">23 : 59 : 59</div><div class="pm-total-label">Total yang harus dibayar:</div><div class="pm-total-amount" id="pm-amount">Rp 0</div><div class="pm-display-area" id="pm-display-area"></div><p style="font-size: 0.85rem; color: #777; margin-bottom: 20px;">Selesaikan pembayaran sebelum waktu habis.</p><button class="btn-confirm" onclick="finalizeOrderToWA()"><i class="ri-whatsapp-line"></i> Saya Sudah Bayar</button>
+        </div>
+    </div>
+
+    <section class="hero-new">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="hero-badge"><i class="ri-fire-fill"></i> Freshly Baked Everyday</span>
+                <h1>Rasakan Kelembutan <br> <span style="color: var(--red); font-style: italic;">Cinta</span> di Setiap Gigitan.</h1>
+                <p>
+                    TiaBakery menghadirkan roti artisan dengan bahan 100% alami dan premium. Tanpa pengawet, penuh rasa, dan selalu hangat dari oven.
+                </p>
+                <div class="hero-buttons">
+                    <a href="product.html" class="btn-primary">Pesan<i class="ri-arrow-right-line"></i></a>
+                    <a href="about.html" class="btn-secondary">Lihat</a>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year-badge" style="background: var(--blue);">2021</span>
-                        <h3>Orderan Online Meledak</h3>
-                        <p>Berkat media sosial, pesanan kami meningkat pesat. Kami mulai merekrut 2 asisten baker dan menyewa ruko kecil untuk produksi.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year-badge" style="background: var(--green);">2023</span>
-                        <h3>Toko Fisik Pertama</h3>
-                        <p>Mimpi menjadi nyata. Outlet resmi TiaBakery dibuka di Jakarta Selatan dengan konsep "Open Kitchen" agar pelanggan bisa mencium aroma roti.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year-badge" style="background: var(--yellow); color: black;">2025</span>
-                        <h3>Ekspansi & Inovasi</h3>
-                        <p>Kini kami memiliki 15 varian menu signature dan melayani pengiriman hampers ke seluruh Indonesia. Perjalanan kami masih panjang!</p>
-                    </div>
-                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="blob-bg"></div>
+                <img src="assets/img/img dapur/proses-pembuatan-roti.webp" class="hero-img-main" alt="TiaBakery Signature Cake" width="500" height="500" fetchpriority="high">
+                <div class="float-item float-1"><i class="ri-star-fill" style="color: var(--yellow);"></i> 4.9 Rating</div>
+                <div class="float-item float-2"><i class="ri-truck-fill" style="color: var(--green);"></i> Free Delivery</div>
             </div>
         </div>
     </section>
 
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="gallery-title">Galeri Momen</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/img/kue/chocolavabo.webp" alt="Choco Lava Bomb TiaBakery" width="300" height="300" loading="lazy">
-                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/img/kue/BlueberryCupcak.webp" alt="Blueberry Cupcake TiaBakery" width="300" height="300" loading="lazy">
-                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/img/kue/cheesegarlicbread.webp" alt="Garlic Bread TiaBakery" width="300" height="300" loading="lazy">
-                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/img/kue/RotiSisirMenteg.webp" alt="Roti Sisir Mentega TiaBakery" width="300" height="300" loading="lazy">
-                    <div class="gallery-overlay"><i class="ri-heart-3-fill"></i></div>
-                </div>
+    <section id="about" class="section-padding container">
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="assets/img/img dapur/kuedipanggangan.webp" alt="Chef Baking" width="600" height="400" loading="lazy">
+                <div class="about-deco"></div>
+            </div>
+            <div class="about-text">
+                <h2>Tradisi Rasa yang <br> Tak Tergantikan.</h2>
+                <p>
+                    Dimulai dari dapur kecil dengan mimpi besar, TiaBakery kini menjadi bagian dari meja makan keluarga Indonesia. Kami percaya bahwa roti yang enak berasal dari bahan yang jujur.
+                </p>
+                <a href="about.html" style="font-weight: 700; color: var(--red); border-bottom: 2px solid var(--red);">Baca Selengkapnya</a>
             </div>
         </div>
     </section>
 
-    <section class="story-section">
+    <div class="container" id="bestseller">
+        <section class="bestseller-section">
+            <div class="bs-header">
+                <div>
+                    <div class="sticker-title">POPULER</div>
+                    <h3>Paling Sering Dibeli</h3>
+                </div>
+                <a href="product.html" style="font-weight: 600;">Lihat Semua <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="grid-4">
+                <div class="product-card">
+                    <div class="pc-img"><img src="assets/img/kue/chocolavabo.webp" alt="Choco Lava" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-title">Choco Lava Bomb</div>
+                    <span class="pc-price">Rp 45.000</span>
+                    <button class="btn-cart" onclick="addToCart(this, 'Choco Lava Bomb', 45000, 'assets/img/kue/chocolavabo.webp')">Beli</button>
+                </div>
+                <div class="product-card">
+                    <div class="pc-img"><img src="assets/img/kue/crossain.webp" alt="Croissant" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-title">French Butter Croissant</div>
+                    <span class="pc-price">Rp 25.000</span>
+                    <button class="btn-cart" onclick="addToCart(this, 'French Butter Croissant', 25000, 'assets/img/kue/croissan.webp')">Beli</button>
+                </div>
+                <div class="product-card">
+                    <div style="position: absolute; top: 10px; right: 10px; background: var(--green); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; z-index: 2;">VEGAN</div>
+                    <div class="pc-img"><img src="assets/img/kue/AvocadoToas.webp" alt="Toast" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-title">Avocado Toast Bread</div>
+                    <span class="pc-price">Rp 35.000</span>
+                    <button class="btn-cart" onclick="addToCart(this, 'Avocado Toast Bread', 35000, 'assets/img/kue/AvocadoToas.webp')">Beli</button>
+                </div>
+                <div class="product-card">
+                    <div class="pc-img"><img src="assets/img/kue/KyotoMatchaRol.webp" alt="Matcha" width="300" height="300" loading="lazy"></div>
+                    <div class="pc-title">Kyoto Matcha Roll</div>
+                    <span class="pc-price">Rp 50.000</span>
+                    <button class="btn-cart" onclick="addToCart(this, 'Kyoto Matcha Roll', 50000, 'assets/img/kue/KyotoMatchaRol.webp')">Beli</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="menu" class="section-padding container">
+        <div class="section-header-center">
+            <span style="display: block; color: var(--blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Our Menu</span>
+            <h2 class="section-title">Pilihan Favorit Keluarga</h2>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-filter="all">Semua</button>
+            <button class="tab-btn" data-filter="roti">Roti Manis</button>
+            <button class="tab-btn" data-filter="pastry">Pastry & Cake</button>
+            <button class="tab-btn" data-filter="donat">Donat</button>
+            <button class="tab-btn" data-filter="hampers">Hampers</button>
+        </div>
+        <div class="grid-4" id="menu-grid">
+            <div class="product-card menu-item" data-category="pastry">
+                <div class="pc-img"><img src="assets/img/kue/MiniFruitTar.webp" alt="Tart" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Mini Fruit Tart</div><span class="pc-price">Rp 30.000</span><button class="btn-cart" onclick="addToCart(this, 'Mini Fruit Tart', 30000, 'assets/img/kue/MiniFruitTar.webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="pastry">
+                <div class="pc-img"><img src="assets/img/kue/BlueberryCupcak.webp" alt="Cupcake" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Blueberry Cupcake</div><span class="pc-price">Rp 15.000</span><button class="btn-cart" onclick="addToCart(this, 'Blueberry Cupcake', 15000, 'assets/img/kue/blueberrycupcake.webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="donat">
+                <div class="pc-img"><img src="assets/img/kue/KampungPotatoDonu.webp" alt="Donat" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Kampung Potato Donut</div><span class="pc-price">Rp 8.000</span><button class="btn-cart" onclick="addToCart(this, 'Kampung Potato Donut', 8000, 'assets/img/kue/KampungPotatoDonu.webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="donat">
+                <div class="pc-img"><img src="assets/img/kue/ChocoBombolon.webp" alt="Bomboloni" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Choco Bomboloni</div><span class="pc-price">Rp 12.000</span><button class="btn-cart" onclick="addToCart(this, 'Choco Bomboloni', 12000, 'assets/img/kue/ChocoBombolon .webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="roti">
+                <div class="pc-img"><img src="assets/img/kue/WholeWheatLoa.webp" alt="Bread" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Whole Wheat Loaf</div><span class="pc-price">Rp 40.000</span><button class="btn-cart" onclick="addToCart(this, 'Whole Wheat Loaf', 40000, 'assets/img/kue/WholeWheatLoa.webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="roti">
+                <div class="pc-img"><img src="assets/img/kue/RotiSisirMenteg.webp" alt="Bread" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Roti Sisir Mentega</div><span class="pc-price">Rp 25.000</span><button class="btn-cart" onclick="addToCart(this, 'Roti Sisir Mentega', 25000, 'assets/img/kue/RotiSisirMenteg.webp')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="hampers">
+                <div class="pc-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop" alt="Hampers" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Tia's Gift Box</div><span class="pc-price">Rp 150.000</span><button class="btn-cart" onclick="addToCart(this, 'Tias Gift Box', 150000, 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500')">Beli</button>
+            </div>
+            <div class="product-card menu-item" data-category="pastry">
+                <div class="pc-img"><img src="assets/img/kue/RedVelvetSlic.webp" alt="Red Velvet" width="300" height="300" loading="lazy"></div>
+                <div class="pc-title">Red Velvet Slice</div><span class="pc-price">Rp 35.000</span><button class="btn-cart" onclick="addToCart(this, 'Red Velvet Slice', 35000, 'assets/img/kue/RedVelvetSlic.webp')">Beli</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding faq-section">
+        <div class="container faq-container">
+            <div class="section-header-center"><h2 class="section-title">Pertanyaan Umum (FAQ)</h2><p style="color: var(--text-light);">Jawaban singkat untuk pertanyaanmu.</p></div>
+            <details open><summary>Apakah TiaBakery sudah bersertifikat Halal?</summary><div class="faq-answer">Ya, 100%. Kami hanya menggunakan bahan-bahan Halal yang tersertifikasi.</div></details>
+            <details><summary>Berapa lama roti tahan di suhu ruang?</summary><div class="faq-answer">Rata-rata tahan 3-4 hari di suhu ruang karena tanpa pengawet.</div></details>
+            <details><summary>Apakah melayani pengiriman ke luar kota?</summary><div class="faq-answer">Roti basah hanya dalam kota. Cookies dan Hampers bisa ke seluruh Indonesia.</div></details>
+            <details><summary>Bagaimana cara memesan Custom Cake?</summary><div class="faq-answer">Hubungi WhatsApp kami H-3 sebelum acara untuk request khusus.</div></details>
+        </div>
+    </section>
+
+    <section class="story-section section-padding">
         <div class="container story-wrapper">
             <div class="story-content">
-                <h2>Ingin Menjadi Bagian <br> dari Cerita Kami?</h2>
+                <h2>Rasa yang Menyatukan <br> Kebahagiaan.</h2>
                 <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                    Rasakan sendiri kehangatan dan kelembutan roti TiaBakery. Pesan sekarang dan nikmati bersama orang tersayang.
+                    Setiap resep kami adalah warisan yang dijaga. TiaBakery hadir untuk membuat setiap momen kumpul keluarga menjadi lebih manis dan berwarna.
                 </p>
-                <a href="product.html" class="btn-cta-wa" aria-label="Pesan Produk Sekarang">
-                    <i class="ri-shopping-bag-3-line" style="font-size: 1.2rem;"></i> Pesan Sekarang
+                <a href="https://wa.me/62895639068080" target="_blank" class="btn-cta-wa" aria-label="Pesan via WhatsApp">
+                    <i class="ri-whatsapp-line" style="font-size: 1.2rem;"></i> Pesan via WhatsApp
                 </a>
             </div>
             <div class="story-img">
-                <img src="assets/img/img dapur/sourdough.webp" alt="Koleksi Roti Sourdough TiaBakery" width="600" height="400" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1472&auto=format&fit=crop" alt="TiaBakery Warm Atmosphere" width="600" height="400" loading="lazy">
             </div>
         </div>
     </section>
@@ -415,51 +597,26 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="nav-logo" style="margin-bottom: 20px;">TiaBakery.</h3>
-                    <p style="color: #666; line-height: 1.6; max-width: 250px;">
-                        Bakery modern dengan cita rasa autentik. Fresh from the oven, straight to your heart.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Eksplorasi</h4>
-                    <ul>
-                        <li><a href="about.html">Tentang Kami</a></li>
-                        <li><a href="product.html">Produk</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Kontak</h4>
-                    <ul>
-                        <li>Jl. Bakery No. 88, Jakarta</li>
-                        <li>hello@tiabakery.com</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Ikuti Kami</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-                    </div>
-                </div>
+                <div class="footer-col"><h3 class="nav-logo" style="margin-bottom: 20px;">TiaBakery.</h3><p style="color: #666; line-height: 1.6; max-width: 250px;">Bakery modern dengan cita rasa autentik.</p></div>
+                <div class="footer-col"><h4>Eksplorasi</h4><ul><li><a href="about.html">Tentang Kami</a></li><li><a href="product.html">Produk</a></li><li><a href="#">Gallery</a></li></ul></div>
+                <div class="footer-col"><h4>Kontak</h4><ul><li>Jl. Bakery No. 88, Jakarta</li><li>hello@tiabakery.com</li></ul></div>
+                <div class="footer-col"><h4>Ikuti Kami</h4><div class="social-icons"><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a><a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></div></div>
             </div>
-            <div style="text-align: center; font-size: 0.9rem; color: #999; border-top: 1px solid #eee; padding-top: 20px;">
-                &copy; 2024 TiaBakery. Dibuat dengan cinta.
-            </div>
+            <div style="text-align: center; font-size: 0.9rem; color: #999; border-top: 1px solid #eee; padding-top: 20px;">&copy; 2024 TiaBakery. Dibuat dengan cinta.</div>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top" id="backToTop" aria-label="Kembali ke Atas" title="Kembali ke Atas">
-        <i class="ri-arrow-up-line"></i>
-    </a>
-    
-    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float" aria-label="Hubungi WhatsApp" title="Chat WhatsApp">
-        <i class="ri-whatsapp-line"></i>
-    </a>
+    <a href="https://wa.me/62895639068080" target="_blank" class="wa-float" aria-label="Hubungi WhatsApp"><i class="ri-whatsapp-line"></i></a>
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Kembali ke Atas"><i class="ri-arrow-up-line"></i></a>
 
     <script>
+        let cart = [];
+        let subtotal = 0;
+        let tax = 0;
+        let grandTotal = 0;
+        let orderData = {};
+
+        // BACK TO TOP LOGIC
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) { backToTopBtn.classList.add('show'); } 
@@ -470,10 +627,135 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        function toggleCart() {
+            document.querySelector('.cart-overlay').classList.toggle('active');
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
             document.getElementById('menuOverlay').classList.toggle('active');
         }
+
+        function addToCart(btn, name, price, img) {
+            const originalText = btn.innerText;
+            btn.innerText = "✓";
+            btn.style.backgroundColor = "var(--text-dark)";
+            btn.style.color = "white";
+            setTimeout(() => { btn.innerText = originalText; btn.style.backgroundColor = "transparent"; btn.style.color = "var(--text-dark)"; }, 1000);
+            cart.push({ name, price, img });
+            calculateTotals();
+            updateCartUI();
+            if (!document.getElementById('cartSidebar').classList.contains('active')) { toggleCart(); }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            calculateTotals();
+            updateCartUI();
+        }
+
+        function calculateTotals() {
+            subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            tax = subtotal * 0.10;
+            grandTotal = subtotal + tax;
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-count');
+            badge.innerText = cart.length;
+            if (cart.length > 0) badge.classList.add('show'); else badge.classList.remove('show');
+            container.innerHTML = '';
+            if (cart.length === 0) { container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 50px;">Keranjang masih kosong.</p>'; } else {
+                cart.forEach((item, index) => {
+                    container.innerHTML += `<div class="cart-item"><img src="${item.img}" alt="${item.name}" width="70" height="70"><div class="cart-item-details"><div class="cart-item-title">${item.name}</div><div class="cart-item-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><div class="cart-remove" onclick="removeFromCart(${index})">&times;</div></div>`;
+                });
+            }
+            document.getElementById('cart-subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
+            document.getElementById('cart-tax').innerText = 'Rp ' + tax.toLocaleString('id-ID');
+            document.getElementById('cart-grand-total').innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
+        }
+
+        function openCheckoutPage() {
+            if (cart.length === 0) { alert("Keranjang masih kosong! Silakan belanja dulu."); return; }
+            toggleCart();
+            document.getElementById('checkoutPage').classList.add('active');
+            document.getElementById('checkout-subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
+            document.getElementById('checkout-tax').innerText = 'Rp ' + tax.toLocaleString('id-ID');
+            document.getElementById('checkout-total').innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
+        }
+
+        function closeCheckoutPage() { document.getElementById('checkoutPage').classList.remove('active'); }
+
+        function processOrder() {
+            const name = document.getElementById('cust-name').value;
+            const address = document.getElementById('cust-address').value;
+            const phone = document.getElementById('cust-phone').value;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            if (!name || !address || !phone) { alert("Mohon lengkapi data diri!"); return; }
+            orderData = { name, address, phone, paymentMethod };
+            showPaymentModal(paymentMethod);
+        }
+
+        function showPaymentModal(method) {
+            document.getElementById('checkoutPage').classList.remove('active');
+            const modal = document.getElementById('paymentModalOverlay');
+            const displayArea = document.getElementById('pm-display-area');
+            const amountDisplay = document.getElementById('pm-amount');
+            amountDisplay.innerText = 'Rp ' + grandTotal.toLocaleString('id-ID');
+            displayArea.innerHTML = '';
+            if (method === 'QRIS') {
+                displayArea.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="pm-qr-img" alt="QRIS Code" width="200" height="200"><p style="margin-top:10px; font-weight:600;">Scan QRIS di atas</p>`;
+            } else if (method === 'Transfer Bank') {
+                displayArea.innerHTML = `<div class="pm-bank-name">BANK BCA</div><div class="pm-bank-info">8800 9922 1100</div><div style="margin-top:5px; font-size:0.9rem;">a.n TiaBakery Official</div><div class="pm-copy-btn" onclick="alert('Nomor rekening disalin!')">Salin Nomor Rekening</div>`;
+            } else {
+                displayArea.innerHTML = `<i class="ri-hand-coin-line" style="font-size: 4rem; color: var(--green);"></i><p style="margin-top:10px; font-weight:600;">Bayar saat kurir sampai.</p><p style="font-size:0.9rem;">Siapkan uang pas sebesar total tagihan.</p>`;
+            }
+            modal.classList.add('open');
+            startCountdown();
+        }
+
+        function startCountdown() {
+            let duration = 24 * 60 * 60;
+            const timerElement = document.getElementById('countdown-timer');
+            const timerInterval = setInterval(() => {
+                const hours = Math.floor(duration / 3600);
+                const minutes = Math.floor((duration % 3600) / 60);
+                const seconds = duration % 60;
+                timerElement.innerText = `${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
+                if (--duration < 0) { clearInterval(timerInterval); timerElement.innerText = "WAKTU HABIS"; }
+            }, 1000);
+        }
+
+        function finalizeOrderToWA() {
+            let message = `Halo TiaBakery, saya konfirmasi pesanan:\n\n*DATA PEMBELI*\nNama: ${orderData.name}\nAlamat: ${orderData.address}\nNo. HP: ${orderData.phone}\n\n*RINCIAN PESANAN*\n`;
+            cart.forEach((item, index) => { message += `${index + 1}. ${item.name} - Rp ${item.price.toLocaleString('id-ID')}\n`; });
+            message += `\nSubtotal: Rp ${subtotal.toLocaleString('id-ID')}`;
+            message += `\nPajak (10%): Rp ${tax.toLocaleString('id-ID')}`;
+            message += `\n*TOTAL BAYAR: Rp ${grandTotal.toLocaleString('id-ID')}*\n`;
+            message += `\nMetode Pembayaran: *${orderData.paymentMethod}*\n`;
+            message += `\nMohon diproses. Terima kasih!`;
+            const waNumber = "62895639068080";
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
+            document.getElementById('paymentModalOverlay').classList.remove('open');
+            cart = []; calculateTotals(); updateCartUI();
+        }
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filterValue = tab.getAttribute('data-filter');
+                menuItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === category) { item.style.display = 'block'; item.style.animation = 'fadeIn 0.5s ease'; } else { item.style.display = 'none'; }
+                });
+            });
+        });
     </script>
 
 </body>
